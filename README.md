@@ -4,7 +4,9 @@ A multi-stage computer vision pipeline for automatic localization and recognitio
 
 **Course:** CS 539 — Introduction to Artificial Neural Networks, University of Wisconsin–Madison  
 **Team:** Ryan Qu, Reilly Tom, Manas Kumar, Jiwoo Hong  
-**Status:** Early Development / Feasibility Testing
+**Status:** Stage 1 baseline trained and evaluated; Stages 2–3 in feasibility development.
+
+Stage 1 used YOLO11n on the existing `cs539-stage1` T4 session, with 2,400 real training images, 400 validation images and 800 held-out test images. All 32 annotation-review examples were inspected before training. Held-out **mAP@0.50: 0.9948; mAP@0.50–0.95: 0.7838**. Checkpoints, metrics and figures were retrieved into the Git-ignored `outputs/stage1/` directory. See [results and limitations](docs/STAGE1_RESULTS.md) and the [reproducible Colab workflow](docs/STAGE1.md).
 
 ## 1. Project Overview
 

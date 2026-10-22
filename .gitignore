@@ -1,0 +1,12 @@
+# Real datasets, model weights and experiment artifacts stay local / on Colab.
+data/
+outputs/
+runs/
+*.pt
+*.pth
+*.onnx
+*.zip
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
