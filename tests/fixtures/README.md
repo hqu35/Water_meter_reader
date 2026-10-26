@@ -15,3 +15,24 @@ comparison. Its source is not shipped as a second production implementation.
 Tests compare the new modules against these records and also run preparation
 again to check determinism. Deliberate future changes to the experiment definition
 should be documented rather than silently updating fixtures to hide a regression.
+
+
+<!-- recursive-summary:start -->
+## Directory overview
+
+Small reference records freeze the original experiment interfaces and deterministic selection behavior.
+
+### Files
+
+| File | Role |
+|---|---|
+| [README.md](README.md) | Directory documentation and this managed overview. |
+| [evaluation\_arguments.json](evaluation_arguments.json) | Expected model.val test-evaluation keyword arguments with the same normalized path convention. |
+| [subset\_selection.json](subset_selection.json) | Expected ordered example IDs, splits, boxes, normalized coordinates, exclusions and review-example selections for the generated unit ZIP. |
+| [training\_arguments.json](training_arguments.json) | Expected model.train keyword arguments; machine-specific paths are represented by `<run-root>`. |
+
+### Summary
+
+Tests compare current behavior against these records. They are regression contracts, not real training images or trained weights; intentional experimental changes should be explained rather than hidden by blindly rewriting expectations.
+
+<!-- recursive-summary:end -->

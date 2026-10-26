@@ -251,3 +251,37 @@ The eventual goal is to provide a runnable Colab notebook demonstrating the full
 ---
 
 *This repository is a course project under active development. Model architecture, datasets, and implementation details may change based on preliminary experiments.*
+
+
+<!-- recursive-summary:start -->
+## Directory overview
+
+CS539 mechanical-water-meter project. The implemented Stage I worker localizes the complete numerical register in a real photograph; digit localization and digit-state recognition remain future stages.
+
+### Files
+
+| File | Role |
+|---|---|
+| [.gitignore](.gitignore) | Keeps real datasets, model weights, generated outputs, environments and caches out of Git while allowing selected dataset documentation. |
+| [README.md](README.md) | Directory documentation and this managed overview. |
+| [requirements-stage1.txt](requirements-stage1.txt) | Pins Ultralytics and bounds data-processing dependencies; explicitly retains Colab's preinstalled CUDA PyTorch build. |
+| [training\_loss.pdf](training_loss.pdf) | Vector PDF export of the same loss diagram for reading or reuse in reports. |
+| [training\_loss.png](training_loss.png) | Raster plot of the recorded 30-epoch training and validation box, classification and distribution-focal losses. |
+
+### Subdirectories
+
+| Directory | Role |
+|---|---|
+| [configs/](configs/README.md) | Experiment definitions; Stage I uses the frozen stage1.json settings. |
+| [dataset/](dataset/README.md) | Data overview only. All existing dataset leaves stay unchanged and are covered by an aggregate root summary. |
+| [docs/](docs/README.md) | Historical experiment workflow, measured results and interpretation limits. |
+| [notes/](notes/README.md) | Human reference notes; PDF contents are not needed to execute the worker. |
+| [outputs/](outputs/README.md) | Aggregate overview of ignored checkpoints, measurements, plots, logs and historical snapshots. |
+| [stage1\_python\_worker/](stage1_python_worker/README.md) | The only active Python worker package, invoked with python3 -m stage1_python_worker. |
+| [tests/](tests/README.md) | Regression tests and small deterministic fixtures for data, execution and simulated Colab operations. |
+
+### Summary
+
+The repository separates executable worker code from experiment settings, reviewed real data, saved results and human documentation. Read the worker CLI, data preparation/review, training and evaluation modules in that order; then read docs/STAGE1_RESULTS.md and inspect the loss and difficult-example plots. This recursive summary documents source/configuration/tests per directory and aggregates dataset/ and outputs/ at their roots; VCS internals, dependency environments and caches are excluded. No model training or remote execution is performed by documentation generation.
+
+<!-- recursive-summary:end -->
