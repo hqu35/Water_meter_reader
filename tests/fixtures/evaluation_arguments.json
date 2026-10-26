@@ -1,0 +1,15 @@
+{
+  "batch": 32,
+  "conf": 0.001,
+  "data": "<run-root>/dataset/stageOne/data.yaml",
+  "device": 0,
+  "exist_ok": false,
+  "imgsz": 640,
+  "iou": 0.7,
+  "name": "heldout_test",
+  "plots": true,
+  "project": "<run-root>/artifacts/evaluation",
+  "save_json": true,
+  "split": "test",
+  "workers": 2
+}

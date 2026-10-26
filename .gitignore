@@ -1,5 +1,10 @@
 # Real datasets, model weights and experiment artifacts stay local / on Colab.
-data/
+/data/
+/dataset/*
+!/dataset/README.md
+!/dataset/stageOne/
+/dataset/stageOne/*
+!/dataset/stageOne/README.md
 outputs/
 runs/
 *.pt

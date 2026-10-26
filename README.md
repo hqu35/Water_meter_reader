@@ -8,6 +8,89 @@ A multi-stage computer vision pipeline for automatic localization and recognitio
 
 Stage 1 used YOLO11n on the existing `cs539-stage1` T4 session, with 2,400 real training images, 400 validation images and 800 held-out test images. All 32 annotation-review examples were inspected before training. Held-out **mAP@0.50: 0.9948; mAP@0.50–0.95: 0.7838**. Checkpoints, metrics and figures were retrieved into the Git-ignored `outputs/stage1/` directory. See [results and limitations](docs/STAGE1_RESULTS.md) and the [reproducible Colab workflow](docs/STAGE1.md).
 
+## Current code structure
+
+All executable Stage I code lives in one package, `stage1_python_worker/`. Its only entry point
+is **`python -m stage1_python_worker`**, run from the repository root. There is no `scripts/`
+implementation or compatibility-wrapper directory.
+
+```text
+stage1_python_worker/
+  __main__.py                 Package entry point
+  cli.py                      All local/remote command parsing and dispatch
+  config.py                   Experiment JSON, paths and source inventory
+  data/                       Source inspection, conversion, splitting and review
+  training/                   T4 checks, YOLO training and checkpoint metadata
+  evaluation/                 Held-out metrics and prediction sheets
+  inference.py                Single-photo detection and register crop
+  colab.py                    Upload/download and launch the same worker remotely
+  utils/                      Shared JSON, hashes, ZIP extraction and result packaging
+configs/stage1.json            Frozen Stage I experiment settings
+requirements-stage1.txt        Dependencies; retain Colab's CUDA PyTorch build
+tests/                        Data, execution and Colab regression tests
+```
+
+The one-time data-migration script has been removed because migration is already
+complete. Colab source synchronization uploads this package, configuration and
+requirements; remote phases also execute `python -m stage1_python_worker`.
+
+- [`dataset/stageOne/`](dataset/stageOne/README.md): existing train/validation/test images, labels, masks and review metadata. Data stays ignored by Git; future stage datasets can be sibling directories.
+- `outputs/stage1/`: existing weights, metrics, plots, logs and immutable source snapshots (ignored).
+- `docs/`: preserved experiment records and results.
+- `notes/`: preserved study notes.
+
+`dataset/`, `docs/`, `notes/` and existing experiment outputs were left unchanged
+by this consolidation. Historical commands or source copies inside those records
+can refer to removed scripts; use the current commands below for execution.
+
+## Running Stage I
+
+```bash
+# Inspect the available local phases and remote operations.
+python3 -m stage1_python_worker --help
+python3 -m stage1_python_worker colab --help
+
+# Read the existing data source and apply an existing checkpoint locally.
+python3 -m stage1_python_worker inspect
+python3 -m stage1_python_worker predict \
+  --weights outputs/stage1/artifacts/runs/register_yolo11n/weights/best.pt \
+  --image /path/to/real_meter_photo.jpg \
+  --output outputs/stage1/prediction
+
+# Use only the existing named Colab session.
+python3 -m stage1_python_worker colab status
+python3 -m stage1_python_worker colab sync
+python3 -m stage1_python_worker colab push-prepared
+python3 -m stage1_python_worker colab train --background
+python3 -m stage1_python_worker colab evaluate --background
+python3 -m stage1_python_worker colab package
+python3 -m stage1_python_worker colab fetch
+```
+
+The remote environment must have `requirements-stage1.txt` installed while keeping
+its CUDA-enabled PyTorch. These are individual commands, not an automatically
+executed sequence: wait for each remote job to finish successfully before starting
+the next. `sync` uploads the full package before it is used remotely.
+
+Data phases remain `download`, `inspect`, `prepare`, and `approve --reviewer NAME`.
+The existing subset is already prepared and reviewed; `prepare` refuses to merge
+with it. For a fresh run, use `python3 -m stage1_python_worker --root /path/to/run prepare`
+after placing the verified ZIP under that run's `dataset/stageOne/raw/`.
+Inspect all 32 review examples before recording approval. Training rechecks the
+reviewed manifest, files and split membership before using the GPU.
+
+`--root` precedes the command. The default local data path remains
+`dataset/stageOne/` and outputs remain `outputs/stage1/`; a custom run root stores
+data under `<root>/dataset/stageOne/`. Colab uses `/content/cs539_stage1` as its
+run root. Training settings and the real-data split are unchanged.
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+Tests use temporary fixtures and simulated Colab/YOLO calls. They do not provision
+a GPU, launch real training, or replace existing experiment results.
+
 ## 1. Project Overview
 
 Mechanical water meters are challenging to read automatically due to variations in lighting, viewing angles, reflections, and partially rotating digit wheels.
@@ -57,7 +140,7 @@ Detect the numerical reading region within a photograph of a mechanical water me
 - **Dataset:** Dryad Word-Wheel Water Meter Dataset.
 - **Output:** Register bounding box and detection confidence.
 
-The dataset provides segmentation masks, which will be converted into detection bounding boxes after verifying image-mask alignment.
+The dataset provides segmentation masks. `stage1_python_worker/data/preparation.py` converts them into register bounding boxes after verifying image-mask alignment.
 
 ### Stage 2 — Individual Digit Localization
 
@@ -161,9 +244,7 @@ The main anticipated challenges include:
 
 ## 7. Reproducibility
 
-The implementation will use Python, PyTorch, Ultralytics, and Google Colab.
-
-Training configurations, random seeds, dataset preparation scripts, and model checkpoints will be documented as development progresses.
+Stage I uses Python, PyTorch, Ultralytics and the existing Google Colab T4 session. Its fixed configuration is `configs/stage1.json`; the current execution interface and test command are documented above. Checkpoints and results remain in `outputs/stage1/`, and experiment records remain in `docs/`.
 
 The eventual goal is to provide a runnable Colab notebook demonstrating the full inference pipeline.
 

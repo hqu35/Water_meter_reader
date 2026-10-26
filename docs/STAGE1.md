@@ -1,6 +1,99 @@
 # Stage 1: real-image register localization
 
-This implementation uses the **existing `cs539-stage1` Colab CLI session**. It never calls `colab new`, `colab run`, changes the accelerator, restarts the runtime, or stops the session. The local repository contains source and configuration only. Raw data, pretrained/trained weights, and experiment artifacts are ignored by Git.
+This implementation uses the **existing `cs539-stage1` Colab CLI session**. It never calls `colab new`, `colab run`, changes the accelerator, restarts the runtime, or stops the session. Only source, configuration and documentation are tracked in Git. Raw data, pretrained/trained weights, and experiment artifacts are ignored by Git.
+
+## Architecture and reading order
+
+`scripts/stage1.py` is a small launcher. Start with `stage1/cli.py` to see the
+phase dispatch, then follow the module for the phase you want to understand:
+
+```text
+scripts/stage1.py                 CLI launcher; existing commands are unchanged
+stage1/
+  cli.py                         Argument parsing and explicit phase dispatch
+  config.py                      Experiment JSON, shared paths and source hashes
+  data/
+    download.py                  Original Dryad download and archive verification
+    archive.py                   Exact image/mask pairing, decoding and inspection
+    preparation.py               Mask boxes, YOLO export and deterministic splits
+    validation.py                Coordinate, file-hash and split-membership checks
+    review.py                    32 review examples, manual approval and train gate
+  training/
+    trainer.py                   T4 check, unchanged YOLO settings and training
+    checkpoints.py               Class-name normalization with tensor comparisons
+  evaluation/
+    evaluator.py                 Held-out AP, bounded predictions and fixed IoU matching
+    visualization.py             Worst-IoU and seeded random prediction sheets
+  utils/
+    io.py                        JSON read/write and streaming SHA-256
+    packaging.py                 Result ZIP, audit snapshot and file checksums
+```
+
+Data flow: **verify archive → pair images/masks → deterministic split and YOLO
+export → inspect review sheets → approve → recheck reviewed files → train →
+evaluate selected checkpoint → package → fetch**. Preparation never approves
+itself, and training checks approval before invoking the GPU or YOLO.
+
+The Colab bridge remains `scripts/colab_stage1.py`. Its `sync` command now uploads
+all package modules as well as the launcher, experiment JSON and requirements.
+Run `sync` before calling phases on a previously configured runtime; replacing
+only the old single script is no longer enough. It uses the existing named
+session and does not allocate or restart a runtime.
+
+The refactor preserves all phase names: `gpu`, `download`, `inspect`, `prepare`,
+`approve`, `train`, `normalize-checkpoints`, `evaluate`, and `package`.
+For example, these remote-root entry commands are unchanged:
+
+```bash
+python3 scripts/stage1.py --root /content/cs539_stage1 prepare
+python3 scripts/stage1.py --root /content/cs539_stage1 train
+python3 scripts/stage1.py --root /content/cs539_stage1 evaluate
+```
+
+These examples are executed **on Colab**; use the bridge below to launch them
+from the local computer. GPU libraries are imported by the relevant phase,
+so CLI help and data checks do not require a local PyTorch installation.
+
+## Local directory layout
+
+All active Stage 1 data lives in the repository-root `dataset/stageOne/` directory:
+
+```text
+dataset/stageOne/
+  data.yaml                         # YOLO dataset entry point
+  images/{train,val,test}/           # Original encoded photographs
+  labels/{train,val,test}/           # Class-0 YOLO bounding boxes
+  masks/{train,val,test}/            # Original PNG segmentation masks
+  raw/                              # Verified source ZIP (or its local symlink)
+  metadata/                         # Frozen split manifest and review records
+    annotations/review_*.jpg         # 32 reviewed image/mask/box comparisons
+  transfers/                        # Ignored data-transfer ZIP and chunks
+outputs/stage1/                      # Checkpoints, metrics and experiment logs
+```
+
+`val` is the validation split. Images, labels and masks share the same basename.
+Only `dataset/stageOne/README.md` is tracked; actual data and generated metadata are ignored.
+The full source archive remains in `raw/`; the extracted directories contain the
+existing 2,400/400/800 subset, not the entire published dataset.
+
+For an older checkout with data under `outputs/stage1/prepared/` or the earlier flat `dataset/` layout, run once:
+
+```bash
+python3 scripts/migrate_stage1_dataset.py
+```
+
+This moves images and labels without resampling, extracts matching original masks,
+updates `data.yaml`, and checks file hashes, all mask-to-box alignments, split
+membership and the original visual-review gate. Historical experiment artifacts,
+source snapshots, checkpoint contents and result ZIPs are preserved unchanged;
+their embedded old paths describe the completed run, not the active dataset.
+
+The normal local root is `dataset/stageOne/`. A custom `--root /path/to/run` uses
+`/path/to/run/dataset/stageOne/`, and the existing Colab bridge uses
+`/content/cs539_stage1/dataset/stageOne/`. Training/evaluation refresh the absolute root in
+`data.yaml` for the current environment. Re-sync the updated scripts and transfer
+the reviewed subset before using the new layout on an existing Colab runtime.
+No remote data migration or training is performed by the local migration command.
 
 ## Experiment definition
 
@@ -50,28 +143,28 @@ Check `/content/cs539_stage1/download.log` using `colab exec`. Do not start the 
 
 ```bash
 colab upload --session cs539-stage1 /path/to/Word-Wheel_Water_Meter_Dataset.zip \
-  /content/cs539_stage1/raw/Word-Wheel_Water_Meter_Dataset.zip
+  /content/cs539_stage1/dataset/stageOne/raw/Word-Wheel_Water_Meter_Dataset.zip
 python3 scripts/colab_stage1.py inspect
 ```
 
-The inspection phase verifies the published archive checksum before reading it. It inspects image/mask pairs inside the ZIP rather than executing downloaded dataset code or indiscriminately extracting archive contents. It records actual official split counts, example paths, dimensions and mask values in `artifacts/inspection.json`.
+The inspection phase verifies the published archive checksum before reading it. It inspects image/mask pairs inside the ZIP rather than executing downloaded dataset code or indiscriminately extracting archive contents. It records actual official split counts, example paths, dimensions and mask values in `dataset/stageOne/metadata/inspection.json`.
 
 Observed in the checksum-verified archive: **32,707 train and 13,391 test pairs**, rather than the 32,714 / 13,398 listed in the dataset description. Its actual folders are `train/train_img`, `train/train_seg_label`, `test/test_img`, and `test/test_seg_label`. The photographs have JPEG content despite `.png` source filenames; masks are grayscale PNG with values 0 and 255. Preparation preserves each photograph's original encoded bytes and normalizes its extension to `.jpg`, without recompression. The original archive filenames and exact bytes remain traceable through the manifest.
 
 ### Browser-download / local-preparation route
 
-If the archive is already on the local computer, a verified local copy can be prepared without uploading the entire 2.61 GB archive. Place it or an ignored symlink at `outputs/stage1/raw/Word-Wheel_Water_Meter_Dataset.zip`. With NumPy, Pillow and PyYAML available locally:
+If the archive is already on the local computer, a verified local copy can be prepared without uploading the entire 2.61 GB archive. Place it or an ignored symlink at `dataset/stageOne/raw/Word-Wheel_Water_Meter_Dataset.zip`. With NumPy, Pillow and PyYAML available locally:
 
 ```bash
 python3 scripts/stage1.py inspect
 python3 scripts/stage1.py prepare
-# Inspect all four local outputs/stage1/artifacts/annotations/review_*.jpg sheets.
+# Inspect all four local dataset/stageOne/metadata/annotations/review_*.jpg sheets.
 python3 scripts/stage1.py approve --reviewer 'Your name; all 32 pairs inspected'
 python3 scripts/colab_stage1.py sync
 python3 scripts/colab_stage1.py push-prepared
 ```
 
-`push-prepared` transfers only selected real images, labels and audit artifacts, in bounded 32 MB Colab CLI uploads. It verifies the chunks and archive remotely, safely extracts the subset, and updates only the dataset root in `data.yaml`. The training gate re-verifies image pixels, label bytes, review sheets and manifest on Colab before fitting. Preparation refuses to mix files with an existing prepared directory; use a fresh output root when reproducing a new subset.
+`push-prepared` transfers only selected real images, YOLO labels, original masks and audit metadata, in bounded 32 MB Colab CLI uploads. It verifies the chunks and archive remotely, safely extracts the subset, and updates only the dataset root in `data.yaml`. The training gate re-verifies image pixels, label and mask bytes, exact split membership, review sheets and manifest on Colab before fitting. Preparation refuses to mix files with an existing dataset directory; use a fresh output root when reproducing a new subset.
 
 ## Conversion and mandatory visual review
 
@@ -93,13 +186,13 @@ YOLO label: 0 cx cy bw bh
 
 The union of **all** foreground pixels is retained. Small disconnected regions are not silently removed. Boxes must be in bounds, contain all foreground pixels, and round-trip to the original half-open pixel coordinates within `1e-5` pixels.
 
-Preparation creates four contact sheets containing **32 comparisons**, including original images, mask overlays and red YOLO boxes. They cover train/validation/test and the smallest/largest mask areas. Download all four sheets and `validation.json` into `outputs/stage1/review/`:
+Preparation creates four contact sheets containing **32 comparisons**, including original images, mask overlays and red YOLO boxes. They cover train/validation/test and the smallest/largest mask areas. Download all four sheets and `validation.json` into `dataset/stageOne/metadata/`:
 
 ```bash
-mkdir -p outputs/stage1/review
-colab download --session cs539-stage1 /content/cs539_stage1/artifacts/validation.json outputs/stage1/review/validation.json
+mkdir -p dataset/stageOne/metadata/annotations
+colab download --session cs539-stage1 /content/cs539_stage1/dataset/stageOne/metadata/validation.json dataset/stageOne/metadata/validation.json
 # Repeat for review_01.jpg, review_02.jpg, review_03.jpg, review_04.jpg:
-colab download --session cs539-stage1 /content/cs539_stage1/artifacts/annotations/review_01.jpg outputs/stage1/review/review_01.jpg
+colab download --session cs539-stage1 /content/cs539_stage1/dataset/stageOne/metadata/annotations/review_01.jpg dataset/stageOne/metadata/annotations/review_01.jpg
 ```
 
 Inspect **all 32** comparisons: mask polarity, filename correspondence, orientation, register coverage, and alignment. A dimension check cannot establish semantic alignment by itself. If any example is wrong, fix conversion, regenerate the sheets and review again. Only after actual visual review:
@@ -108,7 +201,7 @@ Inspect **all 32** comparisons: mask polarity, filename correspondence, orientat
 python3 scripts/colab_stage1.py approve --reviewer 'Your name; all 32 pairs inspected'
 ```
 
-Approval hashes the manifest and review sheets. Training verifies those hashes, verifies every selected image and label again, checks for duplicate decoded images, and requires at least 30 reviewed examples. It refuses to run when approval is absent or the reviewed dataset has changed.
+Approval hashes the manifest and review sheets. Training verifies those hashes, verifies every selected image, label and mask again, checks exact split-directory membership, checks for duplicate decoded images, and requires at least 30 reviewed examples. It refuses to run when approval is absent or the reviewed dataset has changed.
 
 ## Train and evaluate
 
@@ -143,9 +236,10 @@ python3 scripts/colab_stage1.py fetch
 
 Training and evaluation source snapshots are retained separately with their hashes: `source_snapshot/` records the code used by the running training process, and `evaluation_source_snapshot/` records the evaluation implementation. Held-out inference is explicitly chunked into at most 32 images per call, with filename/order checks against the manifest.
 
-The result bundle excludes the raw archive and prepared image dataset. Reproduce the subset using the pinned source archive and manifest. Before any Git commit:
+The result bundle excludes the raw archive and image/mask/label dataset. New runs snapshot dataset audit metadata under `artifacts/dataset_metadata/`; these are historical records, not the live dataset. Reproduce the subset using the pinned source archive and manifest. Before any Git commit:
 
 ```bash
+git check-ignore dataset/stageOne/images/train/example.jpg
 git check-ignore outputs/stage1/artifacts/runs/register_yolo11n/weights/best.pt
 git status --short
 ```
@@ -172,3 +266,29 @@ python3 -m unittest discover -s tests -v
 ```
 
 These tests cover one-pixel boxes, edge pixels, disconnected masks, empty/full masks, invalid bounds, exact filename pairing, dimension mismatch, missing visual review, and invalidated review hashes. Their tiny array fixtures are not training data. Passing them does **not** replace inspection of the real Dryad annotations.
+
+### Refactor verification (October 26, 2026)
+
+The tests retain the original conversion/boundary checks and cover seeded split
+selection, empty/duplicate exclusions, approval revocation, every CLI phase,
+Colab package synchronization, transfer paths, checkpoint-normalization control
+flow and result-bundle contents. JSON fixtures freeze the pre-refactor training
+and evaluation arguments and the ordered subset/review selection.
+
+A one-time differential check against the saved original script compared a small
+fixture end to end: 103 preparation files matched byte for byte (excluding the
+machine-specific root in `data.yaml`), as did inspection/download reports,
+approval records with a fixed timestamp, fixed-threshold predictions and review
+visualizations. Simulated YOLO evaluation produced matching metrics and prediction
+sheets; result ZIP member names and non-provenance payloads matched. This is a
+regression check on unit fixtures, not a new real-data experiment.
+
+Existing datasets, checkpoints and experiment results are checked separately by
+file hashes and left unchanged. Code-provenance hashes naturally change in future
+runs: `source_checksums.json` now includes every package module, and the existing
+checkpoint/evaluation source-hash fields identify their implementing modules.
+No real GPU training, full-data redownload or real PyTorch checkpoint rewrite was
+performed for this refactor. The local checkpoint test uses a serialization stub;
+full T4 numerical/serialization equivalence has not been re-established by a new
+experiment. Public CLI commands and artifact paths are preserved; import helpers
+from the package rather than from the former monolithic script.

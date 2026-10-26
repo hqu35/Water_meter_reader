@@ -60,6 +60,15 @@ At the separately fixed **confidence 0.25 / IoU 0.50** operating point:
 
 The difficult-example contact sheet includes the lowest-IoU cases, including dark/obstructed views and a prediction covering only the visible part of an obscured register. A second sheet contains eight seeded random test examples. Both were visually checked after export. A separate real-image inference check successfully saved a register crop and original-image box coordinates.
 
+## Current dataset location
+
+The reviewed 2,400/400/800 subset now lives under repository-root `dataset/stageOne/`:
+`images/`, `labels/`, and `masks/` each contain `train/`, `val/`, and `test/`.
+The YOLO entry point is `dataset/stageOne/data.yaml`; active split/review metadata is in
+`dataset/stageOne/metadata/`. This was a local layout migration, not a new split or training
+run. Original checkpoint hashes, historical audit artifacts, source snapshots and
+result archives remain unchanged. See [layout details](STAGE1.md#local-directory-layout).
+
 ## Saved outputs
 
 All paths below are local and **ignored by Git**:
