@@ -9,3 +9,5 @@ confidence and aligned crops. `config.py` defines paths, `cli.py` dispatches com
 and `colab.py` transfers approved data/results using the existing named session.
 
 Read [the guide](../../docs/STAGE1_OBB.md) before training.
+
+`orientation_pilot.py` is an explicitly invoked, standalone CPU experiment. It uses GT crops and pretrained PaddleOCR, without changing the normal detector operations.

@@ -34,8 +34,17 @@ def main(argv=None):
 
     remote.add_argument("phase", choices=COMMANDS)
     remote.add_argument("--background", action="store_true")
+    pilot = commands.add_parser(
+        "orientation-pilot", help="Independent 100-sample pretrained PaddleOCR pilot"
+    )
+    pilot.add_argument("--crop-source", choices=["ground-truth"], required=True)
+    pilot.add_argument("--output", type=Path)
     args = parser.parse_args(argv)
-    if args.command == "colab":
+    if args.command == "orientation-pilot":
+        from .orientation_pilot import run
+
+        run(args.root, args.output, args.crop_source)
+    elif args.command == "colab":
         from .colab import dispatch
 
         dispatch(args.phase, args.root, args.background)

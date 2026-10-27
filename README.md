@@ -183,3 +183,8 @@ The main anticipated challenges include:
 - **Synthetic-to-real domain gap:** Relevant to possible future augmentation experiments.
 - **Error propagation:** An inaccurate register crop may affect all later predictions.
 - **Evaluation:** Standalone model accuracy does not necessarily reflect full-pipeline reliability.
+
+## Optional orientation pilot
+
+A standalone pretrained PaddleOCR CPU pilot is available with `orientation-pilot
+--crop-source ground-truth`. See [results and the single-command recipe](docs/STAGE1_ORIENTATION_PILOT.md). It is not part of production inference.
