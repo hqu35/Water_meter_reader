@@ -2,7 +2,7 @@
 
 from pathlib import Path
 
-from .. import config
+from ..obb import config
 from ..utils.io import sha256_file, write_json
 
 

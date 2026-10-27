@@ -4,7 +4,7 @@
   "train_count": 2400,
   "val_count": 400,
   "test_count": 800,
-  "model": "yolo11n.pt",
+  "model": "yolo11n-obb.pt",
   "epochs": 30,
   "imgsz": 640,
   "batch": 32,
@@ -18,5 +18,8 @@
   "dataset_version_id": 422392,
   "dataset_file_id": 4579939,
   "dataset_bytes": 2613710367,
-  "dataset_sha256": "3b7d3d8168ab924314a7c71987ce09f54dec95818a9cb484b46ea804fc1d90e6"
+  "dataset_sha256": "3b7d3d8168ab924314a7c71987ce09f54dec95818a9cb484b46ea804fc1d90e6",
+  "task": "obb",
+  "crop_margin_fraction": 0.03,
+  "conversion_version": "pixel-cells-min-area-v1"
 }

@@ -1,14 +1,12 @@
 """Tiny generated ZIP fixtures for conversion tests, never for model training."""
 
-import hashlib
 import io
 from pathlib import Path
 from zipfile import ZipFile
 
-import numpy as np
 from PIL import Image, ImageDraw
 
-from stage1_python_worker import config
+from stage1_python_worker.obb import config
 from stage1_python_worker.utils.io import sha256_file, write_json
 
 
@@ -49,41 +47,57 @@ def create_source_archive(path: Path) -> dict:
     }
 
 
-def create_reviewed_fixture(run_root: Path) -> Path:
-    """Build three unique examples to exercise integrity gates, not to fit a model."""
-    dataset_root = config.dataset_dir(run_root)
-    metadata = config.metadata_dir(run_root)
+def create_source_fixture(directory):
+    """Build source-only image identities, without invoking a label converter."""
+    import random
+    from stage1_python_worker.data.archive import (
+        discover_image_mask_pairs,
+        decode_image_mask,
+    )
+
+    archive_path = directory / "source.zip"
+    settings = create_source_archive(archive_path)
+    pools = {"train": [], "test": []}
+    seen = set()
+    with ZipFile(archive_path) as archive:
+        for official, pairs in discover_image_mask_pairs(archive).items():
+            for image_name, mask_name in pairs:
+                image, mask, hashes = decode_image_mask(archive, image_name, mask_name)
+                if not mask.any() or hashes["pixel_sha256"] in seen:
+                    continue
+                seen.add(hashes["pixel_sha256"])
+                pools[official].append(
+                    {
+                        "id": official + "_" + Path(image_name).stem,
+                        "official_split": official,
+                        "source_image": image_name,
+                        "source_mask": mask_name,
+                        "width": image.width,
+                        "height": image.height,
+                        **{
+                            key: hashes[key]
+                            for key in ["image_sha256", "mask_sha256", "pixel_sha256"]
+                        },
+                    }
+                )
+    rng = random.Random(settings["seed"])
+    for pool in pools.values():
+        rng.shuffle(pool)
     records = []
-    for index, split in enumerate(["train", "val", "test"]):
-        example_id = split + "_fixture"
-        image_path = dataset_root / "images" / split / (example_id + ".png")
-        label_path = dataset_root / "labels" / split / (example_id + ".txt")
-        mask_path = dataset_root / "masks" / split / (example_id + ".png")
-        for path in [image_path, label_path, mask_path]:
-            path.parent.mkdir(parents=True, exist_ok=True)
-        image = Image.new("RGB", (4, 4), (index * 40, 20, 80))
-        image.save(image_path)
-        Image.new("L", (4, 4), 255).save(mask_path)
-        label_path.write_text("0 0.5 0.5 1 1\n")
-        records.append(
-            {
-                "id": example_id,
-                "split": split,
-                "image_file": image_path.name,
-                "label_sha256": sha256_file(label_path),
-                "mask_sha256": sha256_file(mask_path),
-                "pixel_sha256": hashlib.sha256(np.array(image).tobytes()).hexdigest(),
-            }
-        )
-    write_json(metadata / "split_manifest.json", {"records": records})
+    for split, selected in [
+        ("train", pools["train"][8:24]),
+        ("val", pools["train"][:8]),
+        ("test", pools["test"][:8]),
+    ]:
+        records.extend({**record, "split": split} for record in selected)
+    selection = directory / "selection.json"
     write_json(
-        metadata / "annotation_review.json",
+        selection,
         {
-            "approved": True,
-            "reviewed_image_count": 32,
-            "manifest_sha256": sha256_file(metadata / "split_manifest.json"),
-            "reviewed_sheets": [],
+            "seed": settings["seed"],
+            "dataset_sha256": settings["dataset_sha256"],
+            "records": records,
+            "exclusions": [],
         },
     )
-    config.write_dataset_yaml(run_root)
-    return dataset_root
+    return settings, archive_path, selection

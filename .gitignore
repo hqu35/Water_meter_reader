@@ -1,10 +1,20 @@
-# Real datasets, model weights and experiment artifacts stay local / on Colab.
+# Source masks, photos, audit metadata and model outputs remain local.
 /data/
 /dataset/*
 !/dataset/README.md
-!/dataset/stageOne/
-/dataset/stageOne/*
-!/dataset/stageOne/README.md
+!/dataset/stageOneOBB/
+/dataset/stageOneOBB/*
+!/dataset/stageOneOBB/README.md
+!/dataset/wordWheelSource/
+/dataset/wordWheelSource/*
+!/dataset/wordWheelSource/README.md
+/artifacts/*
+!/artifacts/README.md
+!/artifacts/annotation/
+/artifacts/annotation/*
+!/artifacts/annotation/README.md
+!/artifacts/annotation/index.html
+!/artifacts/annotation/*.jpg
 outputs/
 runs/
 *.pt

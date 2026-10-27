@@ -6,7 +6,7 @@ import json
 from pathlib import Path, PurePosixPath
 from zipfile import ZipFile
 
-from .. import config
+from ..obb import config
 from ..utils.io import sha256_file, write_json
 from .download import verify_source_archive
 
@@ -91,7 +91,7 @@ def decode_image_mask(archive: ZipFile, image_name: str, mask_name: str) -> tupl
 
 def inspect_dataset(run_root: Path) -> None:
     """Save actual split counts and a small decoded sample from the source ZIP."""
-    from .preparation import bbox_from_mask
+    from ..obb.geometry import rectangle_from_mask
 
     archive_path = verify_source_archive(run_root)
     with ZipFile(archive_path) as archive:
@@ -111,7 +111,9 @@ def inspect_dataset(run_root: Path) -> None:
                         "image_format": hashes["image_format"],
                         "mask_values": hashes["mask_values"],
                         "foreground_pixels": int(foreground.sum()),
-                        "bbox": bbox_from_mask(foreground),
+                        "corners_xy": rectangle_from_mask(foreground).tolist()
+                        if foreground.any()
+                        else None,
                     }
                 )
         report = {
