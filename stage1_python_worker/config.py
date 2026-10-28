@@ -17,6 +17,7 @@ def source_files():
         REPO / "requirements-stage1.txt",
         REPO / "requirements-stage1-obb.txt",
         *sorted((REPO / PACKAGE_NAME).rglob("*.py")),
+        *sorted((REPO / PACKAGE_NAME).rglob("*.html")),
     ]
 
 

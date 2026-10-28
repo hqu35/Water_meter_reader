@@ -11,3 +11,5 @@ and `colab.py` transfers approved data/results using the existing named session.
 Read [the guide](../../docs/STAGE1_OBB.md) before training.
 
 `orientation_pilot.py` is an explicitly invoked, standalone CPU experiment. It uses GT crops and pretrained PaddleOCR, without changing the normal detector operations.
+
+`orientation_review.py` builds a standalone review page from existing pilot outputs using `orientation_review.html`. All review labels remain browser-local until exported; model predictions and dataset labels stay unchanged.

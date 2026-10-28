@@ -139,17 +139,6 @@ def render_sheets(output, rows):
         path = directory / f"comparison_{start // 10 + 1:02d}.jpg"
         sheet.save(path, quality=95)
         sheets.append(str(path.relative_to(output)))
-    (output / "index.html").write_text(
-        '<!doctype html><html lang="en"><meta charset="utf-8"><title>PaddleOCR orientation pilot</title>'
-        "<style>body{font:18px system-ui;margin:24px}img{width:100%;max-width:1440px}</style>"
-        "<h1>100-sample orientation pilot — human review pending</h1>"
-        "<p>Left: original GT OBB crop. Right: predicted correction. No orientation accuracy is claimed.</p>"
-        + "".join(
-            f'<h2>Sheet {i + 1}</h2><a href="{path}"><img src="{path}" alt="Comparison sheet {i + 1}"></a>'
-            for i, path in enumerate(sheets)
-        )
-        + "</html>\n"
-    )
     return sheets
 
 
@@ -318,5 +307,8 @@ def run(root, output=None, crop_source="ground-truth"):
             if path.is_file()
         },
     )
+    from .orientation_review import write_review_interface
+
+    write_review_interface(output)
     print(json.dumps({"output": str(output), **summary}, indent=2))
     return summary

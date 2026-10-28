@@ -94,3 +94,7 @@ model operations remain unchanged. Stop here for manual inspection; this command
 is not called automatically by Stage I prediction or training.
 
 Official reference: [PaddleOCR text-line orientation classifier](https://www.paddleocr.ai/v3.1.0/en/version3.x/module_usage/textline_orientation_classification.html).
+
+## Manual review interface
+
+The current `index.html` is now an English-only manual review tool with local autosave, JSON/CSV exports and a portable HTML snapshot. The original gallery remains at `index.contact-sheets.html`. See [manual review instructions and export fields](STAGE1_ORIENTATION_REVIEW.md). This interface does not rerun classification or change the original pilot predictions.

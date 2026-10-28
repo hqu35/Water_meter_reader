@@ -1,0 +1,1142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Register orientation · Manual review</title>
+    <style>
+      :root {
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+        color: #162332;
+        background: #f2f5f8;
+        --accent: #176850;
+        --line: #d7e0e7;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      button,
+      input,
+      textarea,
+      select {
+        font: inherit;
+      }
+      button,
+      select {
+        cursor: pointer;
+      }
+      button {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: white;
+        padding: 9px 13px;
+        color: inherit;
+      }
+      button:hover {
+        border-color: var(--accent);
+      }
+      button:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible,
+      select:focus-visible {
+        outline: 3px solid #75b7f0;
+        outline-offset: 2px;
+      }
+      .primary {
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent);
+      }
+      header {
+        background: white;
+        border-bottom: 1px solid var(--line);
+        padding: 22px 28px;
+      }
+      h1 {
+        font-size: 24px;
+        margin: 0 0 7px;
+      }
+      p {
+        line-height: 1.6;
+      }
+      .subtitle {
+        color: #516274;
+        margin: 0;
+        font-size: 14px;
+      }
+      .toolbar {
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 17px;
+      }
+      .toolbar input {
+        padding: 9px;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        max-width: 170px;
+      }
+      .stats {
+        display: flex;
+        gap: 22px;
+        flex-wrap: wrap;
+        font-size: 14px;
+        margin-top: 16px;
+      }
+      .stats strong {
+        font-size: 21px;
+      }
+      .progress {
+        height: 5px;
+        background: #e3e9ee;
+        margin-top: 14px;
+      }
+      .progress div {
+        height: 100%;
+        background: var(--accent);
+        transition: width 0.15s;
+      }
+      #storage-status {
+        font-size: 12px;
+        color: #526777;
+        margin-left: auto;
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 245px minmax(0, 1fr);
+        gap: 20px;
+        padding: 22px 28px;
+      }
+      aside {
+        position: sticky;
+        top: 14px;
+        align-self: start;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 13px;
+      }
+      aside input,
+      aside select {
+        width: 100%;
+        padding: 9px;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        margin-bottom: 8px;
+      }
+      #sample-list {
+        max-height: 65vh;
+        overflow: auto;
+        display: grid;
+        gap: 5px;
+      }
+      .sample-button {
+        font-size: 12px;
+        text-align: left;
+        padding: 9px;
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+      }
+      .sample-button.active {
+        background: #e8f4ef;
+        border-color: var(--accent);
+      }
+      .sample-button span:first-child {
+        overflow-wrap: anywhere;
+      }
+      .muted {
+        color: #5a6d7c;
+        font-size: 13px;
+      }
+      .nav {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+      }
+      .nav #position {
+        margin-right: auto;
+        font-variant-numeric: tabular-nums;
+      }
+      h2 {
+        margin: 0 0 8px;
+        font-size: 22px;
+        overflow-wrap: anywhere;
+      }
+      .metadata {
+        font-size: 13px;
+        color: #516274;
+        margin-bottom: 15px;
+      }
+      .pair {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .panel,
+      .decision-panel,
+      details {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 16px;
+      }
+      .panel h3 {
+        font-size: 15px;
+        margin: 0 0 6px;
+      }
+      .viewport {
+        height: 240px;
+        background: repeating-conic-gradient(#f1f4f6 0% 25%, #e7edf1 0% 50%)
+          50%/20px 20px;
+        border-radius: 7px;
+        overflow: auto;
+        display: flex;
+        align-items: center;
+        margin-top: 13px;
+      }
+      .viewport img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        flex-shrink: 0;
+        display: block;
+        image-rendering: auto;
+      }
+      .missing {
+        padding: 18px;
+        color: #8f3737;
+      }
+      .zoom {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin: 12px 0;
+        font-size: 13px;
+      }
+      .zoom input {
+        width: 170px;
+      }
+      .decision-panel {
+        margin-top: 14px;
+      }
+      .decision-panel h3 {
+        font-size: 18px;
+        margin: 0 0 7px;
+      }
+      .question {
+        margin: 0 0 12px;
+        color: #526574;
+        font-size: 14px;
+      }
+      .choices {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+      }
+      .choice {
+        text-align: left;
+        padding: 13px;
+      }
+      .choice b,
+      .choice span {
+        display: block;
+      }
+      .choice span {
+        font-size: 12px;
+        color: #526574;
+        margin-top: 5px;
+      }
+      .choice[aria-pressed="true"] {
+        border: 2px solid var(--accent);
+        padding: 12px;
+        background: #edf8f3;
+      }
+      .verdict {
+        padding: 11px;
+        border-radius: 7px;
+        margin: 13px 0;
+        font-size: 14px;
+        background: #f0f3f6;
+      }
+      .verdict.match {
+        background: #e8f4ed;
+        color: #205c3a;
+      }
+      .verdict.mismatch {
+        background: #fff0e3;
+        color: #894700;
+      }
+      .flags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 14px;
+        margin: 15px 0;
+      }
+      textarea {
+        display: block;
+        width: 100%;
+        min-height: 82px;
+        padding: 11px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        resize: vertical;
+      }
+      .notes-label {
+        display: block;
+        margin-bottom: 7px;
+        font-size: 14px;
+      }
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        gap: 10px;
+      }
+      .help {
+        font-size: 12px;
+        color: #586d7e;
+        line-height: 1.7;
+      }
+      details {
+        margin-top: 14px;
+      }
+      details img {
+        max-width: 100%;
+        max-height: 650px;
+        display: block;
+        margin: 15px auto;
+      }
+      summary {
+        cursor: pointer;
+      }
+      #message {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #163c31;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 9px;
+        max-width: 90vw;
+        z-index: 5;
+      }
+      #message:empty {
+        display: none;
+      }
+      button:disabled {
+        opacity: 0.4;
+        cursor: default;
+      }
+      .error {
+        color: #9d3333 !important;
+      }
+      .readonly {
+        font-size: 12px;
+        background: #eef2f7;
+        padding: 3px 8px;
+        border-radius: 20px;
+        display: inline-block;
+        margin-top: 5px;
+      }
+      @media (max-width: 900px) {
+        .layout {
+          grid-template-columns: 1fr;
+          padding: 15px;
+        }
+        aside {
+          position: static;
+        }
+        #sample-list {
+          max-height: 160px;
+          grid-template-columns: repeat(3, 1fr);
+        }
+        header {
+          padding: 18px;
+        }
+        .pair {
+          grid-template-columns: 1fr;
+        }
+        .viewport {
+          height: 200px;
+        }
+        .choices {
+          grid-template-columns: 1fr 1fr;
+        }
+        #storage-status {
+          margin-left: 0;
+        }
+      }
+      @media print {
+        header,
+        .layout > aside,
+        .nav,
+        .choices,
+        .bottom,
+        .zoom {
+          display: none;
+        }
+        .layout {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Register orientation
+        <span style="font-weight: 400; color: #667889">/ Manual review</span>
+      </h1>
+      <p class="subtitle">
+        Review the orientation of each original OBB crop. Your decisions do not
+        change dataset labels or start training.
+      </p>
+      <div class="toolbar">
+        <label for="reviewer">Reviewer</label
+        ><input
+          id="reviewer"
+          placeholder="Name or initials (optional)"
+          autocomplete="off"
+          maxlength="120"
+        />
+        <button class="primary" id="export-json">Export review JSON</button
+        ><button id="export-csv">Export CSV</button
+        ><button id="export-html">Export portable HTML</button>
+        <button id="import-button">Import review JSON</button
+        ><input
+          id="import-file"
+          type="file"
+          accept=".json,application/json"
+          hidden
+        />
+        <span id="storage-status" role="status">Restoring saved progress…</span>
+      </div>
+      <div class="stats" aria-live="polite">
+        <span
+          >Reviewed <strong id="reviewed-count">0</strong> /
+          <span id="total-count">100</span></span
+        ><span>Unreviewed <strong id="remaining-count">100</strong></span
+        ><span>Uncertain <strong id="uncertain-count">0</strong></span
+        ><span>Crop issues <strong id="issue-count">0</strong></span>
+      </div>
+      <div class="progress"><div id="progress-fill"></div></div>
+    </header>
+    <div class="layout">
+      <aside>
+        <label class="muted" for="search">Find a sample</label
+        ><input
+          id="search"
+          type="search"
+          placeholder="Search example ID"
+        /><select id="filter" aria-label="Filter samples">
+          <option value="all">All samples</option>
+          <option value="unreviewed">Unreviewed</option>
+          <option value="reviewed">Reviewed</option>
+          <option value="uncertain">Uncertain / unusable</option>
+          <option value="disagree">Disagrees with model</option>
+          <option value="issue">Flagged crop issues</option>
+        </select>
+        <div id="sample-list"></div>
+        <p class="help">
+          Progress is saved in this browser. Local HTML storage varies by
+          browser; export JSON regularly as a backup.
+        </p>
+      </aside>
+      <main>
+        <div class="nav">
+          <span id="position"></span><button id="previous">← Previous</button
+          ><button id="next">Next →</button
+          ><button id="next-unreviewed">Next unreviewed</button>
+        </div>
+        <h2 id="sample-id"></h2>
+        <div class="metadata" id="sample-meta"></div>
+        <div class="pair">
+          <section class="panel">
+            <h3>1. Original OBB crop — review this image</h3>
+            <span class="muted">Before the model correction</span>
+            <div class="viewport" id="original-view"></div>
+          </section>
+          <section class="panel">
+            <h3>2. PaddleOCR result</h3>
+            <span class="muted" id="prediction-label"></span>
+            <div class="viewport" id="corrected-view"></div>
+          </section>
+        </div>
+        <div class="zoom">
+          <label for="zoom">Image zoom</label
+          ><input
+            id="zoom"
+            type="range"
+            min="100"
+            max="400"
+            step="25"
+            value="100"
+          /><output id="zoom-value">100%</output
+          ><span class="muted"
+            >Scroll horizontally when zoomed. Zoom cannot restore missing
+            detail.</span
+          >
+        </div>
+        <section class="decision-panel">
+          <h3>What rotation does the original crop need to read upright?</h3>
+          <p class="question">
+            Judge the original image on the left. Choose Uncertain when the crop
+            is unclear or ambiguous; do not let the model confidence decide for
+            you.
+          </p>
+          <div class="choices">
+            <button class="choice" data-choice="0" aria-pressed="false">
+              <b>0° · Original is upright</b
+              ><span>Keep the original crop unchanged · Key 0</span>
+            </button>
+            <button class="choice" data-choice="180" aria-pressed="false">
+              <b>180° · Original is upside down</b
+              ><span>Rotate the original crop by 180° · Key 1</span>
+            </button>
+            <button class="choice" data-choice="uncertain" aria-pressed="false">
+              <b>Uncertain</b
+              ><span
+                >Blurred, symmetric digits, or insufficient evidence · U</span
+              >
+            </button>
+            <button class="choice" data-choice="bad_crop" aria-pressed="false">
+              <b>Unusable crop</b
+              ><span
+                >Missing digits, wrong region, or severe occlusion · B</span
+              >
+            </button>
+          </div>
+          <div id="verdict" class="verdict" role="status">Not reviewed</div>
+          <div class="flags">
+            <label
+              ><input id="crop-issue" type="checkbox" /> Crop issue, even if
+              orientation is clear</label
+            ><label
+              ><input id="auto-next" type="checkbox" /> Advance to the next
+              unreviewed sample after choosing</label
+            >
+          </div>
+          <label class="notes-label" for="notes">Notes (optional)</label
+          ><textarea
+            id="notes"
+            maxlength="10000"
+            placeholder="For example: last digit clipped; upside down but not rotated by the model; reflection makes orientation unclear."
+          ></textarea>
+          <div class="bottom">
+            <span class="help"
+              >← / → Navigate · 0 Keep · 1 Rotate · U Uncertain · B Unusable.
+              Shortcuts are disabled while typing notes.</span
+            ><button id="clear-current">Mark this sample unreviewed</button>
+          </div>
+        </section>
+        <details id="source-details">
+          <summary>View the full source photograph for context</summary>
+          <div id="source-view"></div>
+          <p class="help" id="source-path"></p>
+        </details>
+        <details>
+          <summary>Export contents and instructions</summary>
+          <p class="help">
+            Send the exported <b>JSON</b> for analysis. It includes all 100
+            samples, original model predictions and scores, your orientation
+            decisions, crop flags, notes and timestamps. CSV is available for
+            spreadsheets. Unreviewed, uncertain and unusable crops remain
+            separate states and are never counted as correct predictions.
+          </p>
+          <p class="help">
+            HTML exports include every image and your current progress. They
+            work offline and can be reopened for further review. Everything
+            stays on your computer; this page makes no network requests.
+            Confidence is not calibrated correctness. Full data analysis comes
+            after your review.
+          </p>
+          <p id="provenance" class="help"></p>
+        </details>
+      </main>
+    </div>
+    <div id="message" role="status" aria-live="polite"></div>
+    <script type="application/json" id="pilot-data">
+      "__PILOT_DATA__"
+    </script>
+    <script type="application/json" id="embedded-review">
+      {}
+    </script>
+    <script>
+      "use strict";
+      const DATA = JSON.parse(
+        document.getElementById("pilot-data").textContent,
+      );
+      const SAMPLES = DATA.samples;
+      const IDS = new Set(SAMPLES.map((s) => s.example_id));
+      const DECISIONS = new Set([
+        "unreviewed",
+        "0",
+        "180",
+        "uncertain",
+        "bad_crop",
+      ]);
+      const KEY = "cs539.orientation.review.v1." + DATA.fingerprint;
+      const $ = (id) => document.getElementById(id);
+      const emptyItem = () => ({
+        decision: "unreviewed",
+        crop_issue: false,
+        notes: "",
+        updated_at: null,
+      });
+      let state = {
+        fingerprint: DATA.fingerprint,
+        reviewer: "",
+        items: {},
+        cursor: 0,
+        updated_at: null,
+      };
+      let storageAvailable = true;
+      let toastTimer;
+      function toast(text) {
+        $("message").textContent = text;
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => ($("message").textContent = ""), 4500);
+      }
+      function item(id) {
+        return state.items[id] || emptyItem();
+      }
+      function validItem(value) {
+        return (
+          value &&
+          DECISIONS.has(value.decision) &&
+          typeof value.crop_issue === "boolean" &&
+          typeof value.notes === "string" &&
+          value.notes.length <= 10000 &&
+          (value.updated_at === null ||
+            (typeof value.updated_at === "string" &&
+              Number.isFinite(Date.parse(value.updated_at))))
+        );
+      }
+      function restore(candidate) {
+        if (
+          !candidate ||
+          candidate.fingerprint !== DATA.fingerprint ||
+          !candidate.items
+        )
+          return;
+        for (const [id, value] of Object.entries(candidate.items)) {
+          if (!IDS.has(id) || !validItem(value)) continue;
+          const old = state.items[id];
+          if (
+            !old ||
+            Date.parse(value.updated_at || 0) >= Date.parse(old.updated_at || 0)
+          )
+            state.items[id] = value;
+        }
+        if (
+          !state.updated_at ||
+          Date.parse(candidate.updated_at || 0) >=
+            Date.parse(state.updated_at || 0)
+        ) {
+          if (typeof candidate.reviewer === "string")
+            state.reviewer = candidate.reviewer.slice(0, 120);
+          if (
+            Number.isInteger(candidate.cursor) &&
+            candidate.cursor >= 0 &&
+            candidate.cursor < SAMPLES.length
+          )
+            state.cursor = candidate.cursor;
+          state.updated_at = candidate.updated_at || state.updated_at;
+        }
+      }
+      try {
+        restore(JSON.parse($("embedded-review").textContent));
+      } catch (_) {
+        toast(
+          "Embedded progress could not be loaded. The original model data are still available.",
+        );
+      }
+      try {
+        restore(JSON.parse(localStorage.getItem(KEY) || "null"));
+      } catch (_) {
+        storageAvailable = false;
+      }
+      function persist() {
+        state.updated_at = new Date().toISOString();
+        try {
+          localStorage.setItem(KEY, JSON.stringify(state));
+          storageAvailable = true;
+          $("storage-status").textContent =
+            "Saved locally · " + new Date().toLocaleTimeString("en-US");
+          $("storage-status").classList.remove("error");
+        } catch (_) {
+          storageAvailable = false;
+          $("storage-status").textContent =
+            "Local storage is unavailable. Export JSON to save your work.";
+          $("storage-status").classList.add("error");
+        }
+      }
+      function decided(value) {
+        return value.decision !== "unreviewed";
+      }
+      function manualAngle(value) {
+        return value.decision === "0"
+          ? 0
+          : value.decision === "180"
+            ? 180
+            : null;
+      }
+      function agrees(sample, value) {
+        const angle = manualAngle(value);
+        return angle !== null &&
+          sample.status === "success" &&
+          [0, 180].includes(sample.predicted_orientation)
+          ? angle === sample.predicted_orientation
+          : null;
+      }
+      function stats() {
+        const values = SAMPLES.map((s) => item(s.example_id));
+        const reviewed = values.filter(decided).length;
+        return {
+          total: SAMPLES.length,
+          reviewed,
+          unreviewed: SAMPLES.length - reviewed,
+          uncertain: values.filter((v) => v.decision === "uncertain").length,
+          crop_issues: values.filter(
+            (v) => v.crop_issue || v.decision === "bad_crop",
+          ).length,
+        };
+      }
+      function renderStats() {
+        const counts = stats();
+        $("total-count").textContent = counts.total;
+        $("reviewed-count").textContent = counts.reviewed;
+        $("remaining-count").textContent = counts.unreviewed;
+        $("uncertain-count").textContent = counts.uncertain;
+        $("issue-count").textContent = counts.crop_issues;
+        $("progress-fill").style.width =
+          (counts.reviewed / counts.total) * 100 + "%";
+      }
+      function renderList() {
+        const query = $("search").value.trim().toLowerCase(),
+          filter = $("filter").value;
+        const list = $("sample-list");
+        list.replaceChildren();
+        SAMPLES.forEach((sample, index) => {
+          const value = item(sample.example_id);
+          const show =
+            filter === "all" ||
+            (filter === "unreviewed" && !decided(value)) ||
+            (filter === "reviewed" && decided(value)) ||
+            (filter === "uncertain" &&
+              ["uncertain", "bad_crop"].includes(value.decision)) ||
+            (filter === "disagree" && agrees(sample, value) === false) ||
+            (filter === "issue" &&
+              (value.crop_issue || value.decision === "bad_crop"));
+          if (!show || !sample.example_id.toLowerCase().includes(query)) return;
+          const button = document.createElement("button");
+          button.className =
+            "sample-button" + (index === state.cursor ? " active" : "");
+          button.type = "button";
+          const id = document.createElement("span");
+          id.textContent = sample.example_id;
+          const badge = document.createElement("span");
+          badge.textContent = {
+            unreviewed: "Pending",
+            0: "0°",
+            180: "180°",
+            uncertain: "?",
+            bad_crop: "Unusable",
+          }[value.decision];
+          button.append(id, badge);
+          button.addEventListener("click", () => navigate(index));
+          list.append(button);
+        });
+        if (!list.children.length) {
+          const label = document.createElement("p");
+          label.textContent = "No samples match this filter";
+          label.className = "muted";
+          list.append(label);
+        }
+      }
+      function showImage(target, url, alt) {
+        target.replaceChildren();
+        if (url) {
+          const image = document.createElement("img");
+          image.src = url;
+          image.alt = alt;
+          image.draggable = false;
+          target.append(image);
+        } else {
+          const p = document.createElement("p");
+          p.className = "missing";
+          p.textContent =
+            "Image unavailable. Check the inference error or source photograph.";
+          target.append(p);
+        }
+      }
+      function renderDecision() {
+        const sample = SAMPLES[state.cursor],
+          value = item(sample.example_id);
+        for (const button of document.querySelectorAll("[data-choice]"))
+          button.setAttribute(
+            "aria-pressed",
+            String(button.dataset.choice === value.decision),
+          );
+        $("crop-issue").checked = value.crop_issue;
+        $("notes").value = value.notes;
+        const verdict = $("verdict"),
+          match = agrees(sample, value);
+        verdict.className = "verdict";
+        if (match === true) {
+          verdict.textContent =
+            "The model agrees with your orientation decision.";
+          verdict.classList.add("match");
+        } else if (match === false) {
+          verdict.textContent =
+            "The model disagrees with your orientation decision.";
+          verdict.classList.add("mismatch");
+        } else
+          verdict.textContent =
+            {
+              unreviewed: "Not reviewed",
+              uncertain:
+                "Recorded as uncertain; excluded from correct/incorrect orientation judgments.",
+              bad_crop:
+                "Recorded as an unusable crop; excluded from correct/incorrect orientation judgments.",
+            }[value.decision] ||
+            "Manual orientation recorded. Model inference failed, so no comparison is available.";
+        if (value.crop_issue && value.decision !== "bad_crop")
+          verdict.textContent += " Crop issue flagged for separate analysis.";
+      }
+      function render() {
+        const sample = SAMPLES[state.cursor];
+        $("position").textContent = state.cursor + 1 + " / " + SAMPLES.length;
+        $("sample-id").textContent = sample.example_id;
+        $("sample-meta").textContent =
+          "Training split · " + DATA.crop_source + " OBB · " + DATA.model;
+        $("prediction-label").textContent =
+          sample.status === "success"
+            ? "Predicted " +
+              sample.predicted_orientation +
+              "° · Confidence " +
+              Number(sample.confidence).toFixed(4)
+            : "Inference failed: " + sample.error;
+        showImage(
+          $("original-view"),
+          sample.original_crop_image,
+          "Original OBB crop " + sample.example_id,
+        );
+        showImage(
+          $("corrected-view"),
+          sample.corrected_crop_image,
+          "Model-corrected crop " + sample.example_id,
+        );
+        showImage(
+          $("source-view"),
+          sample.source_image,
+          "Source water-meter photograph " + sample.example_id,
+        );
+        $("source-path").textContent = sample.source_image_path;
+        $("previous").disabled = state.cursor === 0;
+        $("next").disabled = state.cursor === SAMPLES.length - 1;
+        renderDecision();
+        renderStats();
+        renderList();
+        applyZoom();
+      }
+      function navigate(index) {
+        state.cursor = Math.max(0, Math.min(SAMPLES.length - 1, index));
+        persist();
+        render();
+      }
+      function nextUnreviewed() {
+        for (let step = 1; step <= SAMPLES.length; step++) {
+          const index = (state.cursor + step) % SAMPLES.length;
+          if (!decided(item(SAMPLES[index].example_id))) {
+            navigate(index);
+            return;
+          }
+        }
+        toast("All samples are reviewed. Export your JSON.");
+      }
+      function update(patch) {
+        const id = SAMPLES[state.cursor].example_id;
+        state.items[id] = {
+          ...item(id),
+          ...patch,
+          updated_at: new Date().toISOString(),
+        };
+        persist();
+        renderStats();
+        renderList();
+      }
+      function choose(decision) {
+        update({ decision });
+        renderDecision();
+        if ($("auto-next").checked) nextUnreviewed();
+      }
+      function applyZoom() {
+        const zoom = $("zoom").value;
+        $("zoom-value").textContent = zoom + "%";
+        document
+          .querySelectorAll(".viewport img")
+          .forEach((image) => (image.style.width = zoom + "%"));
+      }
+      function exportPayload() {
+        return {
+          schema_version: 1,
+          exported_at_utc: new Date().toISOString(),
+          reviewer: state.reviewer,
+          pilot_id: DATA.pilot_id,
+          model: DATA.model,
+          crop_source: DATA.crop_source,
+          fingerprint: DATA.fingerprint,
+          manifest_sha256: DATA.manifest_sha256,
+          predictions_sha256: DATA.predictions_sha256,
+          selection_sha256: DATA.selection_sha256,
+          counts: stats(),
+          reviews: SAMPLES.map((sample) => {
+            const value = item(sample.example_id),
+              angle = manualAngle(value);
+            return {
+              example_id: sample.example_id,
+              source_image_path: sample.source_image_path,
+              crop_source: sample.crop_source,
+              predicted_orientation: sample.predicted_orientation,
+              confidence: sample.confidence,
+              inference_status: sample.status,
+              inference_error: sample.error,
+              original_crop_path: sample.original_crop_path,
+              corrected_crop_path: sample.corrected_crop_path,
+              original_crop_sha256: sample.original_crop_sha256,
+              corrected_crop_sha256: sample.corrected_crop_sha256,
+              review_decision: value.decision,
+              manual_orientation_deg: angle,
+              crop_issue: value.crop_issue,
+              eligible_for_orientation_analysis:
+                angle !== null &&
+                !value.crop_issue &&
+                sample.status === "success",
+              model_decision_correct: agrees(sample, value),
+              notes: value.notes,
+              reviewed_at_utc: value.updated_at,
+            };
+          }),
+        };
+      }
+      function download(content, type, extension) {
+        const blob = new Blob([content], { type });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download =
+          DATA.pilot_id +
+          "_manual_review_" +
+          new Date().toISOString().replace(/[:.]/g, "-") +
+          "." +
+          extension;
+        document.body.append(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 30000);
+        toast(
+          "Created " +
+            extension.toUpperCase() +
+            " export. Check your browser downloads.",
+        );
+      }
+      function csvCell(value) {
+        let text = value === null || value === undefined ? "" : String(value);
+        if (typeof value === "string" && /^[=+\-@]/.test(text))
+          text = "'" + text;
+        return '"' + text.replaceAll('"', '""') + '"';
+      }
+      function exportCsv() {
+        const payload = exportPayload();
+        const rows = payload.reviews.map((review) => ({
+          reviewer: payload.reviewer,
+          pilot_id: DATA.pilot_id,
+          manifest_sha256: DATA.manifest_sha256,
+          predictions_sha256: DATA.predictions_sha256,
+          ...review,
+        }));
+        const keys = Object.keys(rows[0]);
+        download(
+          "\ufeff" +
+            [
+              keys.map(csvCell).join(","),
+              ...rows.map((row) =>
+                keys.map((key) => csvCell(row[key])).join(","),
+              ),
+            ].join("\r\n"),
+          "text/csv;charset=utf-8",
+          "csv",
+        );
+      }
+      function exportHtml() {
+        const clone = document.documentElement.cloneNode(true);
+        clone.querySelector("#embedded-review").textContent = JSON.stringify(
+          state,
+        ).replaceAll("<", "\\u003c");
+        clone.querySelector("#message").textContent = "";
+        download(
+          "<!doctype html>\n" + clone.outerHTML,
+          "text/html;charset=utf-8",
+          "html",
+        );
+      }
+      function validateImport(payload) {
+        if (
+          payload.schema_version !== 1 ||
+          payload.fingerprint !== DATA.fingerprint ||
+          !Array.isArray(payload.reviews) ||
+          payload.reviews.length !== SAMPLES.length
+        )
+          throw new Error(
+            "The review file does not match this pilot or sample set",
+          );
+        const values = {},
+          seen = new Set();
+        for (const row of payload.reviews) {
+          if (!IDS.has(row.example_id) || seen.has(row.example_id))
+            throw new Error("The import contains unknown or duplicate IDs");
+          seen.add(row.example_id);
+          const sample = SAMPLES.find((s) => s.example_id === row.example_id);
+          if (
+            row.predicted_orientation !== sample.predicted_orientation ||
+            row.confidence !== sample.confidence
+          )
+            throw new Error(
+              "Original model predictions differ; import rejected",
+            );
+          const value = {
+            decision: row.review_decision,
+            crop_issue: row.crop_issue,
+            notes: row.notes,
+            updated_at: row.reviewed_at_utc,
+          };
+          if (!validItem(value))
+            throw new Error(
+              "The import contains invalid review labels or timestamps",
+            );
+          values[row.example_id] = value;
+        }
+        return {
+          fingerprint: DATA.fingerprint,
+          reviewer: String(payload.reviewer || "").slice(0, 120),
+          items: values,
+          cursor: 0,
+          updated_at: new Date().toISOString(),
+        };
+      }
+      $("export-json").addEventListener("click", () =>
+        download(
+          JSON.stringify(exportPayload(), null, 2),
+          "application/json;charset=utf-8",
+          "json",
+        ),
+      );
+      $("export-csv").addEventListener("click", exportCsv);
+      $("export-html").addEventListener("click", exportHtml);
+      $("import-button").addEventListener("click", () =>
+        $("import-file").click(),
+      );
+      $("import-file").addEventListener("change", async (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+        try {
+          const candidate = validateImport(JSON.parse(await file.text()));
+          if (
+            stats().reviewed > 0 &&
+            !confirm(
+              "Import will replace your current local review progress. Export a backup first if needed. Continue?",
+            )
+          )
+            return;
+          state = candidate;
+          persist();
+          $("reviewer").value = state.reviewer;
+          render();
+          toast("Review progress restored.");
+        } catch (error) {
+          toast("Import failed: " + error.message);
+        } finally {
+          event.target.value = "";
+        }
+      });
+      $("reviewer").value = state.reviewer;
+      $("reviewer").addEventListener("input", (event) => {
+        state.reviewer = event.target.value;
+        persist();
+      });
+      $("previous").addEventListener("click", () => navigate(state.cursor - 1));
+      $("next").addEventListener("click", () => navigate(state.cursor + 1));
+      $("next-unreviewed").addEventListener("click", nextUnreviewed);
+      $("search").addEventListener("input", renderList);
+      $("filter").addEventListener("change", renderList);
+      $("zoom").addEventListener("input", applyZoom);
+      $("notes").addEventListener("input", (event) =>
+        update({ notes: event.target.value }),
+      );
+      $("crop-issue").addEventListener("change", (event) => {
+        update({ crop_issue: event.target.checked });
+        renderDecision();
+      });
+      document
+        .querySelectorAll("[data-choice]")
+        .forEach((button) =>
+          button.addEventListener("click", () => choose(button.dataset.choice)),
+        );
+      $("clear-current").addEventListener("click", () => {
+        update({ decision: "unreviewed", crop_issue: false, notes: "" });
+        renderDecision();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (
+          event.ctrlKey ||
+          event.metaKey ||
+          event.altKey ||
+          event.target.closest("input,textarea,select")
+        )
+          return;
+        const actions = {
+          0: () => choose("0"),
+          1: () => choose("180"),
+          u: () => choose("uncertain"),
+          b: () => choose("bad_crop"),
+          ArrowLeft: () => navigate(state.cursor - 1),
+          ArrowRight: () => navigate(state.cursor + 1),
+        };
+        if (actions[event.key]) {
+          event.preventDefault();
+          actions[event.key]();
+        }
+      });
+      window.addEventListener("beforeunload", (event) => {
+        if (!storageAvailable && stats().reviewed) {
+          event.preventDefault();
+          event.returnValue = "";
+        }
+      });
+      $("provenance").textContent =
+        "Pilot: " +
+        DATA.pilot_id +
+        " · Samples: " +
+        SAMPLES.length +
+        " · Data fingerprint: " +
+        DATA.fingerprint;
+      render();
+      persist();
+    </script>
+  </body>
+</html>
