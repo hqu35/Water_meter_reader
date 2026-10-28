@@ -12,6 +12,13 @@ from stage1_python_worker.obb.orientation_review import write_review_interface
 from stage1_python_worker.utils.io import write_json
 
 
+@unittest.skipUnless(
+    (
+        Path(__file__).resolve().parents[1]
+        / "stage1_python_worker/obb/orientation_review.html"
+    ).is_file(),
+    "Optional local review template is not available",
+)
 class OrientationReviewTests(unittest.TestCase):
     def fixture(self, root):
         photo = root / "source.png"

@@ -12,4 +12,8 @@ Read [the guide](../../docs/STAGE1_OBB.md) before training.
 
 `orientation_pilot.py` is an explicitly invoked, standalone CPU experiment. It uses GT crops and pretrained PaddleOCR, without changing the normal detector operations.
 
-`orientation_review.py` builds a standalone review page from existing pilot outputs using `orientation_review.html`. All review labels remain browser-local until exported; model predictions and dataset labels stay unchanged.
+`orientation_review.py` builds a standalone review page from existing pilot outputs using `orientation_review.html`. The HTML template and review outputs are kept locally and excluded from Git; restoring that template is required to run this optional legacy UI on a fresh clone. Model predictions and dataset labels stay unchanged.
+
+`integrated.py` is the independent full-image rectification and hosted-orientation
+experiment. `orientation_evaluation.py` prepares or summarizes local human-review
+data; its Label Studio configuration and generated artifacts are Git-ignored.

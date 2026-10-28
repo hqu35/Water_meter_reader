@@ -102,6 +102,9 @@ class OrientationPilotTests(unittest.TestCase):
                     return_value=(Image.new("RGB", (40, 8), "white"), {}),
                 ),
                 patch("importlib.metadata.version", return_value="test"),
+                patch(
+                    "stage1_python_worker.obb.orientation_review.write_review_interface"
+                ),
                 contextlib.redirect_stdout(io.StringIO()),
             ):
                 output = root / "pilot"
