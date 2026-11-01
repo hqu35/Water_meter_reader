@@ -1,0 +1,2 @@
+-r requirements-stage1-obb.txt
+inference-sdk==1.8.3

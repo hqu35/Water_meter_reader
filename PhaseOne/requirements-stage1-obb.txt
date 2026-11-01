@@ -1,0 +1,3 @@
+-r requirements-stage1.txt
+# Match Ultralytics dependency name; avoid competing cv2 package installations.
+opencv-python==4.10.0.84

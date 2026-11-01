@@ -1,0 +1,45 @@
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.venv/
+.ruff_cache/
+
+# Local datasets and frozen identities
+/data/
+/dataset/*
+!/dataset/README.md
+!/dataset/stageOneOBB/
+/dataset/stageOneOBB/*
+!/dataset/stageOneOBB/README.md
+/dataset/wordWheelSource/
+
+# Model checkpoints and large bundles
+*.pt
+*.pth
+*.onnx
+*.zip
+
+# Review visualizations and local-only annotation interfaces
+/artifacts/*
+!/artifacts/README.md
+!/artifacts/annotation/
+/artifacts/annotation/*
+!/artifacts/annotation/README.md
+/stage1_python_worker/obb/orientation_review.html
+/orientation_evaluation/
+**/label_studio*.xml
+**/label_studio*.sqlite3*
+**/label_studio*export*.json
+.label-studio/
+/docs/STAGE1_ORIENTATION_PILOT.md
+/docs/STAGE1_ORIENTATION_REVIEW.md
+
+# Generated experiments, human labels, model results and previews
+/outputs/stage1_obb/
+/outputs/stage1_integration/
+/outputs/orientation_evaluation/
+/outputs/pilots/
+/runs/
+
+# IDE and operating system files
+.DS_Store
