@@ -1,0 +1,4 @@
+# Generated experiment data, plots, and candidate labels
+/results/
+/yolo_candidates/
+__pycache__/
