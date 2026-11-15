@@ -1,0 +1,6 @@
+path: /Users/ququ/water_meter_digit_reader/Water_meter_reader/PhaseOne/dataset/stageOneOBB
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: register

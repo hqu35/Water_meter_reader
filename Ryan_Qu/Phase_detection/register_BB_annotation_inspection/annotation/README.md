@@ -1,6 +1,6 @@
-# Local OBB review evidence
+# Stage I OBB annotation sheets
 
-Four locally preserved sheets and an HTML gallery show 32 train, validation and
-test examples. The images and gallery are ignored by Git. The local approval record
-binds their hashes to the reviewed dataset; preparing a new dataset requires human
-review and a new approval. See [Stage I reproduction](../../docs/STAGE1_OBB.md#reproducibility-and-local-artifacts).
+Four historical sheets show the image, mask overlay, oriented register box and
+aligned crop for 32 train, validation and test examples. See
+[Stage I reproduction](../../docs/STAGE1_OBB.md#reproducibility-and-local-artifacts)
+for the optional preview command.

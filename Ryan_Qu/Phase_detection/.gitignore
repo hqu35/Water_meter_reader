@@ -4,14 +4,10 @@ __pycache__/
 .venv/
 .ruff_cache/
 
+
 # Local datasets and frozen identities
+.dataset/
 /data/
-/dataset/*
-!/dataset/README.md
-!/dataset/stageOneOBB/
-/dataset/stageOneOBB/*
-!/dataset/stageOneOBB/README.md
-/dataset/wordWheelSource/
 
 # Model checkpoints and large bundles
 *.pt
@@ -20,11 +16,6 @@ __pycache__/
 *.zip
 
 # Review visualizations and local-only annotation interfaces
-/artifacts/*
-!/artifacts/README.md
-!/artifacts/annotation/
-/artifacts/annotation/*
-!/artifacts/annotation/README.md
 /stage1_python_worker/obb/orientation_review.html
 /orientation_evaluation/
 **/label_studio*.xml
@@ -36,6 +27,7 @@ __pycache__/
 
 # Generated experiments, human labels, model results and previews
 /outputs/stage1_obb/
+/outputs/obb_preview/
 /outputs/stage1_integration/
 /outputs/orientation_evaluation/
 /outputs/pilots/

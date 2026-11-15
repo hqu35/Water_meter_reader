@@ -1,7 +1,7 @@
 # CS539 — Mechanical Water Meter Reading
 
-The Stage I files are under `PhaseOne/` at the Git repository root. Run the
-commands in this documentation from within that directory (`cd PhaseOne`).
+The Stage I files are under `Ryan_Qu/Phase_detection/`. Run the commands in
+this documentation from within that directory.
 Existing archived experiment records may contain their original absolute paths.
 
 Stage I localizes a mechanical meter's digit register with a trained YOLO11n-OBB
@@ -16,20 +16,20 @@ describes the separate full-image orientation experiment.
 
 | Path | Purpose |
 |---|---|
-| `stage1_python_worker/obb/` | OBB geometry, preparation, review gate, training, evaluation and inference. |
+| `stage1_python_worker/obb/` | OBB geometry, preparation, optional annotation previews, training, evaluation and inference. |
 | `stage1_python_worker/data/` | Dryad source inventory and dataset checks. |
 | `configs/stage1_obb.json` | Frozen Stage I configuration. |
-| `dataset/stageOneOBB/` | Local 2,400 train / 400 validation / 800 test subset, labels and audit metadata. |
+| `dataset/stageOneOBB/` | Local 2,400 train / 400 validation / 800 test subset, labels and frozen split metadata. |
 | `dataset/wordWheelSource/` | Local Dryad ZIP link and frozen source-identity inventory. |
 | `training loss plot/` | Git-tracked Stage I training and validation plots. |
 | `outputs/` | Local experiment outputs, checkpoint, human-review data and results. |
 | `tests/` | Geometry, data integrity, workflow and integration tests. |
 | `notes/` | Supplementary study notes. |
 
-Raw data, checkpoints, visual review images and human annotation files are kept
-locally and excluded from Git. See the [dataset description](dataset/README.md)
-for what must be backed up; a fresh clone alone does not contain the exact data,
-review evidence, or trained weights.
+Raw data, checkpoints and human annotation files are kept locally and excluded
+from Git. The historical OBB inspection sheets are tracked separately. See the [dataset description](dataset/README.md)
+for what must be backed up; a fresh clone alone does not contain the exact data
+or trained weights.
 
 Stage II and Stage III are planned for digit localization and digit-state
 recognition respectively. No digit-reading accuracy is claimed by Stage I.

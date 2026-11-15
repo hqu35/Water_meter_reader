@@ -1,6 +1,5 @@
-# Local review artifacts
+# Register annotation inspection
 
-`register_BB_annotation_inspection/` contains the OBB review sheets and gallery used for the human
-review gate. These generated images and the gallery remain available locally but
-are excluded from Git. Training plots are tracked separately in
-`training loss plot/`.
+This directory preserves the Stage I OBB annotation sheets used during the
+original experiment. The sheets are available for visual inspection and are not
+inputs to training or evaluation.

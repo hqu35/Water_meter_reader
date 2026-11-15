@@ -1,4 +1,4 @@
-"""OBB geometry and workflow gates; generated patterns are tests, not training data."""
+"""OBB geometry and workflow; generated patterns are tests, not training data."""
 
 import itertools
 import tempfile
@@ -21,9 +21,7 @@ from stage1_python_worker.obb.geometry import (
     rotated_iou,
 )
 from stage1_python_worker.obb.evaluation import match_detections
-from stage1_python_worker.obb.review import approve, require_approval
 from stage1_python_worker.obb.training import train, training_arguments
-from stage1_python_worker.utils.io import write_json
 
 
 class OBBGeometryTests(unittest.TestCase):
@@ -193,28 +191,12 @@ class OBBGeometryTests(unittest.TestCase):
 
 
 class OBBWorkflowTests(unittest.TestCase):
-    def test_train_blocks_before_gpu_or_model_download(self):
+    def test_train_missing_dataset_stops_before_gpu(self):
         with tempfile.TemporaryDirectory() as directory:
             with patch("stage1_python_worker.obb.training.verify_gpu") as gpu:
-                with self.assertRaisesRegex(RuntimeError, "human visual approval"):
+                with self.assertRaises(FileNotFoundError):
                     train(Path(directory))
                 gpu.assert_not_called()
-
-    def test_nonhuman_approval_is_rejected(self):
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            write_json(
-                config.metadata_dir(root) / "annotation_review.json",
-                {
-                    "approved": True,
-                    "reviewer": "old automated reviewer",
-                    "task": "detect",
-                },
-            )
-            with self.assertRaises(AssertionError):
-                require_approval(root)
-            with self.assertRaises(ValueError):
-                approve(root, "human", False)
 
     def test_training_configuration_is_explicit(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -256,11 +238,12 @@ class OBBWorkflowTests(unittest.TestCase):
 
 
 class OBBIntegrationTests(unittest.TestCase):
-    def test_source_conversion_and_moved_review_gate_detect_tampering(self):
+    def test_source_conversion_and_optional_preview(self):
         import contextlib
         import io
         from stage1_fixtures import create_source_fixture
         from stage1_python_worker.obb.data import prepare, validate_dataset
+        from stage1_python_worker.obb.preview import render_preview
         from stage1_python_worker.utils.io import read_json
 
         with tempfile.TemporaryDirectory() as directory:
@@ -278,17 +261,78 @@ class OBBIntegrationTests(unittest.TestCase):
                     [(r["split"], r["id"]) for r in manifest["records"]],
                     [(r["split"], r["id"]) for r in original["records"]],
                 )
-                sheets = sorted(config.annotation_dir(run).glob("*.jpg"))
-                self.assertEqual(len(sheets), 4)
-                self.assertFalse((config.metadata_dir(run) / "annotations").exists())
-                # Approval applies only to isolated test fixtures, never real data.
-                approve(run, "unit-test fixture reviewer", True)
-                require_approval(run)
-                sheets[0].write_bytes(sheets[0].read_bytes() + b"changed")
-                with self.assertRaisesRegex(AssertionError, "Review sheet changed"):
-                    require_approval(run)
+                self.assertEqual(
+                    {p.name for p in config.metadata_dir(run).iterdir()},
+                    {"source_selection.json", "split_manifest.json"},
+                )
+                previews = run / "previews"
+                render_preview(run, previews)
+                self.assertEqual(len(list(previews.glob("*.jpg"))), 4)
                 with self.assertRaises(FileExistsError):
                     prepare(run, archive, selection)
+
+                record = next(r for r in manifest["records"] if r["split"] == "test")
+                label = (
+                    config.dataset_dir(run) / "labels/test" / (record["id"] + ".txt")
+                )
+                label.write_text("0 -0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8\n")
+                validate_dataset(run, splits=("train", "val"))
+                with self.assertRaisesRegex(
+                    ValueError, "Invalid normalized coordinates"
+                ):
+                    validate_dataset(run, splits=("test",))
+                manifest["records"][1]["id"] = manifest["records"][0]["id"]
+                path = config.metadata_dir(run) / "split_manifest.json"
+                import json
+
+                path.write_text(json.dumps(manifest))
+                with self.assertRaisesRegex(ValueError, "Repeated id"):
+                    validate_dataset(run)
+
+    def test_train_and_evaluate_with_prepared_data_and_no_review_files(self):
+        from types import SimpleNamespace
+        from unittest.mock import Mock
+        from stage1_fixtures import create_source_fixture
+        from stage1_python_worker.obb.data import prepare
+        from stage1_python_worker.obb.evaluation import evaluate
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            settings, archive, selection = create_source_fixture(root)
+            run = root / "run"
+            weights = root / "fixture.pt"
+            weights.write_bytes(b"stub checkpoint")
+            model = Mock(task="obb", ckpt_path=weights)
+            model.trainer = SimpleNamespace(save_dir=root, best=weights, last=weights)
+            model.train.return_value = SimpleNamespace(results_dict={})
+            model.val.return_value = SimpleNamespace(results_dict={}, speed={})
+            empty_tensor = Mock()
+            empty_tensor.cpu.return_value.numpy.return_value = np.array([])
+            empty_obb = SimpleNamespace(
+                xyxyxyxy=empty_tensor, conf=empty_tensor, cls=empty_tensor
+            )
+            model.predict.side_effect = lambda paths, **kw: [
+                SimpleNamespace(path=path, obb=empty_obb) for path in paths
+            ]
+            fake = SimpleNamespace(__version__="8.4.0", YOLO=Mock(return_value=model))
+            with (
+                patch.dict(config.CONFIG, settings),
+                patch.dict("sys.modules", ultralytics=fake),
+                patch("stage1_python_worker.obb.training.verify_gpu"),
+                patch("stage1_python_worker.obb.training.normalize_checkpoints"),
+                patch(
+                    "stage1_python_worker.obb.training.subprocess.check_output",
+                    return_value="",
+                ),
+                patch.dict("os.environ"),
+            ):
+                prepare(run, archive, selection)
+                train(run)
+                evaluate(run)
+            model.train.assert_called_once()
+            model.val.assert_called_once()
+            self.assertEqual(model.val.call_args.kwargs["split"], "test")
+            self.assertTrue((run / "artifacts/heldout_obb_metrics.json").is_file())
 
     def test_obb_output_and_crop_interface_without_network_or_model_training(self):
         import sys
@@ -332,16 +376,15 @@ class OBBIntegrationTests(unittest.TestCase):
             with self.assertRaises(FileExistsError):
                 predict(weights, image, root / "prediction")
 
-    def test_colab_train_pending_approval_never_launches_remote_job(self):
-        from stage1_python_worker.obb.colab import dispatch
+    def test_colab_train_launches_without_local_dataset_or_review_files(self):
+        from stage1_python_worker.obb.colab import SESSION, dispatch
 
-        with (
-            tempfile.TemporaryDirectory() as directory,
-            patch("stage1_python_worker.obb.colab.run_colab") as remote,
-        ):
-            with self.assertRaisesRegex(RuntimeError, "human visual approval"):
-                dispatch("train", Path(directory), True)
-            remote.assert_not_called()
+        with patch("stage1_python_worker.obb.colab.run_colab") as remote:
+            dispatch("train", Path("/unused"), True)
+        self.assertEqual(remote.call_args.args[:3], ("exec", "--session", SESSION))
+        payload = remote.call_args.kwargs["stdin"]
+        self.assertIn("'obb', '--root', '/content/cs539_stage1_obb', 'train'", payload)
+        compile(payload, "<remote training payload>", "exec")
 
     def test_colab_sync_and_remote_evaluation_target_separate_root(self):
         from stage1_python_worker.obb.colab import dispatch, sync

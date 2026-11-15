@@ -2,8 +2,9 @@
 
 Run `python -m unittest discover -s tests -v`. `test_stage1_obb.py` checks pixel-edge
 rectangles, permutations/winding, padding, normalized serialization, aligned crops,
-polygon IoU, training settings, source-only preparation, human approval and remote
-payload routing. `stage1_fixtures.py` builds source ZIP fixtures and identity lists;
+polygon IoU, training settings, source-only preparation, optional previews, split
+and label checks, and training/evaluation and Colab entry points with mocked
+model/GPU or remote calls. `stage1_fixtures.py` builds source ZIP fixtures and identity lists;
 these generated patterns are only test inputs and never model-training data.
 
 `test_orientation_pilot.py` verifies pilot ordering, parser validation, exact pixel correction, sample-failure continuation and no-overwrite behavior.

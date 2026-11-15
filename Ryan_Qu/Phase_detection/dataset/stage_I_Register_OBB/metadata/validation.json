@@ -1,0 +1,67 @@
+{
+  "counts": {
+    "test": 800,
+    "train": 2400,
+    "val": 400
+  },
+  "human_approval": "PENDING",
+  "opencv_version": "4.10.0",
+  "padded_images": 89,
+  "passed": true,
+  "review_sheets": [
+    {
+      "file": "obb_review_01.jpg",
+      "sha256": "6683c47b0422e1e8d9c14639b8b74e4e0ae3f146672de5d2106c1d7434f617c6"
+    },
+    {
+      "file": "obb_review_02.jpg",
+      "sha256": "d01b49d29369417b1f60afc45c9b89a7ef4e660a5c6f67baccc26519c111ee5a"
+    },
+    {
+      "file": "obb_review_03.jpg",
+      "sha256": "435ae9cb33e4b9dee20ace5f8f804097298e6fc3071fc612dd4496f133ff27e3"
+    },
+    {
+      "file": "obb_review_04.jpg",
+      "sha256": "e0d7945f4988cd2da515095bf33d5984722039f832903f41a74919ed2fe5e112"
+    }
+  ],
+  "reviewed_ids": [
+    "train_train25268",
+    "train_train17696",
+    "train_train30133",
+    "train_train15409",
+    "train_train29835",
+    "train_train5867",
+    "train_train2780",
+    "train_train343",
+    "train_train11308",
+    "train_train23917",
+    "train_train5752",
+    "train_train14",
+    "train_train3915",
+    "train_train4535",
+    "train_train9182",
+    "train_train32518",
+    "train_train25294",
+    "train_train17896",
+    "train_train28915",
+    "train_train30229",
+    "train_train19991",
+    "train_train9533",
+    "train_train31111",
+    "train_train204",
+    "test_test9674",
+    "test_test5891",
+    "test_test12760",
+    "test_test9464",
+    "test_test7308",
+    "test_test6457",
+    "test_test8641",
+    "test_test1992"
+  ],
+  "reviewed_image_count": 32,
+  "same_selected_identities_and_official_splits": true,
+  "source_selection_sha256": "eb7f0a6e5b7310b6dc2da011c556dd1d7eac75ac1095021da55c1aa59ac1a22e",
+  "task": "obb"
+}
