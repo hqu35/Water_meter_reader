@@ -6,7 +6,7 @@ __pycache__/
 
 
 # Local datasets and frozen identities
-dataset/
+/dataset/
 /data/
 
 # Model checkpoints and large bundles
