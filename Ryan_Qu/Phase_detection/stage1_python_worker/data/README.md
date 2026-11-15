@@ -2,5 +2,5 @@
 
 `archive.py` pairs original photographs/masks in the ZIP, checks dimensions and
 encoding, and inspects oriented rectangles. `download.py` obtains/checks the frozen
-Dryad source archive. `validation.py` rejects missing or extra images/masks/labels.
-Conversion and human review are implemented once in `../obb/`.
+Dryad source archive. The OBB converter and prepared
+image/label checks are implemented in [`../obb/data.py`](../obb/data.py).

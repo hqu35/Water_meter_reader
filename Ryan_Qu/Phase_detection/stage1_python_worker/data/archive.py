@@ -7,7 +7,7 @@ from pathlib import Path, PurePosixPath
 from zipfile import ZipFile
 
 from ..obb import config
-from ..utils.io import sha256_file, write_json
+from ..utils.io import write_json
 from .download import verify_source_archive
 
 
@@ -117,7 +117,7 @@ def inspect_dataset(run_root: Path) -> None:
                     }
                 )
         report = {
-            "archive_sha256": sha256_file(archive_path),
+            "archive_sha256": config.CONFIG["dataset_sha256"],
             "archive_members": len(archive.namelist()),
             "official_counts": {split: len(items) for split, items in pairs.items()},
             "pairing": "exact split/parent and filename",

@@ -1,1 +1,1 @@
-"""Oriented register localization, annotation review, training and inference."""
+"""Oriented register localization, annotation previews, training and inference."""

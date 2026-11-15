@@ -40,7 +40,7 @@ def download_dataset(run_root: Path) -> None:
         {
             "doi": settings["dataset_doi"],
             "version": settings["dataset_version_id"],
-            "sha256": sha256_file(archive),
+            "sha256": settings["dataset_sha256"],
             "bytes": archive.stat().st_size,
             "checksum_verified": True,
         },

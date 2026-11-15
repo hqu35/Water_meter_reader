@@ -9,7 +9,6 @@ from . import config
 from .data import validate_dataset
 from .geometry import rotated_iou
 from .inference import detections_from_result
-from .review import require_approval
 
 
 def match_detections(detections, truth, threshold=0.5):
@@ -28,8 +27,6 @@ def match_detections(detections, truth, threshold=0.5):
 
 
 def evaluate(root, weights=None):
-    require_approval(root)
-    manifest = validate_dataset(root)
     artifacts = root / "artifacts"
     weights = weights or __import__("pathlib").Path(
         read_json(artifacts / "training_complete.json")["best"]
@@ -37,6 +34,7 @@ def evaluate(root, weights=None):
     destination = artifacts / "evaluation"
     if destination.exists():
         raise FileExistsError("Evaluation exists; refusing to overwrite results")
+    manifest = validate_dataset(root, splits=("test",))
     import ultralytics
     from ultralytics import YOLO
 

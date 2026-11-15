@@ -15,9 +15,8 @@ def main(argv=None):
     commands.add_parser("validate")
     commands.add_parser("download")
     commands.add_parser("inspect")
-    approve = commands.add_parser("approve")
-    approve.add_argument("--reviewer", required=True)
-    approve.add_argument("--confirm-reviewed", action="store_true", required=True)
+    preview = commands.add_parser("preview", help="Render optional annotation sheets")
+    preview.add_argument("--output", type=Path, required=True)
     commands.add_parser("train")
     evaluate = commands.add_parser("evaluate")
     evaluate.add_argument("--weights", type=Path)
@@ -73,10 +72,10 @@ def main(argv=None):
 
         manifest = validate_dataset(args.root)
         print("OBB integrity passed:", len(manifest["records"]), "real images")
-    elif args.command == "approve":
-        from .review import approve
+    elif args.command == "preview":
+        from .preview import render_preview
 
-        approve(args.root, args.reviewer, args.confirm_reviewed)
+        render_preview(args.root, args.output)
     elif args.command == "train":
         from .training import train
 

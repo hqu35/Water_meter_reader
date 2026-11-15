@@ -1,4 +1,4 @@
-"""OBB data, source inventory, review and result paths."""
+"""OBB data, source inventory, and result paths."""
 
 from pathlib import Path
 from ..config import REPO
@@ -41,12 +41,6 @@ def write_yaml(root):
         )
     )
     return path
-
-
-def annotation_dir(root):
-    if Path(root).resolve() == default_root().resolve():
-        return REPO / "artifacts/annotation"
-    return Path(root) / "artifacts/annotation"
 
 
 def source_dir(root):

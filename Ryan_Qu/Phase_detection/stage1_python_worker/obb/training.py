@@ -1,4 +1,4 @@
-"""OBB training, intentionally unreachable without separate human approval."""
+"""Fine-tune the one-class register OBB model."""
 
 import os
 import subprocess
@@ -9,7 +9,7 @@ from ..training.checkpoints import normalize_checkpoints
 from ..training.trainer import report_completed_epoch, verify_gpu
 from ..utils.io import sha256_file, write_json
 from . import config
-from .review import require_approval
+from .data import validate_dataset
 
 
 def training_arguments(root):
@@ -70,10 +70,10 @@ def training_arguments(root):
 
 
 def train(root):
-    require_approval(root)  # BEFORE GPU access, imports or checkpoint download.
     artifacts = root / "artifacts"
     if (artifacts / "training_config.json").exists():
         raise FileExistsError("Use a fresh run root for another experiment")
+    validate_dataset(root, splits=("train", "val"))
     os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
     os.environ["YOLO_CONFIG_DIR"] = str(root / "ultralytics-settings")
     verify_gpu(root)

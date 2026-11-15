@@ -1,1 +1,1 @@
-"""Source archives, deterministic splits, YOLO annotations and review gates."""
+"""Source archives, deterministic splits and YOLO annotations."""

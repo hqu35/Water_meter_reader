@@ -1,1 +1,1 @@
-"""Stage I: reviewed real-data preparation, training and register evaluation."""
+"""Stage I: real-data preparation, training and register evaluation."""

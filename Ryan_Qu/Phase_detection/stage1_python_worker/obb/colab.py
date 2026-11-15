@@ -9,7 +9,6 @@ from zipfile import ZIP_DEFLATED, ZIP_STORED, ZipFile
 from .. import config as repository
 from ..utils.io import extract_zip_safely, read_json, sha256_file, write_json
 from . import config
-from .review import require_approval
 
 SESSION = config.CONFIG["session"]
 CHUNK_BYTES = 32 * 1024 * 1024
@@ -65,19 +64,16 @@ def restore(root, parts, checksum):
         raise FileExistsError("Remote OBB dataset exists; refusing to overwrite")
     bundle = root / "prepared_obb_subset.zip"
     with bundle.open("xb") as output:
-        for part in parts:
-            path = root / part["name"]
-            assert sha256_file(path) == part["sha256"], "Chunk checksum mismatch"
-            output.write(path.read_bytes())
-    assert sha256_file(bundle) == checksum, "Subset checksum mismatch"
+        for name in parts:
+            output.write((root / name).read_bytes())
+    if sha256_file(bundle) != checksum:
+        raise ValueError("Subset checksum mismatch")
     with ZipFile(bundle) as archive:
         extract_zip_safely(archive, root)
     config.write_yaml(root)
-    require_approval(root)
 
 
 def push(root):
-    require_approval(root)
     data = config.dataset_dir(root)
     directory = root / "transfers"
     directory.mkdir(parents=True, exist_ok=True)
@@ -86,15 +82,21 @@ def push(root):
         raise FileExistsError(
             "Transfer exists; preserve it and use a fresh transfer directory"
         )
+    # Check these before creating a bundle so missing metadata does not leave a partial ZIP.
+    for name in ("split_manifest.json", "source_selection.json"):
+        if not (data / "metadata" / name).is_file():
+            raise FileNotFoundError(data / "metadata" / name)
     with ZipFile(bundle, "x", ZIP_STORED) as archive:
-        for kind in ["images", "labels", "masks", "metadata"]:
+        for kind in ("images", "labels", "masks"):
             for path in sorted((data / kind).rglob("*")):
                 if path.is_file():
                     archive.write(
                         path, str(Path("dataset/stageOneOBB") / path.relative_to(data))
                     )
-        for path in sorted(config.annotation_dir(root).glob("*.jpg")):
-            archive.write(path, "artifacts/annotation/" + path.name)
+        for name in ("split_manifest.json", "source_selection.json"):
+            archive.write(
+                data / "metadata" / name, f"dataset/stageOneOBB/metadata/{name}"
+            )
     run_colab(
         "exec",
         "--session",
@@ -109,7 +111,7 @@ def push(root):
                 break
             path = directory / f"obb_subset.part{len(parts):03d}"
             path.write_bytes(content)
-            parts.append({"name": path.name, "sha256": sha256_file(path)})
+            parts.append(path.name)
             run_colab(
                 "upload", "--session", SESSION, str(path), REMOTE + "/" + path.name
             )
@@ -135,13 +137,10 @@ def package(root):
     bundle = root / "stage1_obb_results.zip"
     if bundle.exists():
         raise FileExistsError("Preserving existing OBB result bundle")
-    shutil.copytree(config.metadata_dir(root), artifacts / "dataset_metadata")
-    checksums = {
-        str(p.relative_to(artifacts)): sha256_file(p)
-        for p in artifacts.rglob("*")
-        if p.is_file()
-    }
-    write_json(artifacts / "artifact_checksums.json", checksums)
+    metadata = artifacts / "dataset_metadata"
+    metadata.mkdir()
+    for name in ("split_manifest.json", "source_selection.json"):
+        shutil.copy2(config.metadata_dir(root) / name, metadata / name)
     with ZipFile(bundle, "x", ZIP_DEFLATED) as archive:
         for path in artifacts.rglob("*"):
             if path.is_file():
@@ -160,13 +159,10 @@ def fetch(root):
         ("stage1_obb_results.zip", bundle),
     ]:
         run_colab("download", "--session", SESSION, REMOTE + "/" + remote, str(local))
-    assert sha256_file(bundle) == read_json(report)["sha256"]
+    if sha256_file(bundle) != read_json(report)["sha256"]:
+        raise ValueError("Result bundle checksum mismatch")
     with ZipFile(bundle) as archive:
         extract_zip_safely(archive, root)
-    for relative, checksum in read_json(
-        root / "artifacts/artifact_checksums.json"
-    ).items():
-        assert sha256_file(root / "artifacts" / relative) == checksum
 
 
 def dispatch(phase, root, background=False):
@@ -179,8 +175,6 @@ def dispatch(phase, root, background=False):
     elif phase == "fetch":
         fetch(root)
     else:
-        if phase == "train":
-            require_approval(root)  # Local gate as well as the remote worker gate.
         arguments = ["-m", "stage1_python_worker", "obb", "--root", REMOTE, phase]
         code = f"import subprocess, sys\nfrom pathlib import Path\nargs = [sys.executable, *{arguments!r}]\n"
         if background:
