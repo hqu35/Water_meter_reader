@@ -1,0 +1,12 @@
+# Standalone package embeds all dataset images and can be regenerated locally.
+/index.html
+
+/index-v1-legacy.html
+
+/index-v2-legacy.html
+
+/index-four-point-legacy.html
+
+/index-manual-cells-legacy.html
+
+/index-guided-nearest-legacy.html

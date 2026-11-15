@@ -1,0 +1,5 @@
+# Generated experiment outputs and third-party checkpoints
+/outputs/
+*.pt
+__pycache__/
+*.py[cod]

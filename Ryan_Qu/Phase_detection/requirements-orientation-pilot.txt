@@ -1,0 +1,13 @@
+# Independent CPU pilot environment (Python 3.12); no Stage I training dependencies.
+paddlepaddle==3.1.1
+paddleocr==3.1.1
+paddlex==3.1.2
+opencv-python==4.10.0.84
+Pillow==11.3.0
+numpy==2.2.6
+setuptools==70.3.0
+# PaddleX 3.1 imports these older public module paths even for classification.
+langchain==0.3.27
+langchain-community==0.3.27
+langchain-openai==0.3.28
+huggingface-hub==0.34.4

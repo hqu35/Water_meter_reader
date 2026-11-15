@@ -1,0 +1,24 @@
+{
+  "total": 2000,
+  "clean": 1500,
+  "clean_qualified_reused": 488,
+  "clean_new": 1012,
+  "noise": 500,
+  "noise_count": 1,
+  "noisy_scenarios": {
+    "dial-stained": 293,
+    "reflective": 95,
+    "dark": 36,
+    "soil-covered": 76
+  },
+  "stage1_crop_sources_for_new": {
+    "prior_stage1_crop": 591,
+    "stage1_detector": 920,
+    "stage1_detector_low_confidence": 1
+  },
+  "unverified_qualified_excluded": [
+    "752"
+  ],
+  "seed": 42,
+  "warning": "Labels originate from the original dataset and do not guarantee image quality; all crops require visual review."
+}

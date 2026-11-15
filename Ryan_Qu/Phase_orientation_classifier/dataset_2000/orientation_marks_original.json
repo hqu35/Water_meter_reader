@@ -1,0 +1,830 @@
+{
+  "schema": "watermeter-orientation-marks-v1",
+  "dataset_fingerprint": "5412a180f6b5178b84408a5414b599ca2975aff3b129e3f103c78019262f924b",
+  "total_images": 2000,
+  "marked_count": 73,
+  "marked_images": [
+    {
+      "path": "clear_1500/new_dataset/train10999.png",
+      "original_id": "train10999",
+      "original_filename": "train10999.png",
+      "crop_filename": "train10999.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train25536.png",
+      "original_id": "train25536",
+      "original_filename": "train25536.png",
+      "crop_filename": "train25536.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train2514.png",
+      "original_id": "train2514",
+      "original_filename": "train2514.png",
+      "crop_filename": "train2514.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train25163.png",
+      "original_id": "train25163",
+      "original_filename": "train25163.png",
+      "crop_filename": "train25163.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train24159.png",
+      "original_id": "train24159",
+      "original_filename": "train24159.png",
+      "crop_filename": "train24159.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train24761.png",
+      "original_id": "train24761",
+      "original_filename": "train24761.png",
+      "crop_filename": "train24761.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train25488.png",
+      "original_id": "train25488",
+      "original_filename": "train25488.png",
+      "crop_filename": "train25488.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train5987.png",
+      "original_id": "train5987",
+      "original_filename": "train5987.png",
+      "crop_filename": "train5987.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train14217.png",
+      "original_id": "train14217",
+      "original_filename": "train14217.png",
+      "crop_filename": "train14217.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train25076.png",
+      "original_id": "train25076",
+      "original_filename": "train25076.png",
+      "crop_filename": "train25076.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train22606.png",
+      "original_id": "train22606",
+      "original_filename": "train22606.png",
+      "crop_filename": "train22606.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train3347.png",
+      "original_id": "train3347",
+      "original_filename": "train3347.png",
+      "crop_filename": "train3347.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train12086.png",
+      "original_id": "train12086",
+      "original_filename": "train12086.png",
+      "crop_filename": "train12086.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train29555.png",
+      "original_id": "train29555",
+      "original_filename": "train29555.png",
+      "crop_filename": "train29555.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train5986.png",
+      "original_id": "train5986",
+      "original_filename": "train5986.png",
+      "crop_filename": "train5986.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train916.png",
+      "original_id": "train916",
+      "original_filename": "train916.png",
+      "crop_filename": "train916.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train77.png",
+      "original_id": "train77",
+      "original_filename": "train77.png",
+      "crop_filename": "train77.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train3965.png",
+      "original_id": "train3965",
+      "original_filename": "train3965.png",
+      "crop_filename": "train3965.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train1518.png",
+      "original_id": "train1518",
+      "original_filename": "train1518.png",
+      "crop_filename": "train1518.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train3943.png",
+      "original_id": "train3943",
+      "original_filename": "train3943.png",
+      "crop_filename": "train3943.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train3253.png",
+      "original_id": "train3253",
+      "original_filename": "train3253.png",
+      "crop_filename": "train3253.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train14030.png",
+      "original_id": "train14030",
+      "original_filename": "train14030.png",
+      "crop_filename": "train14030.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train23490.png",
+      "original_id": "train23490",
+      "original_filename": "train23490.png",
+      "crop_filename": "train23490.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train23469.png",
+      "original_id": "train23469",
+      "original_filename": "train23469.png",
+      "crop_filename": "train23469.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train13033.png",
+      "original_id": "train13033",
+      "original_filename": "train13033.png",
+      "crop_filename": "train13033.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train3304.png",
+      "original_id": "train3304",
+      "original_filename": "train3304.png",
+      "crop_filename": "train3304.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_1500/new_dataset/train8136.png",
+      "original_id": "train8136",
+      "original_filename": "train8136.png",
+      "crop_filename": "train8136.png",
+      "group": "clear",
+      "mapping_method": "original_filename",
+      "noise": [],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train15632.png",
+      "original_id": "train15632",
+      "original_filename": "train15632.png",
+      "crop_filename": "train15632.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "soil-covered"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train14286.png",
+      "original_id": "train14286",
+      "original_filename": "train14286.png",
+      "crop_filename": "train14286.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train14816.png",
+      "original_id": "train14816",
+      "original_filename": "train14816.png",
+      "crop_filename": "train14816.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train14383.png",
+      "original_id": "train14383",
+      "original_filename": "train14383.png",
+      "crop_filename": "train14383.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train14163.png",
+      "original_id": "train14163",
+      "original_filename": "train14163.png",
+      "crop_filename": "train14163.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train14829.png",
+      "original_id": "train14829",
+      "original_filename": "train14829.png",
+      "crop_filename": "train14829.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "soil-covered"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train15236.png",
+      "original_id": "train15236",
+      "original_filename": "train15236.png",
+      "crop_filename": "train15236.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train12056.png",
+      "original_id": "train12056",
+      "original_filename": "train12056.png",
+      "crop_filename": "train12056.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "reflective"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train13459.png",
+      "original_id": "train13459",
+      "original_filename": "train13459.png",
+      "crop_filename": "train13459.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train15468.png",
+      "original_id": "train15468",
+      "original_filename": "train15468.png",
+      "crop_filename": "train15468.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train13488.png",
+      "original_id": "train13488",
+      "original_filename": "train13488.png",
+      "crop_filename": "train13488.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train12764.png",
+      "original_id": "train12764",
+      "original_filename": "train12764.png",
+      "crop_filename": "train12764.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "soil-covered"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train14411.png",
+      "original_id": "train14411",
+      "original_filename": "train14411.png",
+      "crop_filename": "train14411.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train12389.png",
+      "original_id": "train12389",
+      "original_filename": "train12389.png",
+      "crop_filename": "train12389.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "soil-covered"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train13983.png",
+      "original_id": "train13983",
+      "original_filename": "train13983.png",
+      "crop_filename": "train13983.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train16352.png",
+      "original_id": "train16352",
+      "original_filename": "train16352.png",
+      "crop_filename": "train16352.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train16347.png",
+      "original_id": "train16347",
+      "original_filename": "train16347.png",
+      "crop_filename": "train16347.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train13084.png",
+      "original_id": "train13084",
+      "original_filename": "train13084.png",
+      "crop_filename": "train13084.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train14623.png",
+      "original_id": "train14623",
+      "original_filename": "train14623.png",
+      "crop_filename": "train14623.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "soil-covered"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train14646.png",
+      "original_id": "train14646",
+      "original_filename": "train14646.png",
+      "crop_filename": "train14646.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train15358.png",
+      "original_id": "train15358",
+      "original_filename": "train15358.png",
+      "crop_filename": "train15358.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train13674.png",
+      "original_id": "train13674",
+      "original_filename": "train13674.png",
+      "crop_filename": "train13674.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train15684.png",
+      "original_id": "train15684",
+      "original_filename": "train15684.png",
+      "crop_filename": "train15684.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "soil-covered"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train14880.png",
+      "original_id": "train14880",
+      "original_filename": "train14880.png",
+      "crop_filename": "train14880.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train11959.png",
+      "original_id": "train11959",
+      "original_filename": "train11959.png",
+      "crop_filename": "train11959.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dark"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train14031.png",
+      "original_id": "train14031",
+      "original_filename": "train14031.png",
+      "crop_filename": "train14031.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "reflective"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train15710.png",
+      "original_id": "train15710",
+      "original_filename": "train15710.png",
+      "crop_filename": "train15710.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "soil-covered"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train23543.png",
+      "original_id": "train23543",
+      "original_filename": "train23543.png",
+      "crop_filename": "train23543.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "reflective"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train14449.png",
+      "original_id": "train14449",
+      "original_filename": "train14449.png",
+      "crop_filename": "train14449.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train13532.png",
+      "original_id": "train13532",
+      "original_filename": "train13532.png",
+      "crop_filename": "train13532.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train12747.png",
+      "original_id": "train12747",
+      "original_filename": "train12747.png",
+      "crop_filename": "train12747.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train16536.png",
+      "original_id": "train16536",
+      "original_filename": "train16536.png",
+      "crop_filename": "train16536.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "reflective"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train16343.png",
+      "original_id": "train16343",
+      "original_filename": "train16343.png",
+      "crop_filename": "train16343.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train15256.png",
+      "original_id": "train15256",
+      "original_filename": "train15256.png",
+      "crop_filename": "train15256.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train14162.png",
+      "original_id": "train14162",
+      "original_filename": "train14162.png",
+      "crop_filename": "train14162.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "reflective"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train11976.png",
+      "original_id": "train11976",
+      "original_filename": "train11976.png",
+      "crop_filename": "train11976.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train14021.png",
+      "original_id": "train14021",
+      "original_filename": "train14021.png",
+      "crop_filename": "train14021.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train20704.png",
+      "original_id": "train20704",
+      "original_filename": "train20704.png",
+      "crop_filename": "train20704.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "reflective"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train14410.png",
+      "original_id": "train14410",
+      "original_filename": "train14410.png",
+      "crop_filename": "train14410.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "soil-covered"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train16263.png",
+      "original_id": "train16263",
+      "original_filename": "train16263.png",
+      "crop_filename": "train16263.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train12970.png",
+      "original_id": "train12970",
+      "original_filename": "train12970.png",
+      "crop_filename": "train12970.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train14050.png",
+      "original_id": "train14050",
+      "original_filename": "train14050.png",
+      "crop_filename": "train14050.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train15376.png",
+      "original_id": "train15376",
+      "original_filename": "train15376.png",
+      "crop_filename": "train15376.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train15713.png",
+      "original_id": "train15713",
+      "original_filename": "train15713.png",
+      "crop_filename": "train15713.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "soil-covered"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train15428.png",
+      "original_id": "train15428",
+      "original_filename": "train15428.png",
+      "crop_filename": "train15428.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    },
+    {
+      "path": "clear_noise_500/train12748.png",
+      "original_id": "train12748",
+      "original_filename": "train12748.png",
+      "crop_filename": "train12748.png",
+      "group": "clear_one_noise",
+      "mapping_method": "original_filename",
+      "noise": [
+        "dial-stained"
+      ],
+      "orientation": "upside_down"
+    }
+  ]
+}
