@@ -3,7 +3,8 @@
 Run `python -m stage1_python_worker --help` from `Ryan_Qu/Phase_detection/`.
 
 - `data.py` converts the frozen Dryad image/mask selection to YOLO OBB labels
-  and checks prepared image/label pairs for the requested splits.
+  and checks prepared image/label pairs for the requested splits. Use
+  `prepare --replace` to regenerate derived files from the same source selection.
 - `preview.py` renders optional annotation sheets with the `preview` command.
 - `training.py` fine-tunes YOLO11n-OBB. `evaluation.py` reports Ultralytics OBB
   AP and separate exact polygon IoU diagnostics. Neither requires review files.

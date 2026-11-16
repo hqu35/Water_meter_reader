@@ -1,6 +1,7 @@
 """Ultralytics OBB AP plus explicitly separate exact polygon-IoU diagnostics."""
 
 import json
+from pathlib import Path
 
 from PIL import Image, ImageDraw
 
@@ -28,9 +29,7 @@ def match_detections(detections, truth, threshold=0.5):
 
 def evaluate(root, weights=None):
     artifacts = root / "artifacts"
-    weights = weights or __import__("pathlib").Path(
-        read_json(artifacts / "training_complete.json")["best"]
-    )
+    weights = weights or Path(read_json(artifacts / "training_complete.json")["best"])
     destination = artifacts / "evaluation"
     if destination.exists():
         raise FileExistsError("Evaluation exists; refusing to overwrite results")
@@ -96,7 +95,7 @@ def evaluate(root, weights=None):
         )
         assert len(results) == len(batch)
         for record, path, prediction in zip(batch, paths, results):
-            assert __import__("pathlib").Path(prediction.path).name == path.name
+            assert Path(prediction.path).name == path.name
             detections = detections_from_result(prediction)
             matched = match_detections(detections, record["corners_xy"])
             predictions.append(
