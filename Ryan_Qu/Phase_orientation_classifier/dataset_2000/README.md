@@ -2,7 +2,7 @@
 
 The package retains all 2,000 original crops. Use only the 1,996 images in `images/upright_assumed/` and `images/upside_down/` as potential classifier inputs; the four user-rejected samples are isolated in `images/discarded/` and have no training label. Images are byte-identical copies and have not been rotated. The dataset has not been split into train/validation/test.
 
-The user explicitly marked 73 images upside down. The other 1,923 training-eligible images were not marked; their provisional `upright` label is an assumption based on absence of a mark, not proof of individual human verification. Whether every image was inspected is unknown. The four excluded source IDs are train11264, train1355, train14871, train14855.
+The orientation baseline contains 81 upside-down images and 1,915 upright images. The eight additional upside-down labels were corrected using the human review in review_2468f6812375 and its recorded historical 180-degree transformations. The four excluded source IDs are train11264, train1355, train14871, train14855.
 
 `manifest.json` and `manifest.csv` map original Dryad IDs, prior local crop filenames, package paths, scenario labels, source-mapping method, SHA-256 hashes, orientation mark status, exclusion status, and label evidence. 
 

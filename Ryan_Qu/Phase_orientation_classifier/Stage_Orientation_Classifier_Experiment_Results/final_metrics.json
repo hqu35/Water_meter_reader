@@ -1,0 +1,124 @@
+{
+  "experiment": "ViT-Small water-meter orientation classification",
+  "training": {
+    "architecture": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+    "pretrained": true,
+    "device": "mps",
+    "optimizer": "AdamW",
+    "lr": 0.0001,
+    "weight_decay": 0.01,
+    "batch_size": 16,
+    "seed": 42,
+    "epochs": 25,
+    "patience": 5,
+    "loss": "CrossEntropyLoss",
+    "resize": "aspect_ratio_preserving_224_padding_black",
+    "checkpoint_selection": "highest_validation_accuracy_earliest_epoch_on_tie"
+  },
+  "epochs_completed": 11,
+  "selected_epoch": 6,
+  "validation_accuracy": 0.98635477582846,
+  "split_image_files": {
+    "train": 2394,
+    "validation": 513,
+    "test": 513
+  },
+  "held_out_test": {
+    "accuracy": 0.9970760233918129,
+    "orientation_samples": 1026,
+    "unique_test_image_files": 513,
+    "distinct_test_source_groups": 359,
+    "misclassified_samples": 3,
+    "confusion_matrix": [
+      [
+        510,
+        3
+      ],
+      [
+        0,
+        513
+      ]
+    ],
+    "per_class": {
+      "0": {
+        "name": "upright",
+        "precision": 1.0,
+        "recall": 0.9941520467836257,
+        "support": 513
+      },
+      "1": {
+        "name": "upside_down",
+        "precision": 0.9941860465116279,
+        "recall": 1.0,
+        "support": 513
+      }
+    },
+    "by_source": {
+      "dryad": {
+        "orientation_samples": 658,
+        "accuracy": 1.0,
+        "confusion_matrix": [
+          [
+            329,
+            0
+          ],
+          [
+            0,
+            329
+          ]
+        ],
+        "per_class": {
+          "0": {
+            "name": "upright",
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 329
+          },
+          "1": {
+            "name": "upside_down",
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 329
+          }
+        },
+        "image_files": 329,
+        "distinct_source_groups": 329
+      },
+      "roboflow": {
+        "orientation_samples": 368,
+        "accuracy": 0.9918478260869565,
+        "confusion_matrix": [
+          [
+            181,
+            3
+          ],
+          [
+            0,
+            184
+          ]
+        ],
+        "per_class": {
+          "0": {
+            "name": "upright",
+            "precision": 1.0,
+            "recall": 0.9836956521739131,
+            "support": 184
+          },
+          "1": {
+            "name": "upside_down",
+            "precision": 0.983957219251337,
+            "recall": 1.0,
+            "support": 184
+          }
+        },
+        "image_files": 184,
+        "distinct_source_groups": 30
+      }
+    }
+  },
+  "class_labels": {
+    "0": "upright",
+    "1": "upside_down"
+  },
+  "checkpoint_sha256": "f87a5344c128f8bae49ef15f9c2345a86c27ef8ff29b95ecd6705712e7ae7bde"
+}
