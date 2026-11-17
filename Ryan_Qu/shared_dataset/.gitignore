@@ -1,10 +1,13 @@
-/qualified/
 /clear_1500/qualified_replicate/
 /clear_1500/new_dataset/
 /clear_noise_500/
-/selection_manifest.json
 /gallery_data.js
 *.jsonl
-/.processing_records/
 /.processing_temp/
 .DS_Store
+
+# Human-readable names for local image-selection data
+/image_crop_processing_records/
+/selected_image_sources_and_original_ids.json
+/reviewed_lora_register_crops/
+/clear_1500/*.png
