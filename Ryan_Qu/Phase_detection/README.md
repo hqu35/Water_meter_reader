@@ -21,7 +21,7 @@ describes the separate full-image orientation experiment.
 | `configs/stage1_obb.json` | Frozen Stage I configuration. |
 | `dataset/stageOneOBB/` | Local 2,400 train / 400 validation / 800 test subset, labels and frozen split metadata. |
 | `dataset/wordWheelSource/` | Local Dryad ZIP link and frozen source-identity inventory. |
-| `training loss plot/` | Git-tracked Stage I training and validation plots. |
+| `Stage 1 OBB Experiment Results/` | Git-visible training plot and final validation/test metrics. |
 | `outputs/` | Local experiment outputs, checkpoint, human-review data and results. |
 | `tests/` | Geometry, data integrity, workflow and integration tests. |
 | `notes/` | Supplementary study notes. |

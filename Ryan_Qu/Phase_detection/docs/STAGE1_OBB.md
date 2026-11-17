@@ -51,7 +51,7 @@ held-out test set did not select the checkpoint.
 Ultralytics computes these AP metrics with probabilistic rotated IoU. The
 saved exact polygon-IoU operating-point report is a separate diagnostic.
 Neither measures orientation accuracy or digit-reading accuracy. See the
-[training and validation curves](../training%20loss%20plot/stage1_obb_results.png).
+[training and validation curves](../Stage%201%20OBB%20Experiment%20Results/stage1_obb_results.png).
 
 ## Reproducibility and local artifacts
 
