@@ -5,7 +5,8 @@ index.html to browse the 1,996 images. Filenames are original Dryad IDs.
 
 The baseline is Phase_orientation_classifier/dataset_2000/manifest.json and
 its images. Each upright image was copied without changing pixels; each image
-marked upside down was rotated exactly 180 degrees with OpenCV. The four
+marked upside down was rotated exactly 180 degrees with OpenCV. After the
+eight-image human-review correction, 81 were rotated and 1,915 copied unchanged. The four
 discarded images were excluded. The historical directory names are retained:
 clear_1500 contains 1,498 images and clear_noise_500 contains 498.
 
