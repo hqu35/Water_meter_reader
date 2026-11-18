@@ -12,6 +12,9 @@ def main(argv=None):
     prepare = commands.add_parser("prepare")
     prepare.add_argument("--archive", type=Path)
     prepare.add_argument("--selection", type=Path)
+    prepare.add_argument(
+        "--replace", action="store_true", help="Regenerate the derived dataset"
+    )
     commands.add_parser("validate")
     commands.add_parser("download")
     commands.add_parser("inspect")
@@ -66,12 +69,12 @@ def main(argv=None):
     elif args.command == "prepare":
         from .data import prepare
 
-        prepare(args.root, args.archive, args.selection)
+        prepare(args.root, args.archive, args.selection, replace=args.replace)
     elif args.command == "validate":
         from .data import validate_dataset
 
         manifest = validate_dataset(args.root)
-        print("OBB integrity passed:", len(manifest["records"]), "real images")
+        print("OBB image/label pairs:", len(manifest["records"]), "real images")
     elif args.command == "preview":
         from .preview import render_preview
 

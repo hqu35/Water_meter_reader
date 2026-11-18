@@ -271,23 +271,74 @@ class OBBIntegrationTests(unittest.TestCase):
                 with self.assertRaises(FileExistsError):
                     prepare(run, archive, selection)
 
-                record = next(r for r in manifest["records"] if r["split"] == "test")
-                label = (
-                    config.dataset_dir(run) / "labels/test" / (record["id"] + ".txt")
-                )
-                label.write_text("0 -0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8\n")
-                validate_dataset(run, splits=("train", "val"))
-                with self.assertRaisesRegex(
-                    ValueError, "Invalid normalized coordinates"
-                ):
-                    validate_dataset(run, splits=("test",))
-                manifest["records"][1]["id"] = manifest["records"][0]["id"]
-                path = config.metadata_dir(run) / "split_manifest.json"
-                import json
+    def test_replace_removes_stale_outputs_and_preserves_sources(self):
+        from stage1_fixtures import create_source_fixture
+        from stage1_python_worker.obb.cli import main
+        from stage1_python_worker.obb.data import prepare, validate_dataset
+        from stage1_python_worker.utils.io import read_json, write_json
 
-                path.write_text(json.dumps(manifest))
-                with self.assertRaisesRegex(ValueError, "Repeated id"):
-                    validate_dataset(run)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            _, archive, selection = create_source_fixture(root)
+            original = read_json(selection)
+            # No historical hashes, configured split counts, or stored dimensions needed.
+            fields = ("id", "split", "source_image", "source_mask")
+            minimal = {
+                "records": [{k: row[k] for k in fields} for row in original["records"]]
+            }
+            write_json(selection, minimal)
+            run = root / "run"
+            prepare(run, archive, selection)
+            data = config.dataset_dir(run)
+            manifest = validate_dataset(run)
+            chosen = next(r for r in manifest["records"] if r["split"] == "test")
+            label = data / "labels/test" / (chosen["id"] + ".txt")
+            expected_label = label.read_bytes()
+            label.unlink()
+            validate_dataset(run, splits=("train", "val"))
+            with self.assertRaisesRegex(ValueError, "Missing or empty label"):
+                validate_dataset(run, splits=("test",))
+
+            stale = data / "images/train/stale.jpg"
+            stale.write_bytes(b"stale")
+            cached = data / "labels/train.cache"
+            cached.write_bytes(b"cache")
+            keep = data / "README.md"
+            keep.write_text("local notes")
+            source_bytes = archive.read_bytes()
+            selection_bytes = selection.read_bytes()
+            unsafe_source = data / "images/train/inventory.json"
+            unsafe_source.write_bytes(selection_bytes)
+            with self.assertRaisesRegex(ValueError, "inside generated output"):
+                prepare(run, archive, unsafe_source, replace=True)
+            self.assertTrue(unsafe_source.is_file())
+            main(
+                [
+                    "--root",
+                    str(run),
+                    "prepare",
+                    "--archive",
+                    str(archive),
+                    "--selection",
+                    str(selection),
+                    "--replace",
+                ]
+            )
+            self.assertFalse(stale.exists())
+            self.assertFalse(cached.exists())
+            self.assertEqual(label.read_bytes(), expected_label)
+            self.assertEqual(validate_dataset(run), manifest)
+            self.assertEqual(archive.read_bytes(), source_bytes)
+            self.assertEqual(selection.read_bytes(), selection_bytes)
+            self.assertEqual(keep.read_text(), "local notes")
+
+            # A wrong source-pool assignment fails before touching the prior result.
+            wrong_pool = next(r for r in minimal["records"] if r["split"] == "train")
+            wrong_pool["split"] = "test"
+            write_json(selection, minimal)
+            with self.assertRaisesRegex(ValueError, "Incorrect source split"):
+                prepare(run, archive, selection, replace=True)
+            self.assertEqual(validate_dataset(run), manifest)
 
     def test_train_and_evaluate_with_prepared_data_and_no_review_files(self):
         from types import SimpleNamespace

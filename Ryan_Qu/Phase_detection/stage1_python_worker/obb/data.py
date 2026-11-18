@@ -1,234 +1,203 @@
-"""Convert selected real source image/mask pairs into oriented rectangles."""
+"""Prepare a selected set of Dryad image/mask pairs for YOLO OBB."""
 
 import io
 import shutil
-from collections import Counter
 from pathlib import Path, PurePosixPath
+from tempfile import TemporaryDirectory
 from zipfile import ZipFile
 
 import numpy as np
 from PIL import Image
 
-from ..utils.io import read_json, sha256_file, write_json
+from ..utils.io import read_json, write_json
 from . import config
 from .geometry import normalized_corners, rectangle_from_mask, required_padding
 
 SPLITS = ("train", "val", "test")
-# Ultralytics scans image directories recursively rather than using our manifest.
-IMAGE_SUFFIXES = {
-    ".avif",
-    ".bmp",
-    ".dng",
-    ".heic",
-    ".jpeg",
-    ".jpg",
-    ".mpo",
-    ".png",
-    ".tif",
-    ".tiff",
-    ".webp",
-    ".heif",
-    ".jp2",
-}
+IMAGE_SUFFIXES = set(
+    "avif bmp dng heic heif jp2 jpeg jpg mpo png tif tiff webp".split()
+)
 
 
-def check_splits(records):
-    expected = {split: config.CONFIG[f"{split}_count"] for split in SPLITS}
-    if Counter(r["split"] for r in records) != expected:
-        raise ValueError(f"Expected frozen split sizes: {expected}")
-    for key in ("id", "source_image", "source_mask"):
-        if len({r[key] for r in records}) != len(records):
-            raise ValueError(f"Repeated {key} in dataset splits")
-    for record in records:
-        identity = record["id"]
-        if not identity or Path(identity).name != identity or identity in (".", ".."):
-            raise ValueError(f"Invalid image ID: {identity}")
-        official = "test" if record["split"] == "test" else "train"
-        if record["official_split"] != official:
-            raise ValueError(f"Incorrect official split: {identity}")
-
-
-def validate_dataset(root, splits=SPLITS):
-    """Check the manifest and only the image/label pairs consumed by this command."""
-    data = config.dataset_dir(root)
-    manifest = read_json(config.metadata_dir(root) / "split_manifest.json")
-    if manifest["task"] != "obb":
-        raise ValueError("Expected an OBB split manifest")
-    records = manifest["records"]
-    check_splits(records)
-    for split in splits:
-        split_records = [r for r in records if r["split"] == split]
-        folder = data / "images" / split
-        actual = {
-            p.relative_to(folder).as_posix()
-            for p in folder.rglob("*")
-            if p.is_file() and p.suffix.lower() in IMAGE_SUFFIXES
-        }
-        expected_images = {r["image_file"] for r in split_records}
-        if actual != expected_images:
-            missing = sorted(expected_images - actual)[:5]
-            extra = sorted(actual - expected_images)[:5]
-            raise ValueError(
-                f"Image inventory mismatch in {folder}: missing={missing}; extra={extra}"
-            )
-
-        for record in split_records:
-            identity = record["id"]
-            image_file = Path(record["image_file"])
-            if image_file.name != str(image_file) or image_file.stem != identity:
-                raise ValueError(f"Image filename does not match ID: {identity}")
-            size = (record["width"], record["height"])
-            with Image.open(folder / image_file) as image:
-                image.load()
-                if image.size != size:
-                    raise ValueError(f"Incorrect image dimensions: {image_file}")
-
-            label = data / "labels" / split / (identity + ".txt")
-            rows = label.read_text().strip().splitlines()
-            tokens = rows[0].split() if len(rows) == 1 else []
-            if len(tokens) != 9 or tokens[0] != "0":
-                raise ValueError(f"Expected one class-0 OBB in {label}")
-            corners = np.array([float(token) for token in tokens[1:]]).reshape(4, 2)
-            if (
-                not np.isfinite(corners).all()
-                or (corners < 0).any()
-                or (corners > 1).any()
-            ):
-                raise ValueError(f"Invalid normalized coordinates in {label}")
-            edges = np.roll(corners, -1, axis=0) - corners
-            turns = edges[:, 0] * np.roll(edges[:, 1], -1) - edges[:, 1] * np.roll(
-                edges[:, 0], -1
-            )
-            if not (turns > 0).all():
-                raise ValueError(f"Invalid OBB corner order or area in {label}")
-            # Held-out polygon diagnostics use these stored coordinates.
-            expected = np.asarray(record["corners_xy"])
-            if expected.shape != (4, 2) or not np.allclose(
-                corners * size, expected, atol=1e-5
-            ):
-                raise ValueError(f"Label does not match split manifest: {label}")
-    return manifest
-
-
-def prepare(root, archive_path=None, selection_path=None):
-    """Rebuild from the original source ZIP and fixed, format-neutral identities."""
-    archive_path = (
-        Path(archive_path) if archive_path else config.source_archive_path(root)
-    )
-    selection_path = (
-        Path(selection_path)
-        if selection_path
-        else config.source_dir(root) / "selection.json"
-    )
+def prepare(root, archive_path=None, selection_path=None, *, replace=False):
+    """Convert pairs into a fresh tree before replacing any generated files."""
+    archive_path = Path(archive_path or config.source_archive_path(root))
+    selection_path = Path(selection_path or config.source_dir(root) / "selection.json")
     destination = config.dataset_dir(root)
-    if any(
-        (destination / name).exists()
-        for name in ["images", "labels", "masks", "metadata/split_manifest.json"]
-    ):
-        raise FileExistsError(
-            f"Refusing to overwrite existing OBB dataset: {destination}"
-        )
-    original = read_json(selection_path)
-    if (original["dataset_sha256"], original["seed"]) != (
-        config.CONFIG["dataset_sha256"],
-        config.CONFIG["seed"],
-    ):
-        raise ValueError("Selection does not match the configured archive and seed")
-    check_splits(original["records"])
-    # Reuse the frozen inventory's decoded identities for split deduplication.
-    source_pixels = [r["pixel_sha256"] for r in original["records"]]
-    if len(source_pixels) != len(set(source_pixels)):
-        raise ValueError("Duplicate source pixels in the frozen selection")
-    if sha256_file(archive_path) != original["dataset_sha256"]:
-        raise ValueError("Source ZIP checksum mismatch")
+    generated = (
+        "images",
+        "masks",
+        "labels",
+        "data.yaml",
+        "metadata/source_selection.json",
+        "metadata/split_manifest.json",
+    )
+    for name in generated:
+        output = destination / name
+        if (output.exists() or output.is_symlink()) and not replace:
+            raise FileExistsError(
+                f"{output} exists; use prepare --replace to regenerate"
+            )
+        if any(
+            source.absolute().is_relative_to(output.absolute())
+            or source.resolve().is_relative_to(output.resolve())
+            for source in (archive_path, selection_path)
+        ):
+            raise ValueError(
+                f"Source ZIP or selection is inside generated output: {output}"
+            )
+
+    selection = read_json(selection_path)["records"]
+    if {row["split"] for row in selection} != set(SPLITS):
+        raise ValueError("Selection must contain train, val and test splits")
+    for key in ("id", "source_image"):
+        if len({row[key] for row in selection}) != len(selection):
+            raise ValueError(f"Repeated {key} in selection")
+    # The existing inventory may identify duplicate photos under different filenames.
+    pixels = [row["pixel_sha256"] for row in selection if row.get("pixel_sha256")]
+    if len(pixels) != len(set(pixels)):
+        raise ValueError("Duplicate source photos in selection")
+
+    destination.parent.mkdir(parents=True, exist_ok=True)
     records = []
-    with ZipFile(archive_path) as archive:
-        for old in original["records"]:
-            identity, split = old["id"], old["split"]
-            official = old["official_split"]
-            source = PurePosixPath(old["source_image"])
-            mask_directory = {
-                "det_img": "seg_label",
-                f"{official}_img": f"{official}_seg_label",
-            }
-            folder = mask_directory.get(source.parent.name.lower())
-            if (
-                not folder
-                or official not in source.parts[:-2]
-                or old["source_mask"]
-                != str(source.parent.parent / folder / source.name)
-                or identity != f"{official}_{source.stem}"
-            ):
-                raise ValueError(f"Incorrect source image/mask pair: {identity}")
-            image_bytes = archive.read(old["source_image"])
-            mask_bytes = archive.read(old["source_mask"])
-            with (
-                Image.open(io.BytesIO(image_bytes)) as image,
-                Image.open(io.BytesIO(mask_bytes)) as mask_image,
-            ):
-                if image.size != mask_image.size or image.size != (
-                    old["width"],
-                    old["height"],
+    with TemporaryDirectory(dir=destination.parent, prefix=".obb-prepare-") as temp:
+        staged = Path(temp)
+        for split in SPLITS:
+            for kind in ("images", "masks", "labels"):
+                (staged / kind / split).mkdir(parents=True)
+        with ZipFile(archive_path) as archive:
+            for row in selection:
+                identity, split = row["id"], row["split"]
+                if (
+                    not identity
+                    or Path(identity).name != identity
+                    or identity in (".", "..")
                 ):
-                    raise ValueError(f"Image/mask dimensions do not match: {identity}")
-                pixels = np.asarray(image.convert("RGB"))
-                mask = np.asarray(mask_image)
-                if mask.ndim != 2 or not set(np.unique(mask)).issubset({0, 255}):
-                    raise ValueError(f"Expected a binary foreground mask: {identity}")
-                corners = rectangle_from_mask(mask)
-                padding = required_padding(corners, image.width, image.height)
-                left, top, right, bottom = padding
-                extension = {"JPEG": ".jpg", "PNG": ".png"}[image.format]
-                image_file = identity + (".png" if any(padding) else extension)
-                image_path = destination / "images" / split / image_file
-                mask_path = destination / "masks" / split / (identity + ".png")
-                label_path = destination / "labels" / split / (identity + ".txt")
-                for path in [image_path, mask_path, label_path]:
-                    path.parent.mkdir(parents=True, exist_ok=True)
-                if any(padding):
-                    pixels = np.pad(
-                        pixels, ((top, bottom), (left, right), (0, 0)), mode="edge"
+                    raise ValueError(f"Invalid image ID: {identity}")
+
+                # Check the archive paths, not the historical manifest's split assertion.
+                official = "test" if split == "test" else "train"
+                photo = PurePosixPath(row["source_image"])
+                mask_folder = {
+                    "det_img": "seg_label",
+                    f"{official}_img": f"{official}_seg_label",
+                }
+                mask_dir = mask_folder.get(photo.parent.name)
+                if (
+                    official not in photo.parts[:-2]
+                    or not mask_dir
+                    or row["source_mask"]
+                    != str(photo.parent.parent / mask_dir / photo.name)
+                ):
+                    raise ValueError(
+                        f"Incorrect source split or image/mask pair: {photo}"
                     )
-                    mask = np.pad(mask, ((top, bottom), (left, right)), mode="constant")
-                    Image.fromarray(pixels).save(image_path)
-                    Image.fromarray(mask).save(mask_path)
-                    corners = corners + [left, top]
-                else:
-                    image_path.write_bytes(image_bytes)
-                    mask_path.write_bytes(mask_bytes)
-                width, height = (
-                    old["width"] + left + right,
-                    old["height"] + top + bottom,
-                )
-                normalized = normalized_corners(corners, width, height)
-                label_path.write_text(
-                    "0 " + " ".join(f"{x:.10f}" for x in normalized.ravel()) + "\n"
+
+                image_bytes = archive.read(row["source_image"])
+                mask_bytes = archive.read(row["source_mask"])
+                with (
+                    Image.open(io.BytesIO(image_bytes)) as image,
+                    Image.open(io.BytesIO(mask_bytes)) as mask_image,
+                ):
+                    extension = {"JPEG": ".jpg", "PNG": ".png"}.get(image.format)
+                    if not extension:
+                        raise ValueError(
+                            f"Unsupported photo format for {identity}: {image.format}"
+                        )
+                    if image.size != mask_image.size:
+                        raise ValueError(
+                            f"Image/mask dimensions do not match: {identity}"
+                        )
+                    image.load()
+                    mask = np.asarray(mask_image)
+                    if mask.ndim != 2 or not np.isin(mask, (0, 255)).all():
+                        raise ValueError(
+                            f"Expected a binary foreground mask: {identity}"
+                        )
+
+                    corners = rectangle_from_mask(mask)
+                    padding = required_padding(corners, image.width, image.height)
+                    left, top, right, bottom = padding
+                    width = image.width + left + right
+                    height = image.height + top + bottom
+                    corners += [left, top]
+                    normalized = normalized_corners(corners, width, height)
+
+                    image_file = identity + (".png" if any(padding) else extension)
+                    image_path = staged / "images" / split / image_file
+                    mask_path = staged / "masks" / split / (identity + ".png")
+                    if any(padding):
+                        pixels = np.asarray(image.convert("RGB"))
+                        padded = np.pad(
+                            pixels, ((top, bottom), (left, right), (0, 0)), mode="edge"
+                        )
+                        Image.fromarray(padded).save(image_path)
+                        Image.fromarray(
+                            np.pad(mask, ((top, bottom), (left, right)))
+                        ).save(mask_path)
+                    else:
+                        image_path.write_bytes(image_bytes)
+                        mask_path.write_bytes(mask_bytes)
+
+                (staged / "labels" / split / (identity + ".txt")).write_text(
+                    "0 "
+                    + " ".join(f"{value:.10f}" for value in normalized.ravel())
+                    + "\n"
                 )
                 record = {
                     "id": identity,
                     "split": split,
-                    "official_split": old["official_split"],
-                    "source_image": old["source_image"],
-                    "source_mask": old["source_mask"],
-                    "source_pixel_sha256": old["pixel_sha256"],
-                    "source_size": [old["width"], old["height"]],
+                    "official_split": official,
+                    "source_image": row["source_image"],
+                    "source_mask": row["source_mask"],
                     "image_file": image_file,
                     "width": width,
                     "height": height,
                     "padding_ltrb": padding,
                     "corners_xy": corners.tolist(),
                 }
+                if row.get("pixel_sha256"):
+                    record["source_pixel_sha256"] = row["pixel_sha256"]
                 records.append(record)
-    manifest = {
-        "task": "obb",
-        "conversion_version": config.CONFIG["conversion_version"],
-        "seed": original["seed"],
-        "dataset_sha256": original["dataset_sha256"],
-        "records": records,
-    }
-    metadata = config.metadata_dir(root)
-    metadata.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(selection_path, metadata / "source_selection.json")
-    write_json(metadata / "split_manifest.json", manifest)
-    config.write_yaml(root)
+
+        metadata = staged / "metadata"
+        write_json(
+            metadata / "split_manifest.json", {"task": "obb", "records": records}
+        )
+        shutil.copyfile(selection_path, metadata / "source_selection.json")
+        for name in generated:
+            output = destination / name
+            if output.is_dir() and not output.is_symlink():
+                shutil.rmtree(output)
+            else:
+                output.unlink(missing_ok=True)
+            if name != "data.yaml":
+                output.parent.mkdir(parents=True, exist_ok=True)
+                (staged / name).replace(output)
+        config.write_yaml(root)
+
     print(f"Prepared {len(records)} image/label pairs in {destination}")
+
+
+def validate_dataset(root, splits=SPLITS):
+    """Check that YOLO will see the intended images and their label files."""
+    data = config.dataset_dir(root)
+    manifest = read_json(config.metadata_dir(root) / "split_manifest.json")
+    for split in splits:
+        folder = data / "images" / split
+        files = {r["image_file"] for r in manifest["records"] if r["split"] == split}
+        images = {
+            p.relative_to(folder).as_posix()
+            for p in folder.rglob("*")
+            if p.is_file() and p.suffix[1:].lower() in IMAGE_SUFFIXES
+        }
+        if not files or images != files:
+            raise ValueError(
+                f"Image inventory mismatch in {folder}: "
+                f"missing={sorted(files - images)[:5]}; extra={sorted(images - files)[:5]}"
+            )
+        for image in files:
+            label = data / "labels" / split / Path(image).with_suffix(".txt")
+            if not label.is_file() or not label.stat().st_size:
+                raise ValueError(f"Missing or empty label: {label}")
+    return manifest

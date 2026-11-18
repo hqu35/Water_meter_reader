@@ -1,110 +1,128 @@
-# Stage I — register localization and orientation
+# Stage I: Register localization with YOLO-OBB
 
-## Architecture and data
+Stage I finds the digit register in a full mechanical water-meter photo. The
+detector returns four oriented corners and a confidence score. OpenCV uses the
+register's long axis to make it horizontal; the axis alone does not tell us
+which way the digits face.
 
-The Stage I detector is `yolo11n-obb.pt`, fine-tuned for one register class on
-real [Dryad Word-Wheel images and segmentation masks](https://datadryad.org/dataset/doi:10.5061/dryad.7d7wm3860).
-The frozen subset contains 2,400 training and 400 validation examples from the
-official training pool, plus 800 held-out examples from the official test pool.
-Selection seed: `20261022`. Synthetic data was not used. `configs/stage1_obb.json`
-records the full source checksum and fixed settings.
+The intended pipeline is **detect the register → rotate the full frame with
+OpenCV → classify its orientation with our locally trained ViT-Small → apply a
+180° correction if needed → crop the register**. The team tested detection,
+full-frame rectification, and local orientation classification together in a
+[100-image pilot](../../Phase_orientation_classifier/README.md#separate-100-image-review).
+The pilot saved predictions without applying the classifier's correction. The
+detector's `predict` command is also standalone: it returns a rotation-aligned
+crop, but does not resolve the 180° ambiguity. Single-digit detection and meter
+reading are outside the scope of this detector.
 
-`stage1_python_worker/obb/data.py` fits minimum-area rectangles to the foreground
-pixel-cell hull with OpenCV and stores normalized, ordered four-corner labels.
-`geometry.py` implements ordering, padding, rotation-aligned crops and polygon
-IoU. The OBB describes an undirected axis; it does not determine whether digits are
-upright. Image boundaries, missing or inaccurate mask regions and small/near-square
-boxes remain limitations.
+## Data and labels
 
-For a separate end-to-end experiment, `stage1_python_worker/obb/integrated.py`
-runs the detector once, rotates the full image and its predicted OBB together,
-uses Roboflow `meter-orientation-classification-ugjff/3` on that full image, and
-extracts the final crop. Only `Correct` and `upside_down` produce a crop; other
-classes and API failures remain unresolved. This is independent of the original
-`predict` command. The [integration guide](STAGE1_INTEGRATION.md) gives usage,
-credentials and ten-image verification details. No Stage II code is implemented.
+The frozen subset contains **2,400 train**, **400 validation**, and **800
+held-out test** images from the Dryad Word-Wheel Water Meter Dataset. Training
+and validation were selected from the official training pool; test used the
+official test pool. The selection seed was `20261022`. No synthetic images
+were used.
 
-## Training and detector evaluation
+For each exact image/mask pair, OpenCV fits a minimum-area rectangle enclosing
+the foreground pixels. Boundary cases are padded before normalization. Each
+label is one class-0 register followed by four ordered, normalized corners:
+`0 x1 y1 x2 y2 x3 y3 x4 y4`. The frozen source inventory and split manifest
+record the identities used in the experiment.
 
-Training ran on NVIDIA T4 with Ultralytics 8.4.0: 30 epochs, image size 640,
-batch 32, AdamW, learning rate 0.001, seed 20261022, warmup 3 epochs, patience
-10, AMP disabled and configured augmentations disabled. The `best.pt` checkpoint
-was selected by validation OBB fitness, not the held-out test. The validation
-history's highest recorded mAP50–95 was 0.88236 at epoch 24; the finalized
-checkpoint has its epoch metadata stripped, so that epoch cannot be verified from
-its embedded metadata alone.
+Preparation checks the source splits, image/mask pairing and dimensions,
+and OBB geometry as it converts the data. Before training or evaluation, the
+worker checks that the requested splits contain the intended image/label pairs. Neither requires approval files. Historical
+[annotation sheets](../register_BB_annotation_inspection/annotation/README.md)
+remain available for inspection.
 
-On the 800 held-out test images, Ultralytics OBB probabilistic-IoU metrics were:
+## Training and held-out results
 
-| Precision | Recall | mAP@0.50 | mAP@0.50–0.95 |
-|---:|---:|---:|---:|
-| 0.9942 | 0.9900 | 0.9949 | 0.8527 |
+The team fine-tuned `yolo11n-obb.pt` on a Colab **NVIDIA T4** with Ultralytics
+**8.4.0** for **30 epochs**. The [configuration](../configs/stage1_obb.json)
+records the settings: 640-pixel inputs, batch size 32, AdamW with initial
+learning rate 0.001, three warmup epochs, and patience 10. AMP and the configured
+augmentations were disabled. Validation OBB fitness selected `best.pt`; the
+held-out test set did not select the checkpoint.
 
-These are register localization metrics, not reading or orientation accuracy.
-Exact polygon-IoU operating-point diagnostics are separate from native OBB AP.
-The [training and validation plot](../training%20loss%20plot/stage1_obb_results.png)
-is tracked in Git. Local final outputs, logs, results CSV, metadata and checkpoint
-are under `outputs/stage1_obb/final_run/artifacts/`; the checkpoint is
-`runs/register_yolo11n_obb/weights/best.pt` beneath that directory, SHA-256
-`e7c03f5e8bd7e09b00fdd0d82f4d232f641ea576566f38b672503b5ad503e07e`.
+| Test images | Precision | Recall | OBB mAP@0.50 | OBB mAP@0.50–0.95 |
+| ---: | ---: | ---: | ---: | ---: |
+| 800 | 0.9942 | 0.9900 | 0.9949 | 0.8527 |
 
-## Orientation evaluation and limits
-
-The integrated ten-image pilot uses held-out validation images and predicted
-OBBs; its intermediate images and JSON remain local under
-`outputs/stage1_integration/pilot_10/`. Successful execution does not establish
-classifier correctness. The hosted model is accessed with `ROBOFLOW_API_KEY`;
-never put credentials in code or logs. Classifier confidence is not calibrated.
-
-A historical 100-crop PaddleOCR pilot used GT OBB crops and is not integrated into
-production. A later Roboflow pilot on 13 deliberately selected PaddleOCR failures
-agreed with 6 of 13 prior human judgments; this selected cohort is not an unbiased
-accuracy estimate. Local artifacts and raw responses remain in `outputs/pilots/`.
-
-For the later 1,000-image orientation review, samples were taken from the original
-Dryad training pool excluding the detector's selected train/validation identities
-and exact pixel duplicates of its frozen splits. As of the locally saved Label
-Studio export on 2026-10-28 at 04:10 UTC, 403 samples had human verdicts: 375
-Correct and 28 Incorrect (375/403 = 93.05% agreement among those reviewed).
-These are partial human judgments on successfully processed samples, not a final
-1,000-sample accuracy or an assessment of OpenCV calibration reliability. The
-remaining annotation packages and completed human records are local-only.
+Ultralytics computes these AP metrics with probabilistic rotated IoU. The
+saved exact polygon-IoU operating-point report is a separate diagnostic.
+Neither measures orientation accuracy or digit-reading accuracy. See the
+[training and validation curves](../Stage%201%20OBB%20Experiment%20Results/stage1_obb_results.png).
 
 ## Reproducibility and local artifacts
 
-Install `requirements-stage1-obb.txt`; use `requirements-stage1-integration.txt`
-for the separate hosted-orientation experiment. Use `python -m stage1_python_worker --help`
-for available commands. `python -m stage1_python_worker validate` checks the split
-inventory and all image/label pairs. Training checks train/validation inputs; evaluation checks test
-inputs. Both run directly on prepared data. Use
-`python -m stage1_python_worker preview --output outputs/obb_preview` to render
-optional mask, rectangle and aligned-crop sheets to a new directory. Historical
-sheets and approval records are preserved as experiment history.
+Run the commands below from `Ryan_Qu/Phase_detection/`. The original detector
+checkpoint is located at
+`outputs/stage1_obb/final_run/artifacts/runs/register_yolo11n_obb/weights/best.pt`.
+The same run's `artifacts/` directory holds the test metrics, logs, GPU and
+environment details, and frozen dataset inventory. Back up the raw archive,
+source inventory, split manifest, and checkpoint separately: they are not
+included in a fresh Git clone.
 
-The local `dataset/wordWheelSource/` contains a symlink to the downloaded Dryad
-ZIP and `selection.json`, the exact source identity, image/mask hashes, and split
-inventory. The ZIP can be requested again from Dryad but availability/access is
-not guaranteed. The inventory is also stored in prepared metadata and in the final
-run's `dataset_metadata/source_selection.json`. Back up the ZIP, frozen inventory,
-manifest and final checkpoint separately: they are ignored by Git
-and cannot be recovered from a fresh clone alone. For a fresh preparation, provide
-both the archive and preserved inventory using `prepare --archive ... --selection
-...` under a fresh `--root`; preserve the existing run instead of overwriting it.
+**Prepare a fresh run.** Supply the original ZIP and frozen `selection.json`;
+`prepare` reuses those identities. To regenerate an existing prepared dataset,
+rerun the same command with `prepare --replace`. It builds the new dataset first
+and replaces the generated image, mask, and label directories, manifests, and
+YOLO YAML. The input ZIP, selection file, and other files stay in place. Put
+`--root` before the subcommand.
 
-`outputs/stage1_obb/final_run/artifacts/REPRODUCIBILITY.md`, `pip-freeze.txt`,
-`training_config.json`, source checksums and logs retain run-specific details.
-The Colab workflow is available through `python -m stage1_python_worker colab
---help`; use an authorized existing T4 session, verify CUDA, and never overwrite
-existing results. Checkpoints and newly generated previews are local-only. Colab
-dataset transfers include images, labels, masks, and the frozen split/source
-inventories; one checksum verifies each transferred ZIP.
+```bash
+python -m pip install -r requirements-stage1-obb.txt
+RUN=outputs/stage1_obb/reproduction
+SOURCE=dataset/Dryad_archive_original_dataset
 
-The older PaddleOCR manual-review HTML template and its visual artifacts are also
-local-only. The optional review generator and its tests need that preserved HTML
-file; a fresh clone without the local archive cannot run that optional UI workflow.
-The historical tracked template can be recovered from commit `073ec90` if needed.
-This does not affect OBB training or the full-image orientation inference path.
+python -m stage1_python_worker --root "$RUN" prepare \
+  --archive "$SOURCE/Word-Wheel_Water_Meter_Dataset.zip" \
+  --selection "$SOURCE/selection.json"
+python -m stage1_python_worker --root "$RUN" validate
+# Optional: render annotation and crop previews to a new directory.
+python -m stage1_python_worker --root "$RUN" preview --output outputs/obb_preview
+```
 
-Run lightweight checks with `python -m unittest discover -s tests -v` after
-installing dependencies. Some optional tests require locally preserved review
-files or separate PaddleOCR dependencies; see `tests/README.md`.
+Adjust `SOURCE` to your local archive location. The prepared data for this
+command goes in `$RUN/dataset/stageOneOBB/`. Without `--root`, the worker still
+expects `dataset/stageOneOBB/`; it does not automatically find the renamed
+`dataset/stage_I_Register_OBB/` folder. This guide rebuilds from the frozen
+inventory rather than changing the archived dataset.
+
+**Train and evaluate on Colab.** Use the existing authorized `cs539-stage1`
+T4 session. After syncing, make sure the runtime has the dependencies in
+`requirements-stage1-obb.txt` while retaining Colab's CUDA PyTorch build. The
+worker uses `/content/cs539_stage1_obb` on Colab; it refuses to overwrite an
+existing prepared dataset or run. Preserve old results and use a runtime where
+that remote working path is unused for a fresh run.
+
+```bash
+python -m stage1_python_worker colab status
+python -m stage1_python_worker colab sync
+python -m stage1_python_worker --root "$RUN" colab push-prepared
+python -m stage1_python_worker colab gpu
+python -m stage1_python_worker colab train --background
+# After training completes successfully:
+python -m stage1_python_worker colab evaluate --background
+# After evaluation completes successfully:
+python -m stage1_python_worker colab package
+python -m stage1_python_worker --root "$RUN" colab fetch
+```
+
+Background commands write `train.log` and `evaluate.log` under the Colab
+working path. Fetch saves the result bundle and extracted `artifacts/` under
+`$RUN`.
+
+**Run detector-only inference.** Use an EXIF-normalized image and a new output
+directory.
+
+```bash
+python -m stage1_python_worker predict \
+  --weights outputs/stage1_obb/final_run/artifacts/runs/register_yolo11n_obb/weights/best.pt \
+  --image /path/to/meter.jpg \
+  --output outputs/stage1_obb/example
+```
+
+The command writes `prediction.jpg`, `prediction.json`, and, when a register is
+detected, `register_crop.png`. For the local orientation model and its input
+contract, see the [orientation classifier guide](../../Phase_orientation_classifier/README.md).

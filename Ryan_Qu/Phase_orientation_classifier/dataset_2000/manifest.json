@@ -13139,7 +13139,7 @@
       "original_filename": "train928.png",
       "prior_crop_filename": "train928.png",
       "prior_crop_relative_path": "clear_1500/new_dataset/train928.png",
-      "packaged_image_path": "images/upright_assumed/train928.png",
+      "packaged_image_path": "images/upside_down/train928.png",
       "sha256": "10baf8bacce3ffa9ace225554d8b69f6f50b4edeae7bf7bbf14539ab30484614",
       "dataset_group": "clear",
       "author_scenario_labels": {
@@ -13154,10 +13154,10 @@
         "six_digit": 0
       },
       "source_mapping_method": "original_filename",
-      "user_marked_upside_down": false,
+      "user_marked_upside_down": true,
       "user_excluded": false,
-      "orientation_label": "upright",
-      "label_evidence": "unmarked_assumed_upright",
+      "orientation_label": "upside_down",
+      "label_evidence": "human_orientation_review_20261112",
       "stage1_processing": {
         "id": "train928",
         "group": "clean",
@@ -13165,7 +13165,8 @@
         "crop_source": "prior_stage1_crop",
         "source_crop": "/Users/ququ/water_meter_digit_reader/Water_meter_reader/Ryan_Qu/Phase_detection/outputs/clear_blurry_review_seed42/images/crop/train928.png",
         "sha256": "10baf8bacce3ffa9ace225554d8b69f6f50b4edeae7bf7bbf14539ab30484614"
-      }
+      },
+      "orientation_review_revision": "review_2468f6812375"
     },
     {
       "original_id": "train1026",
@@ -15053,7 +15054,7 @@
       "original_filename": "train18154.png",
       "prior_crop_filename": "train18154.png",
       "prior_crop_relative_path": "clear_1500/new_dataset/train18154.png",
-      "packaged_image_path": "images/upright_assumed/train18154.png",
+      "packaged_image_path": "images/upside_down/train18154.png",
       "sha256": "24f20f48540d2519cc70ae3dbdbe989a4d7e0d5ea53b526dfdd49a912dead1db",
       "dataset_group": "clear",
       "author_scenario_labels": {
@@ -15068,10 +15069,10 @@
         "six_digit": 0
       },
       "source_mapping_method": "original_filename",
-      "user_marked_upside_down": false,
+      "user_marked_upside_down": true,
       "user_excluded": false,
-      "orientation_label": "upright",
-      "label_evidence": "unmarked_assumed_upright",
+      "orientation_label": "upside_down",
+      "label_evidence": "human_orientation_review_20261112",
       "stage1_processing": {
         "id": "train18154",
         "group": "clean",
@@ -15079,7 +15080,8 @@
         "crop_source": "prior_stage1_crop",
         "source_crop": "/Users/ququ/water_meter_digit_reader/Water_meter_reader/Ryan_Qu/Phase_detection/outputs/clear_blurry_review_seed42/images/crop/train18154.png",
         "sha256": "24f20f48540d2519cc70ae3dbdbe989a4d7e0d5ea53b526dfdd49a912dead1db"
-      }
+      },
+      "orientation_review_revision": "review_2468f6812375"
     },
     {
       "original_id": "train22824",
@@ -18716,7 +18718,7 @@
       "original_filename": "train15794.png",
       "prior_crop_filename": "train15794.png",
       "prior_crop_relative_path": "clear_1500/new_dataset/train15794.png",
-      "packaged_image_path": "images/upright_assumed/train15794.png",
+      "packaged_image_path": "images/upside_down/train15794.png",
       "sha256": "ca108331d4b63c64c8322233ac57aad8827f65f393e0941ccc23b770cd88b660",
       "dataset_group": "clear",
       "author_scenario_labels": {
@@ -18731,10 +18733,10 @@
         "six_digit": 1
       },
       "source_mapping_method": "original_filename",
-      "user_marked_upside_down": false,
+      "user_marked_upside_down": true,
       "user_excluded": false,
-      "orientation_label": "upright",
-      "label_evidence": "unmarked_assumed_upright",
+      "orientation_label": "upside_down",
+      "label_evidence": "human_orientation_review_20261112",
       "stage1_processing": {
         "id": "train15794",
         "group": "clean",
@@ -18742,7 +18744,8 @@
         "crop_source": "prior_stage1_crop",
         "source_crop": "/Users/ququ/water_meter_digit_reader/Water_meter_reader/Ryan_Qu/Phase_detection/outputs/clear_blurry_review_seed42/images/crop/train15794.png",
         "sha256": "ca108331d4b63c64c8322233ac57aad8827f65f393e0941ccc23b770cd88b660"
-      }
+      },
+      "orientation_review_revision": "review_2468f6812375"
     },
     {
       "original_id": "train22372",
@@ -48008,7 +48011,7 @@
       "original_filename": "train15729.png",
       "prior_crop_filename": "train15729.png",
       "prior_crop_relative_path": "clear_noise_500/train15729.png",
-      "packaged_image_path": "images/upright_assumed/train15729.png",
+      "packaged_image_path": "images/upside_down/train15729.png",
       "sha256": "cfa8d54a40875bd54e8ad85b59f0bab5a9155d15d8fd169dd0fe52068119241a",
       "dataset_group": "clear_one_noise",
       "author_scenario_labels": {
@@ -48023,10 +48026,10 @@
         "six_digit": 0
       },
       "source_mapping_method": "original_filename",
-      "user_marked_upside_down": false,
+      "user_marked_upside_down": true,
       "user_excluded": false,
-      "orientation_label": "upright",
-      "label_evidence": "unmarked_assumed_upright",
+      "orientation_label": "upside_down",
+      "label_evidence": "human_orientation_review_20261112",
       "stage1_processing": {
         "id": "train15729",
         "group": "one_noise",
@@ -48034,7 +48037,8 @@
         "crop_source": "prior_stage1_crop",
         "source_crop": "/Users/ququ/water_meter_digit_reader/Water_meter_reader/Ryan_Qu/Phase_detection/outputs/clear_blurry_review_seed42/images/crop/train15729.png",
         "sha256": "cfa8d54a40875bd54e8ad85b59f0bab5a9155d15d8fd169dd0fe52068119241a"
-      }
+      },
+      "orientation_review_revision": "review_2468f6812375"
     },
     {
       "original_id": "train13623",
@@ -56045,7 +56049,7 @@
       "original_filename": "train14059.png",
       "prior_crop_filename": "train14059.png",
       "prior_crop_relative_path": "clear_noise_500/train14059.png",
-      "packaged_image_path": "images/upright_assumed/train14059.png",
+      "packaged_image_path": "images/upside_down/train14059.png",
       "sha256": "b12cc545b2258e7418e5f722e48e6f20eb6b2942c4b0513b8613b3a8d4abb8e6",
       "dataset_group": "clear_one_noise",
       "author_scenario_labels": {
@@ -56060,10 +56064,10 @@
         "six_digit": 0
       },
       "source_mapping_method": "original_filename",
-      "user_marked_upside_down": false,
+      "user_marked_upside_down": true,
       "user_excluded": false,
-      "orientation_label": "upright",
-      "label_evidence": "unmarked_assumed_upright",
+      "orientation_label": "upside_down",
+      "label_evidence": "human_orientation_review_20261112",
       "stage1_processing": {
         "id": "train14059",
         "group": "one_noise",
@@ -56074,7 +56078,8 @@
         "orientation": "correct",
         "orientation_confidence": 0.7071,
         "sha256": "b12cc545b2258e7418e5f722e48e6f20eb6b2942c4b0513b8613b3a8d4abb8e6"
-      }
+      },
+      "orientation_review_revision": "review_2468f6812375"
     },
     {
       "original_id": "train13208",
@@ -56765,7 +56770,7 @@
       "original_filename": "train8132.png",
       "prior_crop_filename": "train8132.png",
       "prior_crop_relative_path": "clear_noise_500/train8132.png",
-      "packaged_image_path": "images/upright_assumed/train8132.png",
+      "packaged_image_path": "images/upside_down/train8132.png",
       "sha256": "acb501b69416085651511a95106e80a80aa9ff1f4c6770b6272c10fc2719623a",
       "dataset_group": "clear_one_noise",
       "author_scenario_labels": {
@@ -56780,10 +56785,10 @@
         "six_digit": 0
       },
       "source_mapping_method": "original_filename",
-      "user_marked_upside_down": false,
+      "user_marked_upside_down": true,
       "user_excluded": false,
-      "orientation_label": "upright",
-      "label_evidence": "unmarked_assumed_upright",
+      "orientation_label": "upside_down",
+      "label_evidence": "human_orientation_review_20261112",
       "stage1_processing": {
         "id": "train8132",
         "group": "one_noise",
@@ -56794,7 +56799,8 @@
         "orientation": "correct",
         "orientation_confidence": 0.9882,
         "sha256": "acb501b69416085651511a95106e80a80aa9ff1f4c6770b6272c10fc2719623a"
-      }
+      },
+      "orientation_review_revision": "review_2468f6812375"
     },
     {
       "original_id": "train20165",
@@ -58817,7 +58823,7 @@
       "original_filename": "train15284.png",
       "prior_crop_filename": "train15284.png",
       "prior_crop_relative_path": "clear_noise_500/train15284.png",
-      "packaged_image_path": "images/upright_assumed/train15284.png",
+      "packaged_image_path": "images/upside_down/train15284.png",
       "sha256": "ad0484e7d05596be2c7b7d56f4b6b3ab4d44c2c2a67b1d43f3a10b64b9449f06",
       "dataset_group": "clear_one_noise",
       "author_scenario_labels": {
@@ -58832,10 +58838,10 @@
         "six_digit": 0
       },
       "source_mapping_method": "original_filename",
-      "user_marked_upside_down": false,
+      "user_marked_upside_down": true,
       "user_excluded": false,
-      "orientation_label": "upright",
-      "label_evidence": "unmarked_assumed_upright",
+      "orientation_label": "upside_down",
+      "label_evidence": "human_orientation_review_20261112",
       "stage1_processing": {
         "id": "train15284",
         "group": "one_noise",
@@ -58846,7 +58852,8 @@
         "orientation": "upside_down",
         "orientation_confidence": 0.9955,
         "sha256": "ad0484e7d05596be2c7b7d56f4b6b3ab4d44c2c2a67b1d43f3a10b64b9449f06"
-      }
+      },
+      "orientation_review_revision": "review_2468f6812375"
     },
     {
       "original_id": "train16501",
@@ -64433,7 +64440,7 @@
       "original_filename": "train11975.png",
       "prior_crop_filename": "train11975.png",
       "prior_crop_relative_path": "clear_noise_500/train11975.png",
-      "packaged_image_path": "images/upright_assumed/train11975.png",
+      "packaged_image_path": "images/upside_down/train11975.png",
       "sha256": "f0ea4b6fb8dcd5e68533aeb3caaf2d29d05af01415d00bc73eb868c42ae7fc99",
       "dataset_group": "clear_one_noise",
       "author_scenario_labels": {
@@ -64448,10 +64455,10 @@
         "six_digit": 0
       },
       "source_mapping_method": "original_filename",
-      "user_marked_upside_down": false,
+      "user_marked_upside_down": true,
       "user_excluded": false,
-      "orientation_label": "upright",
-      "label_evidence": "unmarked_assumed_upright",
+      "orientation_label": "upside_down",
+      "label_evidence": "human_orientation_review_20261112",
       "stage1_processing": {
         "id": "train11975",
         "group": "one_noise",
@@ -64462,7 +64469,8 @@
         "orientation": "upside_down",
         "orientation_confidence": 0.9299,
         "sha256": "f0ea4b6fb8dcd5e68533aeb3caaf2d29d05af01415d00bc73eb868c42ae7fc99"
-      }
+      },
+      "orientation_review_revision": "review_2468f6812375"
     },
     {
       "original_id": "train12643",

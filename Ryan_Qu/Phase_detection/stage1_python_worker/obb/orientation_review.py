@@ -3,16 +3,15 @@
 import base64
 import csv
 import hashlib
+import io
 import json
 import mimetypes
 from pathlib import Path
 
 
-def _image_url(path):
-    if path is None or not path.is_file():
-        return None
+def _image_url(path, content):
     mime = mimetypes.guess_type(path.name)[0] or "image/png"
-    return f"data:{mime};base64," + base64.b64encode(path.read_bytes()).decode("ascii")
+    return f"data:{mime};base64," + base64.b64encode(content).decode("ascii")
 
 
 def write_review_interface(pilot_dir, destination=None):
@@ -21,9 +20,11 @@ def write_review_interface(pilot_dir, destination=None):
     destination = Path(destination) if destination else pilot_dir / "index.html"
     predictions = pilot_dir / "predictions.csv"
     selection_path = pilot_dir / "selection.json"
-    selection = json.loads(selection_path.read_text())
+    selection_bytes = selection_path.read_bytes()
+    selection = json.loads(selection_bytes)
     summary = json.loads((pilot_dir / "summary.json").read_text())
-    with predictions.open(newline="") as stream:
+    prediction_bytes = predictions.read_bytes()
+    with io.TextIOWrapper(io.BytesIO(prediction_bytes), newline="") as stream:
         rows = list(csv.DictReader(stream))
     identities = [row["example_id"] for row in rows]
     if len(identities) != len(set(identities)):
@@ -37,17 +38,27 @@ def write_review_interface(pilot_dir, destination=None):
             int(row["predicted_orientation"]) if row["predicted_orientation"] else None
         )
         record["confidence"] = float(row["confidence"]) if row["confidence"] else None
-        for field in ["original_crop_path", "corrected_crop_path"]:
-            path = (pilot_dir / row[field]).resolve() if row[field] else None
-            if path and not path.is_relative_to(pilot_dir.resolve()):
+        for field in ("original_crop_path", "corrected_crop_path"):
+            crop_path = (pilot_dir / row[field]).resolve() if row[field] else None
+            if crop_path and not crop_path.is_relative_to(pilot_dir.resolve()):
                 raise ValueError("Crop path escapes the pilot directory")
-            record[field.replace("_path", "_image")] = _image_url(path)
+            crop_bytes = (
+                crop_path.read_bytes() if crop_path and crop_path.is_file() else None
+            )
+            record[field.replace("_path", "_image")] = (
+                _image_url(crop_path, crop_bytes) if crop_bytes is not None else None
+            )
             record[field.replace("_path", "_sha256")] = (
-                hashlib.sha256(path.read_bytes()).hexdigest()
-                if path and path.is_file()
+                hashlib.sha256(crop_bytes).hexdigest()
+                if crop_bytes is not None
                 else None
             )
-        record["source_image"] = _image_url(Path(row["source_image_path"]))
+        source_path = Path(row["source_image_path"])
+        record["source_image"] = (
+            _image_url(source_path, source_path.read_bytes())
+            if source_path.is_file()
+            else None
+        )
         records.append(record)
     data = {
         "schema_version": 1,
@@ -55,11 +66,11 @@ def write_review_interface(pilot_dir, destination=None):
         "model": summary["model"],
         "crop_source": selection["crop_source"],
         "manifest_sha256": selection["manifest_sha256"],
-        "predictions_sha256": hashlib.sha256(predictions.read_bytes()).hexdigest(),
-        "selection_sha256": hashlib.sha256(selection_path.read_bytes()).hexdigest(),
+        "predictions_sha256": hashlib.sha256(prediction_bytes).hexdigest(),
+        "selection_sha256": hashlib.sha256(selection_bytes).hexdigest(),
         "fingerprint": hashlib.sha256(
-            predictions.read_bytes()
-            + selection_path.read_bytes()
+            prediction_bytes
+            + selection_bytes
             + json.dumps(
                 [
                     [r["original_crop_sha256"], r["corrected_crop_sha256"]]
