@@ -44,6 +44,7 @@ def build(manifest_path, output):
         if (label, evidence) not in [
             ("upright", "unmarked_assumed_upright"),
             ("upside_down", "explicit_upside_down_mark"),
+            ("upside_down", "human_orientation_review_20261112"),
         ]:
             errors.append(f"{image_id}: missing or ambiguous orientation")
             continue
