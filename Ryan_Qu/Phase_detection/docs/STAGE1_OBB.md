@@ -71,7 +71,7 @@ YOLO YAML. The input ZIP, selection file, and other files stay in place. Put
 `--root` before the subcommand.
 
 ```bash
-python -m pip install -r requirements-stage1-obb.txt
+python -m pip install -r environment_setup/requirements-stage1-obb.txt
 RUN=outputs/stage1_obb/reproduction
 SOURCE=dataset/Dryad_archive_original_dataset
 
@@ -91,7 +91,7 @@ inventory rather than changing the archived dataset.
 
 **Train and evaluate on Colab.** Use the existing authorized `cs539-stage1`
 T4 session. After syncing, make sure the runtime has the dependencies in
-`requirements-stage1-obb.txt` while retaining Colab's CUDA PyTorch build. The
+`environment_setup/requirements-stage1-obb.txt` while retaining Colab's CUDA PyTorch build. The
 worker uses `/content/cs539_stage1_obb` on Colab; it refuses to overwrite an
 existing prepared dataset or run. Preserve old results and use a runtime where
 that remote working path is unused for a fresh run.

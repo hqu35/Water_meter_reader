@@ -14,8 +14,8 @@ def artifacts_dir(root):
 def source_files():
     return [
         REPO / "configs/stage1_obb.json",
-        REPO / "requirements-stage1.txt",
-        REPO / "requirements-stage1-obb.txt",
+        REPO / "environment_setup/requirements-stage1.txt",
+        REPO / "environment_setup/requirements-stage1-obb.txt",
         *sorted((REPO / PACKAGE_NAME).rglob("*.py")),
         *sorted((REPO / PACKAGE_NAME).rglob("*.html")),
     ]

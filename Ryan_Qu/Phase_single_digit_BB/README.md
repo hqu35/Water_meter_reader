@@ -54,7 +54,7 @@ are overwritten. Replace the review/CSV paths if your copies differ.
 
 ```bash
 python3.11 -m venv /private/tmp/phase2-repro-venv
-/private/tmp/phase2-repro-venv/bin/pip install -r PhaseOne/requirements-stage1-obb.txt
+/private/tmp/phase2-repro-venv/bin/pip install -r Ryan_Qu/Phase_detection/environment_setup/requirements-stage1-obb.txt
 /private/tmp/phase2-repro-venv/bin/python PhaseTwo/prepare_inputs.py \
   --output PhaseTwo/outputs/exp0_reproduction \
   --review-export /path/to/label-studio-export.json \

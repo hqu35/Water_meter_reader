@@ -18,6 +18,7 @@ describes the separate full-image orientation experiment.
 |---|---|
 | `stage1_python_worker/obb/` | OBB geometry, preparation, optional annotation previews, training, evaluation and inference. |
 | `stage1_python_worker/data/` | Dryad source inventory and dataset checks. |
+| `environment_setup/` | Python dependency files for Stage I and historical pilot environments. |
 | `configs/stage1_obb.json` | Frozen Stage I configuration. |
 | `dataset/stageOneOBB/` | Local 2,400 train / 400 validation / 800 test subset, labels and frozen split metadata. |
 | `dataset/wordWheelSource/` | Local Dryad ZIP link and frozen source-identity inventory. |
