@@ -1,0 +1,5325 @@
+{
+  "seed": 42,
+  "source": "reviewed register crops; original Dryad image ID is the split group",
+  "grouping_note": "No augmented variants identified in this selection.",
+  "splits": {
+    "train": [
+      {
+        "image_id": "train1037",
+        "source_group_id": "train1037",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1232",
+        "source_group_id": "train1232",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train17976",
+        "source_group_id": "train17976",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3290",
+        "source_group_id": "train3290",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29791",
+        "source_group_id": "train29791",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29690",
+        "source_group_id": "train29690",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29974",
+        "source_group_id": "train29974",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6386",
+        "source_group_id": "train6386",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3434",
+        "source_group_id": "train3434",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2979",
+        "source_group_id": "train2979",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26654",
+        "source_group_id": "train26654",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train32321",
+        "source_group_id": "train32321",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30316",
+        "source_group_id": "train30316",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21250",
+        "source_group_id": "train21250",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29763",
+        "source_group_id": "train29763",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19461",
+        "source_group_id": "train19461",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24149",
+        "source_group_id": "train24149",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29956",
+        "source_group_id": "train29956",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20786",
+        "source_group_id": "train20786",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20351",
+        "source_group_id": "train20351",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1878",
+        "source_group_id": "train1878",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train672",
+        "source_group_id": "train672",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train28854",
+        "source_group_id": "train28854",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3934",
+        "source_group_id": "train3934",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29378",
+        "source_group_id": "train29378",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20657",
+        "source_group_id": "train20657",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1331",
+        "source_group_id": "train1331",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3632",
+        "source_group_id": "train3632",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train11261",
+        "source_group_id": "train11261",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21545",
+        "source_group_id": "train21545",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train17097",
+        "source_group_id": "train17097",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15083",
+        "source_group_id": "train15083",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train25916",
+        "source_group_id": "train25916",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23208",
+        "source_group_id": "train23208",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18488",
+        "source_group_id": "train18488",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22339",
+        "source_group_id": "train22339",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29268",
+        "source_group_id": "train29268",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2196",
+        "source_group_id": "train2196",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22377",
+        "source_group_id": "train22377",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13991",
+        "source_group_id": "train13991",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train8102",
+        "source_group_id": "train8102",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21092",
+        "source_group_id": "train21092",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6616",
+        "source_group_id": "train6616",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train11708",
+        "source_group_id": "train11708",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1960",
+        "source_group_id": "train1960",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train10999",
+        "source_group_id": "train10999",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23056",
+        "source_group_id": "train23056",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3671",
+        "source_group_id": "train3671",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3598",
+        "source_group_id": "train3598",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2704",
+        "source_group_id": "train2704",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14023",
+        "source_group_id": "train14023",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29724",
+        "source_group_id": "train29724",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14439",
+        "source_group_id": "train14439",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1909",
+        "source_group_id": "train1909",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22013",
+        "source_group_id": "train22013",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15237",
+        "source_group_id": "train15237",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train16296",
+        "source_group_id": "train16296",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23479",
+        "source_group_id": "train23479",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14683",
+        "source_group_id": "train14683",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1404",
+        "source_group_id": "train1404",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22994",
+        "source_group_id": "train22994",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1347",
+        "source_group_id": "train1347",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15251",
+        "source_group_id": "train15251",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23003",
+        "source_group_id": "train23003",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1470",
+        "source_group_id": "train1470",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12933",
+        "source_group_id": "train12933",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1394",
+        "source_group_id": "train1394",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3489",
+        "source_group_id": "train3489",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21559",
+        "source_group_id": "train21559",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22928",
+        "source_group_id": "train22928",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5506",
+        "source_group_id": "train5506",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train32274",
+        "source_group_id": "train32274",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2946",
+        "source_group_id": "train2946",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5517",
+        "source_group_id": "train5517",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15379",
+        "source_group_id": "train15379",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3567",
+        "source_group_id": "train3567",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6067",
+        "source_group_id": "train6067",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30724",
+        "source_group_id": "train30724",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15563",
+        "source_group_id": "train15563",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1197",
+        "source_group_id": "train1197",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5521",
+        "source_group_id": "train5521",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19623",
+        "source_group_id": "train19623",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23467",
+        "source_group_id": "train23467",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22683",
+        "source_group_id": "train22683",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19208",
+        "source_group_id": "train19208",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26524",
+        "source_group_id": "train26524",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3301",
+        "source_group_id": "train3301",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19473",
+        "source_group_id": "train19473",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train11386",
+        "source_group_id": "train11386",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2923",
+        "source_group_id": "train2923",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18612",
+        "source_group_id": "train18612",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train25582",
+        "source_group_id": "train25582",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6068",
+        "source_group_id": "train6068",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train31147",
+        "source_group_id": "train31147",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20343",
+        "source_group_id": "train20343",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20485",
+        "source_group_id": "train20485",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26043",
+        "source_group_id": "train26043",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26125",
+        "source_group_id": "train26125",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14290",
+        "source_group_id": "train14290",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12376",
+        "source_group_id": "train12376",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5023",
+        "source_group_id": "train5023",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30697",
+        "source_group_id": "train30697",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train16144",
+        "source_group_id": "train16144",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20745",
+        "source_group_id": "train20745",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train7088",
+        "source_group_id": "train7088",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3288",
+        "source_group_id": "train3288",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2413",
+        "source_group_id": "train2413",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29399",
+        "source_group_id": "train29399",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3413",
+        "source_group_id": "train3413",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train10449",
+        "source_group_id": "train10449",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29954",
+        "source_group_id": "train29954",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train31146",
+        "source_group_id": "train31146",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2505",
+        "source_group_id": "train2505",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21554",
+        "source_group_id": "train21554",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12848",
+        "source_group_id": "train12848",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20839",
+        "source_group_id": "train20839",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14204",
+        "source_group_id": "train14204",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26491",
+        "source_group_id": "train26491",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14581",
+        "source_group_id": "train14581",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20387",
+        "source_group_id": "train20387",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5710",
+        "source_group_id": "train5710",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13149",
+        "source_group_id": "train13149",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22717",
+        "source_group_id": "train22717",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train8228",
+        "source_group_id": "train8228",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train31747",
+        "source_group_id": "train31747",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22886",
+        "source_group_id": "train22886",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29777",
+        "source_group_id": "train29777",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23052",
+        "source_group_id": "train23052",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13215",
+        "source_group_id": "train13215",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train32313",
+        "source_group_id": "train32313",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29738",
+        "source_group_id": "train29738",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15574",
+        "source_group_id": "train15574",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15211",
+        "source_group_id": "train15211",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15288",
+        "source_group_id": "train15288",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train25919",
+        "source_group_id": "train25919",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23513",
+        "source_group_id": "train23513",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21546",
+        "source_group_id": "train21546",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5759",
+        "source_group_id": "train5759",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5684",
+        "source_group_id": "train5684",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3388",
+        "source_group_id": "train3388",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train16360",
+        "source_group_id": "train16360",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train17325",
+        "source_group_id": "train17325",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14112",
+        "source_group_id": "train14112",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6540",
+        "source_group_id": "train6540",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20375",
+        "source_group_id": "train20375",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22551",
+        "source_group_id": "train22551",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5705",
+        "source_group_id": "train5705",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6548",
+        "source_group_id": "train6548",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train25310",
+        "source_group_id": "train25310",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21629",
+        "source_group_id": "train21629",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6321",
+        "source_group_id": "train6321",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14127",
+        "source_group_id": "train14127",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24792",
+        "source_group_id": "train24792",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22648",
+        "source_group_id": "train22648",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15480",
+        "source_group_id": "train15480",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21877",
+        "source_group_id": "train21877",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5998",
+        "source_group_id": "train5998",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18603",
+        "source_group_id": "train18603",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20569",
+        "source_group_id": "train20569",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6401",
+        "source_group_id": "train6401",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15191",
+        "source_group_id": "train15191",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train27503",
+        "source_group_id": "train27503",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26584",
+        "source_group_id": "train26584",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29774",
+        "source_group_id": "train29774",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train460",
+        "source_group_id": "train460",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3386",
+        "source_group_id": "train3386",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22531",
+        "source_group_id": "train22531",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3682",
+        "source_group_id": "train3682",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30970",
+        "source_group_id": "train30970",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29675",
+        "source_group_id": "train29675",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train16707",
+        "source_group_id": "train16707",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train28774",
+        "source_group_id": "train28774",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24694",
+        "source_group_id": "train24694",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19503",
+        "source_group_id": "train19503",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train17723",
+        "source_group_id": "train17723",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23005",
+        "source_group_id": "train23005",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23996",
+        "source_group_id": "train23996",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14218",
+        "source_group_id": "train14218",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train32559",
+        "source_group_id": "train32559",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train17596",
+        "source_group_id": "train17596",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23771",
+        "source_group_id": "train23771",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20362",
+        "source_group_id": "train20362",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train31418",
+        "source_group_id": "train31418",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train17045",
+        "source_group_id": "train17045",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train28943",
+        "source_group_id": "train28943",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3825",
+        "source_group_id": "train3825",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2433",
+        "source_group_id": "train2433",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26493",
+        "source_group_id": "train26493",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19832",
+        "source_group_id": "train19832",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train16288",
+        "source_group_id": "train16288",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29096",
+        "source_group_id": "train29096",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train4590",
+        "source_group_id": "train4590",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15550",
+        "source_group_id": "train15550",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18045",
+        "source_group_id": "train18045",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21613",
+        "source_group_id": "train21613",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19754",
+        "source_group_id": "train19754",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12117",
+        "source_group_id": "train12117",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train483",
+        "source_group_id": "train483",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2614",
+        "source_group_id": "train2614",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train31634",
+        "source_group_id": "train31634",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train4523",
+        "source_group_id": "train4523",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18147",
+        "source_group_id": "train18147",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20708",
+        "source_group_id": "train20708",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26525",
+        "source_group_id": "train26525",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13398",
+        "source_group_id": "train13398",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3419",
+        "source_group_id": "train3419",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14117",
+        "source_group_id": "train14117",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train993",
+        "source_group_id": "train993",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2988",
+        "source_group_id": "train2988",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23250",
+        "source_group_id": "train23250",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13352",
+        "source_group_id": "train13352",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24124",
+        "source_group_id": "train24124",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train11128",
+        "source_group_id": "train11128",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2564",
+        "source_group_id": "train2564",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29277",
+        "source_group_id": "train29277",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1877",
+        "source_group_id": "train1877",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19973",
+        "source_group_id": "train19973",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13046",
+        "source_group_id": "train13046",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2973",
+        "source_group_id": "train2973",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6423",
+        "source_group_id": "train6423",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23261",
+        "source_group_id": "train23261",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train921",
+        "source_group_id": "train921",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20760",
+        "source_group_id": "train20760",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18483",
+        "source_group_id": "train18483",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train31117",
+        "source_group_id": "train31117",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30633",
+        "source_group_id": "train30633",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19939",
+        "source_group_id": "train19939",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26335",
+        "source_group_id": "train26335",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19468",
+        "source_group_id": "train19468",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6373",
+        "source_group_id": "train6373",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train7029",
+        "source_group_id": "train7029",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15070",
+        "source_group_id": "train15070",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train7077",
+        "source_group_id": "train7077",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13235",
+        "source_group_id": "train13235",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20154",
+        "source_group_id": "train20154",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30703",
+        "source_group_id": "train30703",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29520",
+        "source_group_id": "train29520",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20502",
+        "source_group_id": "train20502",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13406",
+        "source_group_id": "train13406",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train7039",
+        "source_group_id": "train7039",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2705",
+        "source_group_id": "train2705",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13013",
+        "source_group_id": "train13013",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30663",
+        "source_group_id": "train30663",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train17841",
+        "source_group_id": "train17841",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22481",
+        "source_group_id": "train22481",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train8116",
+        "source_group_id": "train8116",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3661",
+        "source_group_id": "train3661",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1644",
+        "source_group_id": "train1644",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26067",
+        "source_group_id": "train26067",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14248",
+        "source_group_id": "train14248",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22355",
+        "source_group_id": "train22355",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5549",
+        "source_group_id": "train5549",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13520",
+        "source_group_id": "train13520",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18521",
+        "source_group_id": "train18521",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24089",
+        "source_group_id": "train24089",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1897",
+        "source_group_id": "train1897",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23938",
+        "source_group_id": "train23938",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19455",
+        "source_group_id": "train19455",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train17834",
+        "source_group_id": "train17834",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12317",
+        "source_group_id": "train12317",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train32133",
+        "source_group_id": "train32133",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29514",
+        "source_group_id": "train29514",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14052",
+        "source_group_id": "train14052",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22954",
+        "source_group_id": "train22954",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12130",
+        "source_group_id": "train12130",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14097",
+        "source_group_id": "train14097",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26792",
+        "source_group_id": "train26792",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5617",
+        "source_group_id": "train5617",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24989",
+        "source_group_id": "train24989",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20468",
+        "source_group_id": "train20468",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5005",
+        "source_group_id": "train5005",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14126",
+        "source_group_id": "train14126",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15752",
+        "source_group_id": "train15752",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1372",
+        "source_group_id": "train1372",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18219",
+        "source_group_id": "train18219",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3409",
+        "source_group_id": "train3409",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12318",
+        "source_group_id": "train12318",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train7121",
+        "source_group_id": "train7121",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26014",
+        "source_group_id": "train26014",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3938",
+        "source_group_id": "train3938",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12590",
+        "source_group_id": "train12590",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15478",
+        "source_group_id": "train15478",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5720",
+        "source_group_id": "train5720",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21602",
+        "source_group_id": "train21602",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22685",
+        "source_group_id": "train22685",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29123",
+        "source_group_id": "train29123",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6411",
+        "source_group_id": "train6411",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15086",
+        "source_group_id": "train15086",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train16637",
+        "source_group_id": "train16637",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train16297",
+        "source_group_id": "train16297",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29745",
+        "source_group_id": "train29745",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23767",
+        "source_group_id": "train23767",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13346",
+        "source_group_id": "train13346",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3280",
+        "source_group_id": "train3280",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2303",
+        "source_group_id": "train2303",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1393",
+        "source_group_id": "train1393",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13315",
+        "source_group_id": "train13315",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2346",
+        "source_group_id": "train2346",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29968",
+        "source_group_id": "train29968",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23305",
+        "source_group_id": "train23305",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train31474",
+        "source_group_id": "train31474",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train17721",
+        "source_group_id": "train17721",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22334",
+        "source_group_id": "train22334",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30656",
+        "source_group_id": "train30656",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24360",
+        "source_group_id": "train24360",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train16702",
+        "source_group_id": "train16702",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19472",
+        "source_group_id": "train19472",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15416",
+        "source_group_id": "train15416",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24148",
+        "source_group_id": "train24148",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18613",
+        "source_group_id": "train18613",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23462",
+        "source_group_id": "train23462",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23477",
+        "source_group_id": "train23477",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21603",
+        "source_group_id": "train21603",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6535",
+        "source_group_id": "train6535",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22189",
+        "source_group_id": "train22189",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2338",
+        "source_group_id": "train2338",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13291",
+        "source_group_id": "train13291",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22633",
+        "source_group_id": "train22633",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23253",
+        "source_group_id": "train23253",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train7049",
+        "source_group_id": "train7049",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train10443",
+        "source_group_id": "train10443",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12996",
+        "source_group_id": "train12996",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5721",
+        "source_group_id": "train5721",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5611",
+        "source_group_id": "train5611",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train17696",
+        "source_group_id": "train17696",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29747",
+        "source_group_id": "train29747",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20114",
+        "source_group_id": "train20114",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26065",
+        "source_group_id": "train26065",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15300",
+        "source_group_id": "train15300",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30642",
+        "source_group_id": "train30642",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6726",
+        "source_group_id": "train6726",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15751",
+        "source_group_id": "train15751",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3653",
+        "source_group_id": "train3653",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22011",
+        "source_group_id": "train22011",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22634",
+        "source_group_id": "train22634",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22726",
+        "source_group_id": "train22726",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5997",
+        "source_group_id": "train5997",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6549",
+        "source_group_id": "train6549",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23252",
+        "source_group_id": "train23252",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12269",
+        "source_group_id": "train12269",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24139",
+        "source_group_id": "train24139",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30771",
+        "source_group_id": "train30771",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30387",
+        "source_group_id": "train30387",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22655",
+        "source_group_id": "train22655",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5707",
+        "source_group_id": "train5707",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29105",
+        "source_group_id": "train29105",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15290",
+        "source_group_id": "train15290",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24122",
+        "source_group_id": "train24122",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29800",
+        "source_group_id": "train29800",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22934",
+        "source_group_id": "train22934",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train32555",
+        "source_group_id": "train32555",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train8119",
+        "source_group_id": "train8119",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13135",
+        "source_group_id": "train13135",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21612",
+        "source_group_id": "train21612",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2514",
+        "source_group_id": "train2514",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3576",
+        "source_group_id": "train3576",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5057",
+        "source_group_id": "train5057",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3687",
+        "source_group_id": "train3687",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21025",
+        "source_group_id": "train21025",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22730",
+        "source_group_id": "train22730",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26569",
+        "source_group_id": "train26569",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train25530",
+        "source_group_id": "train25530",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train17933",
+        "source_group_id": "train17933",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29116",
+        "source_group_id": "train29116",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22273",
+        "source_group_id": "train22273",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6355",
+        "source_group_id": "train6355",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12854",
+        "source_group_id": "train12854",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15193",
+        "source_group_id": "train15193",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train17508",
+        "source_group_id": "train17508",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train28729",
+        "source_group_id": "train28729",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14118",
+        "source_group_id": "train14118",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2112",
+        "source_group_id": "train2112",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6555",
+        "source_group_id": "train6555",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23866",
+        "source_group_id": "train23866",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6268",
+        "source_group_id": "train6268",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3263",
+        "source_group_id": "train3263",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24662",
+        "source_group_id": "train24662",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train276",
+        "source_group_id": "train276",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5338",
+        "source_group_id": "train5338",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20717",
+        "source_group_id": "train20717",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3158",
+        "source_group_id": "train3158",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19923",
+        "source_group_id": "train19923",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1030",
+        "source_group_id": "train1030",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19618",
+        "source_group_id": "train19618",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train31604",
+        "source_group_id": "train31604",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29931",
+        "source_group_id": "train29931",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20127",
+        "source_group_id": "train20127",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train31467",
+        "source_group_id": "train31467",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3269",
+        "source_group_id": "train3269",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29762",
+        "source_group_id": "train29762",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29679",
+        "source_group_id": "train29679",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14167",
+        "source_group_id": "train14167",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2977",
+        "source_group_id": "train2977",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26155",
+        "source_group_id": "train26155",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13247",
+        "source_group_id": "train13247",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train10968",
+        "source_group_id": "train10968",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3654",
+        "source_group_id": "train3654",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2371",
+        "source_group_id": "train2371",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train989",
+        "source_group_id": "train989",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29122",
+        "source_group_id": "train29122",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3162",
+        "source_group_id": "train3162",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20656",
+        "source_group_id": "train20656",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12999",
+        "source_group_id": "train12999",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29687",
+        "source_group_id": "train29687",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20752",
+        "source_group_id": "train20752",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29765",
+        "source_group_id": "train29765",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train4571",
+        "source_group_id": "train4571",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2950",
+        "source_group_id": "train2950",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6390",
+        "source_group_id": "train6390",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20673",
+        "source_group_id": "train20673",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5540",
+        "source_group_id": "train5540",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29676",
+        "source_group_id": "train29676",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14603",
+        "source_group_id": "train14603",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train7835",
+        "source_group_id": "train7835",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1335",
+        "source_group_id": "train1335",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train27819",
+        "source_group_id": "train27819",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5394",
+        "source_group_id": "train5394",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train25900",
+        "source_group_id": "train25900",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20130",
+        "source_group_id": "train20130",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12892",
+        "source_group_id": "train12892",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1328",
+        "source_group_id": "train1328",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2353",
+        "source_group_id": "train2353",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23725",
+        "source_group_id": "train23725",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6737",
+        "source_group_id": "train6737",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train75",
+        "source_group_id": "train75",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train31111",
+        "source_group_id": "train31111",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20773",
+        "source_group_id": "train20773",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20350",
+        "source_group_id": "train20350",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train31255",
+        "source_group_id": "train31255",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18832",
+        "source_group_id": "train18832",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6786",
+        "source_group_id": "train6786",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train32529",
+        "source_group_id": "train32529",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13260",
+        "source_group_id": "train13260",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train4540",
+        "source_group_id": "train4540",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14594",
+        "source_group_id": "train14594",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20295",
+        "source_group_id": "train20295",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train28844",
+        "source_group_id": "train28844",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29790",
+        "source_group_id": "train29790",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26705",
+        "source_group_id": "train26705",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15390",
+        "source_group_id": "train15390",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20899",
+        "source_group_id": "train20899",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22699",
+        "source_group_id": "train22699",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22677",
+        "source_group_id": "train22677",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train4703",
+        "source_group_id": "train4703",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5536",
+        "source_group_id": "train5536",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train31126",
+        "source_group_id": "train31126",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15108",
+        "source_group_id": "train15108",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3262",
+        "source_group_id": "train3262",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24095",
+        "source_group_id": "train24095",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5028",
+        "source_group_id": "train5028",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15298",
+        "source_group_id": "train15298",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21650",
+        "source_group_id": "train21650",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29945",
+        "source_group_id": "train29945",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18154",
+        "source_group_id": "train18154",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": true
+      },
+      {
+        "image_id": "train29728",
+        "source_group_id": "train29728",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train11974",
+        "source_group_id": "train11974",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12953",
+        "source_group_id": "train12953",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29964",
+        "source_group_id": "train29964",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train8158",
+        "source_group_id": "train8158",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5589",
+        "source_group_id": "train5589",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2515",
+        "source_group_id": "train2515",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12981",
+        "source_group_id": "train12981",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3626",
+        "source_group_id": "train3626",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train4537",
+        "source_group_id": "train4537",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29972",
+        "source_group_id": "train29972",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3675",
+        "source_group_id": "train3675",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22383",
+        "source_group_id": "train22383",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22824",
+        "source_group_id": "train22824",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train11148",
+        "source_group_id": "train11148",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18513",
+        "source_group_id": "train18513",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5593",
+        "source_group_id": "train5593",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15224",
+        "source_group_id": "train15224",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15424",
+        "source_group_id": "train15424",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13408",
+        "source_group_id": "train13408",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20712",
+        "source_group_id": "train20712",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21687",
+        "source_group_id": "train21687",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29935",
+        "source_group_id": "train29935",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train4650",
+        "source_group_id": "train4650",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19482",
+        "source_group_id": "train19482",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5628",
+        "source_group_id": "train5628",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24106",
+        "source_group_id": "train24106",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20126",
+        "source_group_id": "train20126",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6787",
+        "source_group_id": "train6787",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train25367",
+        "source_group_id": "train25367",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14822",
+        "source_group_id": "train14822",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2416",
+        "source_group_id": "train2416",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6083",
+        "source_group_id": "train6083",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26156",
+        "source_group_id": "train26156",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5687",
+        "source_group_id": "train5687",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30641",
+        "source_group_id": "train30641",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3505",
+        "source_group_id": "train3505",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train74",
+        "source_group_id": "train74",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23007",
+        "source_group_id": "train23007",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29755",
+        "source_group_id": "train29755",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6542",
+        "source_group_id": "train6542",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15759",
+        "source_group_id": "train15759",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1415",
+        "source_group_id": "train1415",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train976",
+        "source_group_id": "train976",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30809",
+        "source_group_id": "train30809",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20901",
+        "source_group_id": "train20901",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train238",
+        "source_group_id": "train238",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6537",
+        "source_group_id": "train6537",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13590",
+        "source_group_id": "train13590",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26343",
+        "source_group_id": "train26343",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2206",
+        "source_group_id": "train2206",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6318",
+        "source_group_id": "train6318",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3378",
+        "source_group_id": "train3378",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12954",
+        "source_group_id": "train12954",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29101",
+        "source_group_id": "train29101",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21104",
+        "source_group_id": "train21104",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train25912",
+        "source_group_id": "train25912",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14213",
+        "source_group_id": "train14213",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6530",
+        "source_group_id": "train6530",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21055",
+        "source_group_id": "train21055",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13400",
+        "source_group_id": "train13400",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21029",
+        "source_group_id": "train21029",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23207",
+        "source_group_id": "train23207",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train25891",
+        "source_group_id": "train25891",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3670",
+        "source_group_id": "train3670",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12141",
+        "source_group_id": "train12141",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train32069",
+        "source_group_id": "train32069",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23560",
+        "source_group_id": "train23560",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1026",
+        "source_group_id": "train1026",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18089",
+        "source_group_id": "train18089",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      }
+    ],
+    "val": [
+      {
+        "image_id": "train26080",
+        "source_group_id": "train26080",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train4535",
+        "source_group_id": "train4535",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train7259",
+        "source_group_id": "train7259",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3540",
+        "source_group_id": "train3540",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22935",
+        "source_group_id": "train22935",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15105",
+        "source_group_id": "train15105",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3302",
+        "source_group_id": "train3302",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18964",
+        "source_group_id": "train18964",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3267",
+        "source_group_id": "train3267",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5021",
+        "source_group_id": "train5021",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1041",
+        "source_group_id": "train1041",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6227",
+        "source_group_id": "train6227",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train17971",
+        "source_group_id": "train17971",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2975",
+        "source_group_id": "train2975",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6422",
+        "source_group_id": "train6422",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train990",
+        "source_group_id": "train990",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6795",
+        "source_group_id": "train6795",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train598",
+        "source_group_id": "train598",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15241",
+        "source_group_id": "train15241",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train11255",
+        "source_group_id": "train11255",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2156",
+        "source_group_id": "train2156",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3672",
+        "source_group_id": "train3672",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30668",
+        "source_group_id": "train30668",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2629",
+        "source_group_id": "train2629",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26492",
+        "source_group_id": "train26492",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13712",
+        "source_group_id": "train13712",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train695",
+        "source_group_id": "train695",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train7026",
+        "source_group_id": "train7026",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train17731",
+        "source_group_id": "train17731",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15210",
+        "source_group_id": "train15210",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13258",
+        "source_group_id": "train13258",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1446",
+        "source_group_id": "train1446",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train32393",
+        "source_group_id": "train32393",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3379",
+        "source_group_id": "train3379",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train16389",
+        "source_group_id": "train16389",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5683",
+        "source_group_id": "train5683",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6415",
+        "source_group_id": "train6415",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train2768",
+        "source_group_id": "train2768",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29720",
+        "source_group_id": "train29720",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22021",
+        "source_group_id": "train22021",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      }
+    ],
+    "test": [
+      {
+        "image_id": "train4525",
+        "source_group_id": "train4525",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21502",
+        "source_group_id": "train21502",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train915",
+        "source_group_id": "train915",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22024",
+        "source_group_id": "train22024",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train16703",
+        "source_group_id": "train16703",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30074",
+        "source_group_id": "train30074",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train27311",
+        "source_group_id": "train27311",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3264",
+        "source_group_id": "train3264",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20433",
+        "source_group_id": "train20433",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23398",
+        "source_group_id": "train23398",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20409",
+        "source_group_id": "train20409",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13905",
+        "source_group_id": "train13905",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22093",
+        "source_group_id": "train22093",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train28638",
+        "source_group_id": "train28638",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23418",
+        "source_group_id": "train23418",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train8220",
+        "source_group_id": "train8220",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20743",
+        "source_group_id": "train20743",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train13393",
+        "source_group_id": "train13393",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train23594",
+        "source_group_id": "train23594",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20651",
+        "source_group_id": "train20651",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5414",
+        "source_group_id": "train5414",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22198",
+        "source_group_id": "train22198",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26166",
+        "source_group_id": "train26166",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30632",
+        "source_group_id": "train30632",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18128",
+        "source_group_id": "train18128",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train942",
+        "source_group_id": "train942",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3835",
+        "source_group_id": "train3835",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18523",
+        "source_group_id": "train18523",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14025",
+        "source_group_id": "train14025",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22068",
+        "source_group_id": "train22068",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20378",
+        "source_group_id": "train20378",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train25163",
+        "source_group_id": "train25163",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26044",
+        "source_group_id": "train26044",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18093",
+        "source_group_id": "train18093",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train25902",
+        "source_group_id": "train25902",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29959",
+        "source_group_id": "train29959",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6790",
+        "source_group_id": "train6790",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6634",
+        "source_group_id": "train6634",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14847",
+        "source_group_id": "train14847",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train8114",
+        "source_group_id": "train8114",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14122",
+        "source_group_id": "train14122",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22702",
+        "source_group_id": "train22702",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20742",
+        "source_group_id": "train20742",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1324",
+        "source_group_id": "train1324",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14016",
+        "source_group_id": "train14016",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train19698",
+        "source_group_id": "train19698",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5756",
+        "source_group_id": "train5756",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train25838",
+        "source_group_id": "train25838",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22754",
+        "source_group_id": "train22754",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5026",
+        "source_group_id": "train5026",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14121",
+        "source_group_id": "train14121",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26165",
+        "source_group_id": "train26165",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15474",
+        "source_group_id": "train15474",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train4082",
+        "source_group_id": "train4082",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train30260",
+        "source_group_id": "train30260",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1322",
+        "source_group_id": "train1322",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22023",
+        "source_group_id": "train22023",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6539",
+        "source_group_id": "train6539",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24158",
+        "source_group_id": "train24158",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train25536",
+        "source_group_id": "train25536",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14617",
+        "source_group_id": "train14617",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train26259",
+        "source_group_id": "train26259",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1447",
+        "source_group_id": "train1447",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train911",
+        "source_group_id": "train911",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24109",
+        "source_group_id": "train24109",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20496",
+        "source_group_id": "train20496",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train17904",
+        "source_group_id": "train17904",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train7033",
+        "source_group_id": "train7033",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train24130",
+        "source_group_id": "train24130",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train8223",
+        "source_group_id": "train8223",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train18036",
+        "source_group_id": "train18036",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train10961",
+        "source_group_id": "train10961",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22462",
+        "source_group_id": "train22462",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6330",
+        "source_group_id": "train6330",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29933",
+        "source_group_id": "train29933",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20653",
+        "source_group_id": "train20653",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29506",
+        "source_group_id": "train29506",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train9101",
+        "source_group_id": "train9101",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20120",
+        "source_group_id": "train20120",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train5527",
+        "source_group_id": "train5527",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12626",
+        "source_group_id": "train12626",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train6536",
+        "source_group_id": "train6536",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train3292",
+        "source_group_id": "train3292",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20771",
+        "source_group_id": "train20771",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20637",
+        "source_group_id": "train20637",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14565",
+        "source_group_id": "train14565",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12867",
+        "source_group_id": "train12867",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12908",
+        "source_group_id": "train12908",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train29531",
+        "source_group_id": "train29531",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train635",
+        "source_group_id": "train635",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train14227",
+        "source_group_id": "train14227",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "manual_fallback",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train4648",
+        "source_group_id": "train4648",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15002",
+        "source_group_id": "train15002",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train1642",
+        "source_group_id": "train1642",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train20660",
+        "source_group_id": "train20660",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train21229",
+        "source_group_id": "train21229",
+        "source_category": "clear_1500",
+        "digit_count": 6,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train22368",
+        "source_group_id": "train22368",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train12422",
+        "source_group_id": "train12422",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train15219",
+        "source_group_id": "train15219",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      },
+      {
+        "image_id": "train903",
+        "source_group_id": "train903",
+        "source_category": "clear_1500",
+        "digit_count": 5,
+        "annotation_mode": "automatic",
+        "annotation_coordinates_rotated_180": false
+      }
+    ]
+  }
+}

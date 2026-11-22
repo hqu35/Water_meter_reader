@@ -1,0 +1,7 @@
+path: /content/watermeter_pose_dataset
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: digit_slot
+kpt_shape: [4, 2]

@@ -1,0 +1,16 @@
+{
+  "images": 664,
+  "split_counts": {
+    "train": 524,
+    "val": 40,
+    "test": 100
+  },
+  "digit_instances": 3389,
+  "missing_or_invalid": [],
+  "coordinate_alignment_180": [
+    "train18154"
+  ],
+  "seed": 42,
+  "visualizations": 25,
+  "additional_visualization": "visualizations/train18154_orientation_alignment.png"
+}
